@@ -1,7 +1,7 @@
 # Curse of Aestrum
 
-A Dungeons & Dragons 5e **time-loop campaign** played interactively in Claude Code. This is
-**Chapter 1**.
+An interactive Dungeons & Dragons 5e campaign. Arrive in the duchy of Aestrum, where something is
+deeply and secretly wrong. This is **Chapter 1**.
 
 ## Requirements
 

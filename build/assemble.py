@@ -258,8 +258,8 @@ def copy_spec(src: Path, dst_rel: str) -> int:
 import json
 
 PLUGIN_NAME = "curse-of-aestrum"
-DESCRIPTION = ("Curse of Aestrum — a Dungeons & Dragons 5e time-loop campaign played "
-               "interactively in Claude Code. Chapter 1.")
+DESCRIPTION = ("Curse of Aestrum — an interactive Dungeons & Dragons 5e campaign. Arrive in the "
+               "duchy of Aestrum, where something is deeply and secretly wrong. Chapter 1.")
 AUTHOR = "Cody Mallonee"
 DONATION_URL = ""      # set to a real donation link (Ko-fi / GitHub Sponsors) to add a Support section
 
@@ -313,8 +313,8 @@ def write_meta() -> None:
                f"**{DONATION_URL}** — entirely optional.\n") if DONATION_URL else ""
     (OUT / "README.md").write_text(f"""# Curse of Aestrum
 
-A Dungeons & Dragons 5e **time-loop campaign** played interactively in Claude Code. This is
-**Chapter 1**.
+An interactive Dungeons & Dragons 5e campaign. Arrive in the duchy of Aestrum, where something is
+deeply and secretly wrong. This is **Chapter 1**.
 
 ## Requirements
 

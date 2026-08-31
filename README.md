@@ -1,6 +1,6 @@
 # Curse of Aestrum — Claude Code plugin
 
-A Dungeons & Dragons 5e **time-loop campaign** played interactively in [Claude Code](https://claude.com/claude-code). This repo is a **Claude Code marketplace** hosting the campaign as an installable plugin.
+An interactive Dungeons & Dragons 5e campaign, set in the duchy of Aestrum where something is deeply and secretly wrong, played in [Claude Code](https://claude.com/claude-code). This repo is a **Claude Code marketplace** hosting the campaign as an installable plugin.
 
 ## Install & play
 
