@@ -14,6 +14,12 @@ Then open Claude Code in a fresh, empty folder (your play-state is written there
 [plugins/curse-of-aestrum/README.md](plugins/curse-of-aestrum/README.md) for requirements
 (you'll need Python for the play-time gate) and full instructions.
 
+## Content rating
+
+**Written for adults** — occult horror, violence, manipulation, and intimate themes, played at a
+content rating you set per session that reaches fully explicit at its top tier. Scale, defaults, and
+the limits that hold regardless: [plugin README](plugins/curse-of-aestrum/README.md#content-rating).
+
 ## Repo layout
 
 - **`plugins/curse-of-aestrum/`** — the generated, installable plugin (self-contained: the

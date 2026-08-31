@@ -15,7 +15,7 @@ The counter is scrubbed board, laid each morning with the day's baking: dark hea
 
 ## What It Provides
 
-Cheap, excellent bread and the warmest welcome in Duskwall. The proprietor, **Albin Crumb**, is the campaign's comic-relief-turned-quiet-heartbreak baker — his voice, his obliviously ribald bread-talk, and the tragedy folded into the apricot loaf in the window are on his sheet: [../../../npcs/chapter_1/remaining_npcs.md]({{PLUGIN_ROOT}}/npcs/chapter_1/remaining_npcs.md) (§ Albin Crumb).
+Cheap, excellent bread and the warmest welcome in Duskwall. The proprietor, **Albin Crumb**, is the campaign's comic-relief-turned-quiet-heartbreak baker — his voice, his obliviously ribald bread-talk, and the tragedy folded into the apricot loaf in the window are on his sheet: [`{{PLUGIN_ROOT}}/npcs/chapter_1/remaining_npcs.md`]({{PLUGIN_ROOT}}/npcs/chapter_1/remaining_npcs.md) (§ Albin Crumb).
 
 A stop for: a cheap meal, warmth and gossip (Albin knows every regular's family and troubles), and — on a second or third visit — the Hettie thread.
 

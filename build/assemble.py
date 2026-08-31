@@ -259,13 +259,41 @@ import json
 
 PLUGIN_NAME = "curse-of-aestrum"
 DESCRIPTION = ("Curse of Aestrum — an interactive Dungeons & Dragons 5e campaign. Arrive in the "
-               "duchy of Aestrum, where something is deeply and secretly wrong. Chapter 1.")
+               "duchy of Aestrum, where something is deeply and secretly wrong. Chapter 1. "
+               "For adults: mature themes throughout, with a content rating chosen per session "
+               "(T / M / AO; M by default, T the floor).")
 AUTHOR = "Cody Mallonee"
 DONATION_URL = ""      # set to a real donation link (Ko-fi / GitHub Sponsors) to add a Support section
 
 
 def _cmd(s: str) -> dict:
     return {"type": "command", "command": s}
+
+
+def extract_rating_block() -> tuple[str, str]:
+    """Lift the T/M/AO table and the hard-limits list verbatim out of CoA's scene override.
+
+    overrides/scene.md is the single source of truth for the rating scale. The plugin README
+    restates it for anyone deciding whether to install, so it is *extracted* rather than
+    paraphrased — a paraphrase drifts the moment the scale is edited. Hard-fails if the section
+    shape changes, so the README can never ship with a hole where the ratings should be.
+    """
+    src = COA / "overrides" / "scene.md"
+    section = re.search(r"^## Content rating system$(.*?)^## ", src.read_text(encoding="utf-8"),
+                        re.M | re.S)
+    if not section:
+        raise SystemExit(f"assemble: no '## Content rating system' section in {src}")
+
+    table = re.search(r"^\| Rating \|.*?(?=\n\s*\n)", section.group(1), re.M | re.S)
+    if not table:
+        raise SystemExit(f"assemble: no '| Rating |' table under 'Content rating system' in {src}")
+
+    limits = re.search(r"^\*\*Hard limits regardless of rating:\*\*.*?(?=\n\s*\n\*\*)",
+                       section.group(1), re.M | re.S)
+    if not limits:
+        raise SystemExit(f"assemble: no hard-limits list under 'Content rating system' in {src}")
+
+    return table.group(0).strip(), limits.group(0).strip()
 
 
 def write_meta() -> None:
@@ -311,10 +339,27 @@ def write_meta() -> None:
 
     support = (f"\n## Support\n\nIf you enjoy it and want to support continued development: "
                f"**{DONATION_URL}** — entirely optional.\n") if DONATION_URL else ""
+    rating_table, rating_limits = extract_rating_block()
     (OUT / "README.md").write_text(f"""# Curse of Aestrum
 
 An interactive Dungeons & Dragons 5e campaign. Arrive in the duchy of Aestrum, where something is
 deeply and secretly wrong. This is **Chapter 1**.
+
+## Content rating
+
+**Written for adults.** Occult horror, violence, manipulation, and intimate themes run through the
+campaign, and **T is the floor** — it does not play lighter than that.
+
+You choose a rating when a session starts; **M** is the default, and a saved campaign resumes at
+whatever it was last set to. The rating governs the whole scene, not just sex — injury granularity,
+innuendo, threat bluntness, NPC anger.
+
+{rating_table}
+
+Say *"switch to M"*, *"drop to T"*, or *"go AO for this scene"* at any point; it takes effect on the
+next response.
+
+{rating_limits}
 
 ## Requirements
 

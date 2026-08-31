@@ -6,7 +6,7 @@
 
 > **Scope:** Canonical Nortmunde regional events that occur in every Chapter 1 instance, independent of any specific party. Entries marked **\*[conditional]\*** are canonical *unless* the party intervenes to preempt them — for example, breaking the cycle and returning to the Nortmunde-side world before the listed date can prevent Aidra's column from reaching Aestrum.
 >
-> Party-instance state — actual party arrival dates, what the party knows, character knowledge snapshots, session-by-session position — lives in [`saved/nortmunde_regional.md`](../saved/nortmunde_regional.md). The Aestrum loop session log lives per-instance in [`saved/aestrum_events.md`](../saved/aestrum_events.md).
+> Party-instance state — actual party arrival dates, what the party knows, character knowledge snapshots, session-by-session position — lives in [`timelines/saved/nortmunde_regional.md`]({{PROJECT_ROOT}}/campaign_state/<C>/timelines/saved/nortmunde_regional.md). The Aestrum loop session log lives per-instance in [`timelines/saved/aestrum_events.md`]({{PROJECT_ROOT}}/campaign_state/<C>/timelines/saved/aestrum_events.md).
 
 ---
 

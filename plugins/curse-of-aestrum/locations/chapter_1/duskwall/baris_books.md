@@ -17,13 +17,13 @@ The shop smells of old paper, leather binding, and lamp oil. It is almost always
 
 ## What Bari Provides
 
-Players seeking **historical information** about Aestrum, Nortmunde, or adjacent topics should be directed here — Bari is the campaign's primary lore source. He has read everything in the shop and written his own manuscript on Aestrum's history, and **commands the whole of it as active knowledge the moment a player engages him** (see [../../../npcs/chapter_1/bari_khalid.md]({{PLUGIN_ROOT}}/npcs/chapter_1/bari_khalid.md)). He turns to the manuscript to show a page, cite exact wording, or pin a date — never because he had to look something up to know it. He is accurate and does not embellish.
+Players seeking **historical information** about Aestrum, Nortmunde, or adjacent topics should be directed here — Bari is the campaign's primary lore source. He has read everything in the shop and written his own manuscript on Aestrum's history, and **commands the whole of it as active knowledge the moment a player engages him** (see [`{{PLUGIN_ROOT}}/npcs/chapter_1/bari_khalid.md`]({{PLUGIN_ROOT}}/npcs/chapter_1/bari_khalid.md)). He turns to the manuscript to show a page, cite exact wording, or pin a date — never because he had to look something up to know it. He is accurate and does not embellish.
 
 Players seeking **directions or maps** should be sent to The Salient Cartographer instead.
 
 ## The Manuscript
 
-*An Abridged History of Aestrum* — Bari's ongoing personal project, and the primary in-world source for Aestrum historical information. Stored at `{{PLUGIN_ROOT}}/lore/abridged_history_of_aestrum.md`. **Load it together with [../../../npcs/chapter_1/bari_khalid.md]({{PLUGIN_ROOT}}/npcs/chapter_1/bari_khalid.md) whenever the party engages Bari — it IS his knowledge, not a text he consults out of ignorance.** Its full contents are his to speak on entry.
+*An Abridged History of Aestrum* — Bari's ongoing personal project, and the primary in-world source for Aestrum historical information. Stored at `{{PLUGIN_ROOT}}/lore/abridged_history_of_aestrum.md`. **Load it together with [`{{PLUGIN_ROOT}}/npcs/chapter_1/bari_khalid.md`]({{PLUGIN_ROOT}}/npcs/chapter_1/bari_khalid.md) whenever the party engages Bari — it IS his knowledge, not a text he consults out of ignorance.** Its full contents are his to speak on entry.
 
 ## Seed Secrets
 

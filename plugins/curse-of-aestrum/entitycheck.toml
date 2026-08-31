@@ -4,10 +4,11 @@
 # skills to read. Keep the two in step — the override is the explanation, this is
 # the enforcement.
 #
-# Run:  py -m runtime entitycheck --config ../CurseOfAestrum/entitycheck.toml
+# Run, from the plugin's engines/fiction-host directory:
+#   py -m runtime entitycheck --config <plugin-root>/entitycheck.toml
 #
 # The invariants being checked are Aria's
-# (../story-engine/rules/authoring_entities.md, anchor entity-authoring.bindings);
+# (engines/story-engine/rules/authoring_entities.md, anchor entity-authoring.bindings);
 # everything below is this campaign's binding of them.
 version = 1
 

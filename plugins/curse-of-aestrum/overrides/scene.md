@@ -264,7 +264,7 @@ tier — campaign NPCs are never chapter-organized.)
 **Exemption — `### Cycle response —` entries.** Any NPC-overlay entry whose
 heading is prefixed **`### Cycle response —`** (the loop-recurrence response
 repertoire — approach-keyed dialogue *and* location-independent event-experience
-reactions, per [../rules/cycle_recurrences.md]({{PLUGIN_ROOT}}/rules/cycle_recurrences.md)) is
+reactions, per [`{{PLUGIN_ROOT}}/rules/cycle_recurrences.md`]({{PLUGIN_ROOT}}/rules/cycle_recurrences.md)) is
 **not** time-filtered — it loads in full regardless of the specified Aestrum Day.
 It is deterministic baseline behavior the loop always reproduces, not experience
 the character accumulates. The **prefix is the machine contract** (the flush
@@ -446,7 +446,8 @@ mechanics clarification mid-scene.
 
 ## In-scene mechanics (CoA-only rules)
 
-The thin shell handles the engine-side mechanics (`../rpg-5e-engine/rules/`).
+The thin shell handles the engine-side mechanics
+(`{{PLUGIN_ROOT}}/engines/rpg-5e-engine/rules/`).
 The CoA setting-specific rules, loaded on demand when the mechanic fires:
 
 - `{{PLUGIN_ROOT}}/rules/time_loop.md`
@@ -566,7 +567,7 @@ the line per the global Calliope leak protocol.
 **Night-danger tone scoping — sheltered nights are safe harbors.** The reset's
 danger is a *bounded window,* not an ambient condition of darkness. The hazard
 is the midnight **Sleep** step and the reset sequence that follows it (12:00 AM
-onward, [../rules/time_loop.md]({{PLUGIN_ROOT}}/rules/time_loop.md)), and it falls on
+onward, [`{{PLUGIN_ROOT}}/rules/time_loop.md`]({{PLUGIN_ROOT}}/rules/time_loop.md)), and it falls on
 subjects who meet it **exposed** — caught out, unsheltered, somewhere that "a
 place where being found in the morning will not undo you" fails to describe
 (Jiasha's charge; Aliss's corroboration that people do not always wake where
@@ -610,7 +611,7 @@ Aestrum residents reset nightly and re-live the same day, so their reactions are
 line every cycle, a different approach branches into new dialogue, and the same
 *kind of experience* draws the same reaction **even in a different place** (the
 Westworld/Lawrence texture). Capture and replay these per
-[../rules/cycle_recurrences.md]({{PLUGIN_ROOT}}/rules/cycle_recurrences.md) (load it when the
+[`{{PLUGIN_ROOT}}/rules/cycle_recurrences.md`]({{PLUGIN_ROOT}}/rules/cycle_recurrences.md) (load it when the
 party re-enters a location, re-opens a conversation with a resident, or puts a
 resident through a repeat situation-type). Draft-time behavior:
 
@@ -630,7 +631,7 @@ resident through a repeat situation-type). Draft-time behavior:
   `### Cycle response —` block under `## locations/<id>` / `## npcs/<name>`, and
   flushed to the overlay on save — the same staging-tail pipeline and D1
   explicit-save discipline as any other delta (see
-  [../rules/cycle_recurrences.md]({{PLUGIN_ROOT}}/rules/cycle_recurrences.md), *Capture*).
+  [`{{PLUGIN_ROOT}}/rules/cycle_recurrences.md`]({{PLUGIN_ROOT}}/rules/cycle_recurrences.md), *Capture*).
 
 **Loader note:** NPC `### Cycle response —` entries are **exempt from the overlay
 time-filter** (see *Time-filter format* above) — baseline determinism, not
@@ -645,9 +646,9 @@ At scene start, read the active campaign's instance toggle file:
   `{{PROJECT_ROOT}}/campaign_state/.active` per the state-directory section above.
 
 For each toggle set to `true`, apply the matching behavior from
-[../rules/optional_rules.md]({{PLUGIN_ROOT}}/rules/optional_rules.md) (the catalog) as a drafting
+[`{{PLUGIN_ROOT}}/rules/optional_rules.md`]({{PLUGIN_ROOT}}/rules/optional_rules.md) (the catalog) as a drafting
 constraint for this campaign. Load order is Engine → Campaign → **Instance**
-(last-loaded wins), per [../rules/file_layering.md]({{PLUGIN_ROOT}}/rules/file_layering.md).
+(last-loaded wins), per [`{{PLUGIN_ROOT}}/rules/file_layering.md`]({{PLUGIN_ROOT}}/rules/file_layering.md).
 Absence of the file, or of a given key, means default (RAW) behavior.
 
 ---
@@ -690,7 +691,7 @@ this override supplies:
 > format with CoA's domains, and the flush wiring.
 
 CoA **stages** each confirmed beat's deltas during play and **flushes** them
-at save time via `scripts/flush_campaign_staging.ps1` (the scene skill's
+at save time via `{{PLUGIN_ROOT}}/scripts/flush_campaign_staging.ps1` (the scene skill's
 "Save handling" invokes it). Two consequences for the save cost:
 
 - **The model never reads or writes an overlay at save time.** §5a's

@@ -24,8 +24,8 @@ Rules — game mechanics, race/class definitions, homebrew rulings — follow th
 
 | Layer | Path Convention | Purpose |
 |---|---|---|
-| **Engine** | `../rpg-5e-engine/rules/[file].md` | Canterbury — generic D&D 5e mechanics. Setting-agnostic. |
-| **Campaign** | `rules/[file].md` (this repo) | Curse of Aestrum — homebrew that applies to every playthrough of CoA (time loop, dead zones, revert, etc.). Overlays Canterbury. |
+| **Engine** | `{{PLUGIN_ROOT}}/engines/rpg-5e-engine/rules/[file].md` | Canterbury — generic D&D 5e mechanics. Setting-agnostic. Vendored inside the plugin. |
+| **Campaign** | `{{PLUGIN_ROOT}}/rules/[file].md` | Curse of Aestrum — homebrew that applies to every playthrough of CoA (time loop, dead zones, revert, etc.). Overlays Canterbury. |
 | **Instance** | `{{PROJECT_ROOT}}/campaign_state/<instance>/rules/[file].md` | This specific playthrough — table rulings, non-standard PC backgrounds, custom Oaths/lineages, one-off mechanics tied to a specific party. Overlays both Engine and Campaign. |
 
 Load order is **Engine → Campaign → Instance**. Last loaded wins on conflict.
@@ -34,7 +34,7 @@ The Instance tier exists so a single playthrough can carry mechanical homebrew (
 
 ## Load Order
 
-The skill (scene, write-chapter, etc.) loads the layers in this order and merges them:
+The skill (scene, author, etc.) loads the layers in this order and merges them:
 
 **During Chapter 1:**
 1. Read **base** file
@@ -145,7 +145,7 @@ at a location is planned — see the system-wide TODO.)*
 ## Status
 
 - **Base + current (`saved/`) layering: in active use** across `npcs/`, `party/`, `locations/`, and `factions/`.
-- **Chapter overlay tier: defined here, not yet wired into the skills** (scene, write-chapter, etc.). Skills do not auto-load `chapter_N/` overlays. Chapter overlay files can be authored, but the DM must load them manually when running scenes in the relevant chapter, until skill support lands.
+- **Chapter overlay tier: defined here, not yet wired into the skills** (scene, author, etc.). Skills do not auto-load `chapter_N/` overlays. Chapter overlay files can be authored, but the DM must load them manually when running scenes in the relevant chapter, until skill support lands.
 
 ## Migration Notes
 

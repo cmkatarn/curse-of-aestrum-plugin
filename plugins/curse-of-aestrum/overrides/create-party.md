@@ -37,12 +37,12 @@ Summary for this skill:
 - **Rule-override scaffold:** write `{{PROJECT_ROOT}}/campaign_state/<slug>/rules/rule_overrides.md`
   with all toggles at their default (`false`), so the available overrides are
   discoverable for the new campaign. See the catalog in
-  [../rules/optional_rules.md]({{PLUGIN_ROOT}}/rules/optional_rules.md) for the current toggle
+  [`{{PLUGIN_ROOT}}/rules/optional_rules.md`]({{PLUGIN_ROOT}}/rules/optional_rules.md) for the current toggle
   set; mirror its keys with `false` values.
 - **Display-preferences scaffold:** write `{{PROJECT_ROOT}}/campaign_state/<slug>/preferences.md`
   seeded to the campaign defaults — `narrationDisplay: Novelization`,
   `dice_display: false` — as an instance overlay of
-  [../party/preferences.md]({{PLUGIN_ROOT}}/party/preferences.md). These are mutable later
+  [`{{PLUGIN_ROOT}}/party/preferences.md`]({{PLUGIN_ROOT}}/party/preferences.md). These are mutable later
   (a change applies on the next scene). See
   [scene.md]({{PLUGIN_ROOT}}/overrides/scene.md#display-mode-and-dice-resolution), *Display mode and dice
   resolution*.

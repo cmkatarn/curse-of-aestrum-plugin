@@ -9,7 +9,7 @@ description: >
   or formalize a world object. Also triggers when a dangling reference needs
   closing ("close loc_aidra_house", "that place needs a file"). Do NOT use for
   characters — NPCs go to create-npc, player characters to create-character,
-  parties to create-party. Do NOT use for prose (write-chapter) or live play
+  parties to create-party. Do NOT use for writing prose, or for live play
   (scene).
 allowed-tools: [Read, Grep, Glob, Write, Edit, PowerShell]
 version: 1.1.0
@@ -30,11 +30,13 @@ version: 1.1.0
 Thin shell over Aria's non-character authoring procedure, bound to this
 campaign's spellings.
 
-**Path resolution.** Every relative path below resolves against the **CoA project
-root** (`{{PLUGIN_ROOT}}`), **not** this skill's own base
-directory. So `overrides/...` → `CurseOfAestrum\overrides\...`, and
-`../story-engine/...` reaches the sibling engine repo. If a read 404s, retry from
-the project root before assuming the file is missing.
+**Path resolution.** Every path below is written `{{PLUGIN_ROOT}}/...` and
+resolves against this plugin's bundled root — **not** this skill's own base
+directory, and **not** the working directory. The engines are vendored inside
+the plugin: Aria is at `{{PLUGIN_ROOT}}/engines/story-engine/...`. There is no
+sibling engine repo to reach for, and no path leaves the plugin. If a read 404s,
+re-resolve the placeholder against the plugin root before assuming the file is
+missing.
 
 ## Subject types
 
