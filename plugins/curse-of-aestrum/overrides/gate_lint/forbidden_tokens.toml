@@ -1,0 +1,37 @@
+# Curse of Aestrum — gate Row 13 override extensions, machine-readable mirror.
+#
+# Deterministic-lint sidecar for the closed-vocabulary subset of the
+# "Epistemic-pass extensions" in overrides/scene.md. The prose remains canonical
+# for the model; this .toml is what a runtime linter (fiction-host) enforces.
+#
+# In-fiction time uses the Calendar of Harptos or relative phrasing — the
+# project-internal day-index frame must never appear in narration or dialogue.
+#
+# v1 carries the unambiguous frame phrase "Aestrum Day". The numeric forms
+# ("Day 6", "Day -29", "Cycle 3") are PATTERNS (token + a number) and are parked
+# for v2 — note that bare "Day" and bare "cycle"/"the cycle" are LEGITIMATE
+# in-fiction (the loop and the cycle are concepts characters may use), so only the
+# numeric-index forms are forbidden, which v1's exact/word matcher cannot express.
+
+version = 1
+
+[[tokens]]
+token = "Aestrum Day"
+match = "word"
+case_sensitive = false
+surfaces = ["narration", "dialogue"]
+rewrite_hint = "use the Calendar of Harptos (e.g. '14th of Mirtul') or relative phrasing"
+
+# --- v2 (parked): numeric index forms — need a regex matcher (token + number) ---
+
+[[tokens]]
+token = "Day [N]"
+match = "pattern"
+enabled = false
+rewrite_hint = "forbid 'Day 6' / 'Day -29' / 'Day +3' (digit-bearing), NOT bare 'day'"
+
+[[tokens]]
+token = "Cycle [N]"
+match = "pattern"
+enabled = false
+rewrite_hint = "forbid 'Cycle 3' (digit-bearing), NOT bare 'cycle' / 'the cycle'"

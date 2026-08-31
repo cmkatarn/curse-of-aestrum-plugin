@@ -1,0 +1,64 @@
+# Public contract surface of Calliope (prose-engine).
+#
+# Anchors listed here are the wording-independent ids a consumer may cite as
+# `<file>#<id>` (the section carries a matching `<!-- anchor: <id> -->` marker).
+# Reword the heading freely — the anchor is the promise. The reference-integrity
+# checker (fiction-host `refcheck`) enforces two things against this file:
+#   1. a consumer citation into this engine must target an id listed below
+#      (citing a private/internal anchor is an error), and
+#   2. the consumer's declared target version must equal contract_version.
+# Removing or renaming a public anchor is a BREAKING change: bump contract_version
+# and update each consumer's [engines] pin.
+contract_version = 1
+
+# --- scene/core.md : the fixed workflow + rule-application order ---
+[[anchor]]
+id   = "core.rule-order"
+file = "scene/core.md"
+note = "rule-application order is fixed: override/engine rules are drafting constraints; the epistemic pass is the final gate"
+
+[[anchor]]
+id   = "core.step-1"
+file = "scene/core.md"
+note = "STEP 1 — gather scene parameters"
+
+[[anchor]]
+id   = "core.step-2"
+file = "scene/core.md"
+note = "STEP 2 — build character memory for each participant"
+
+[[anchor]]
+id   = "core.step-2.5"
+file = "scene/core.md"
+note = "STEP 2.5 — load location memory"
+
+[[anchor]]
+id   = "core.step-3"
+file = "scene/core.md"
+note = "STEP 3 — establish the scene"
+
+[[anchor]]
+id   = "core.step-4"
+file = "scene/core.md"
+note = "STEP 4 — run the scene (holds the first-scene always-load set)"
+
+[[anchor]]
+id   = "core.step-5"
+file = "scene/core.md"
+note = "STEP 5 — scene close and save"
+
+[[anchor]]
+id   = "core.step-6"
+file = "scene/core.md"
+note = "STEP 6 — error handling"
+
+# --- scene/references/scene_lifecycle.md : resume + save invariants ---
+[[anchor]]
+id   = "scene-lifecycle.resume"
+file = "scene/references/scene_lifecycle.md"
+note = "the generic RESUME operation a consumer's resume command maps onto"
+
+[[anchor]]
+id   = "scene-lifecycle.save-discipline"
+file = "scene/references/scene_lifecycle.md"
+note = "save invariants D1–D4 that bind every consuming layer's save"

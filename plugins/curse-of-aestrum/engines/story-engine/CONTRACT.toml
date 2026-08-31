@@ -1,0 +1,70 @@
+# Public contract surface of Aria (story-engine).
+#
+# Aria is the genre-agnostic scene-management / authoring / disclosure layer that
+# consuming works — and any system layer between Aria and a work — read directly.
+# Anchors listed
+# here are the wording-independent ids a consumer may cite as `<file>#<id>` (each
+# section carries a matching `<!-- anchor: <id> -->` marker). Reword the heading
+# freely — the anchor is the promise. The reference-integrity checker (fiction-host
+# `refcheck`) enforces two things against this file:
+#   1. a consumer citation into this engine must target an id listed below
+#      (citing a private/internal anchor is an error), and
+#   2. the consumer's declared target version must equal contract_version.
+# Removing or renaming a public anchor is a BREAKING change: bump contract_version
+# and update each consumer's [engines] pin.
+#
+# Whole-file dependencies (a consumer loading information_disclosure.md,
+# private_information.md, scene_framing.md, story_lifecycle.md, file_layering.md,
+# or the authoring_* modules without a fragment) are covered by the version pin
+# above; only fragment-cited sections need an anchor entry here.
+contract_version = 1
+
+# --- information_disclosure.md ---
+[[anchor]]
+id   = "info.sensory-channels"
+file = "rules/information_disclosure.md"
+note = "deliberate non-visual sensory inclusion; the reveal-vs-withhold line a consumer's effect-display rule cites"
+
+# --- private_information.md ---
+[[anchor]]
+id   = "private.hard-limits"
+file = "rules/private_information.md"
+note = "the don't-run-a-decision-on-a-wrong-world-picture safety rule consumers cite"
+
+# --- story_lifecycle.md : the work container mapped onto Calliope's scene lifecycle ---
+[[anchor]]
+id   = "story-lifecycle.resume"
+file = "rules/story_lifecycle.md"
+note = "the work-scoped RESUME operation a consumer's resume command maps onto"
+
+[[anchor]]
+id   = "story-lifecycle.save-discipline"
+file = "rules/story_lifecycle.md"
+note = "the Save/Close mapping; overlay-only write scope binds every consuming layer"
+
+[[anchor]]
+id   = "story-lifecycle.staging"
+file = "rules/story_lifecycle.md"
+note = "the work-level lifecycle of the staging artifact (location under the override's staging path, resume-picks-it-up, switch-refuses-an-unstaged-beat) a consumer's staging/flush wiring binds to"
+
+# --- file_layering.md : the layer model consumers bind their directories to ---
+[[anchor]]
+id   = "file-layering.tier-binding"
+file = "rules/file_layering.md"
+note = "layers are named by this engine, directories by the override; the two-tier minimum (chapter tier optional)"
+
+# --- authoring_entities.md : authoring everything that is not a character ---
+[[anchor]]
+id   = "entity-authoring.bindings"
+file = "rules/authoring_entities.md"
+note = "the invariant-vs-binding split; the table an override declares its id/field/layer/status spellings against"
+
+[[anchor]]
+id   = "entity-authoring.integrity"
+file = "rules/authoring_entities.md"
+note = "the four entity-graph failure modes (dangling ref / alias drift / one-way edge / key drift) a consumer's schema or integrity check cites"
+
+[[anchor]]
+id   = "entity-authoring.relations"
+file = "rules/authoring_entities.md"
+note = "containment-on-the-child vs peer-on-both-ends; the relation shape a consumer's frontmatter vocabulary binds to"

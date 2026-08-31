@@ -1,0 +1,117 @@
+# Calliope — infrastructure-citation tokens (gate Row 5), machine-readable mirror.
+#
+# This is the deterministic-lint sidecar for the closed-vocabulary subset of the
+# infrastructure-citation failure mode (scene/references/epistemic_discipline.md,
+# "Never refer to files, skills, overlays..."). A consuming runtime may enforce
+# these deterministically before a beat is shown; the prose remains the canonical
+# model-facing rule. Engine-neutral: only generic storage-layer vocabulary, no
+# consuming-project names.
+#
+# v1 carries only entries that are unambiguous on sight. The bare single-word
+# tokens (file, notes, base, saved, marked, recorded) are ordinary English and
+# only leak in a storage-naming *context* — they are parked as `enabled = false`
+# pattern entries for v2 (context regex), not scanned in v1.
+
+version = 1
+
+# --- v1: unambiguous storage-naming phrases (word-boundary, case-insensitive) ---
+
+[[tokens]]
+token = "base file"
+match = "word"
+case_sensitive = false
+surfaces = ["narration", "dialogue"]
+rewrite_hint = "state the fact in-fiction; do not name the storage layer"
+
+[[tokens]]
+token = "saved overlay"
+match = "word"
+case_sensitive = false
+surfaces = ["narration", "dialogue"]
+rewrite_hint = "state the fact in-fiction; do not name the storage layer"
+
+[[tokens]]
+token = "the overlay"
+match = "word"
+case_sensitive = false
+surfaces = ["narration", "dialogue"]
+rewrite_hint = "state the fact in-fiction; do not name the storage layer"
+
+[[tokens]]
+token = "overlay notes"
+match = "word"
+case_sensitive = false
+surfaces = ["narration", "dialogue"]
+rewrite_hint = "state the fact in-fiction; do not name the storage layer"
+
+[[tokens]]
+token = "per the skill"
+match = "word"
+case_sensitive = false
+surfaces = ["narration", "dialogue"]
+rewrite_hint = "state the fact in-fiction; do not cite the skill"
+
+[[tokens]]
+token = "as the overlay notes"
+match = "word"
+case_sensitive = false
+surfaces = ["narration", "dialogue"]
+rewrite_hint = "state the fact in-fiction; do not cite the overlay"
+
+# --- v1: source-file citation (substring) — process-narration backstop ---
+#
+# Naming a source/config/implementation file to the player is the sharpest tell
+# of narrated source-consultation ("let me read snapshot.md", "per time_loop.md")
+# — the process-narration leak Row 5 forbids: consultation is a SILENT act. A
+# file extension never legitimately appears in fiction narration or dialogue, and
+# OOC/meta spans (`<…>`, `<<…>>`, `*[…]*`) are stripped before this scan, so an
+# admin aside that names a file is exempt. `exact` = substring, so the extension
+# is caught wherever the filename sits. Engine-neutral: extensions, not names.
+
+[[tokens]]
+token = ".md"
+match = "exact"
+case_sensitive = false
+surfaces = ["narration", "dialogue"]
+rewrite_hint = "consult the source SILENTLY (thinking + tool calls); never name a file to the player — state only the in-fiction fact the source grounds"
+
+[[tokens]]
+token = ".toml"
+match = "exact"
+case_sensitive = false
+surfaces = ["narration", "dialogue"]
+rewrite_hint = "same as .md — do not name a config/spec file to the player; consult it silently"
+
+[[tokens]]
+token = ".py"
+match = "exact"
+case_sensitive = false
+surfaces = ["narration", "dialogue"]
+rewrite_hint = "same as .md — do not name an implementation file to the player; consult it silently"
+
+[[tokens]]
+token = ".ps1"
+match = "exact"
+case_sensitive = false
+surfaces = ["narration", "dialogue"]
+rewrite_hint = "same as .md — do not name a script file to the player; consult it silently"
+
+# --- v2 (parked): context-dependent single tokens — need a regex matcher ---
+
+[[tokens]]
+token = "file"
+match = "pattern"
+enabled = false
+rewrite_hint = "leak only when naming the storage layer ('in his file', 'her file says')"
+
+[[tokens]]
+token = "base"
+match = "pattern"
+enabled = false
+rewrite_hint = "leak only as 'base file' / 'in the base' storage sense"
+
+[[tokens]]
+token = "saved"
+match = "pattern"
+enabled = false
+rewrite_hint = "leak only in the 'saved state/overlay' storage sense"

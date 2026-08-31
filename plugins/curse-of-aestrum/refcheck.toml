@@ -1,0 +1,41 @@
+# Reference-integrity checker config (consumed by fiction-host's `refcheck`).
+# This file is owned by the consumer (CoA): it declares which markdown trees to
+# scan for cross-references and which link targets are intentional soft pointers.
+# Run:  py -m runtime refcheck --config ../CurseOfAestrum/refcheck.toml
+version = 1
+
+[scan]
+# Roots whose *.md are scanned for outbound links, relative to this file's dir.
+# The campaign repo plus the sibling engines it cites. story-engine (Aria) is the
+# canonical home for the genre-agnostic scene/authoring rules CoA now reads
+# directly (Canterbury consumes Aria); scanning it keeps Aria internally green.
+roots = [".", "../prose-engine", "../rpg-5e-engine", "../story-engine"]
+
+# Path segments never scanned: generated per-instance state and binary assets.
+exclude = ["campaign_state", "Photos", "badges", ".git", "__pycache__"]
+
+# Link targets matching these globs are intentional soft pointers — canon files
+# reference a "saved/" overlay that only resolves inside a live campaign instance
+# (campaign_state/<id>/.../saved/...), so it is legitimately absent from the canon
+# tree. These are not validated. See story-engine file_layering (base/overlay).
+ignore_targets = ["saved/*", "*/saved/*"]
+
+# Engine-contract pins: the contract_version this consumer was written against.
+# A fragment citation into an engine must target a PUBLIC anchor listed in that
+# engine's CONTRACT.toml, and the version below must equal the engine's live
+# contract_version — a mismatch fails the check, the markdown analogue of the
+# Python plugin CONTRACT_VERSION gate.
+[engines.prose]
+path = "../prose-engine"
+version = 1
+
+[engines.rpg]
+path = "../rpg-5e-engine"
+version = 1
+
+# Aria (story-engine): the genre-agnostic scene/authoring layer CoA now reads
+# directly for the de-duplicated rules (Canterbury → Aria; CoA → Aria for the
+# base, + Canterbury's 5e layer where one exists).
+[engines.aria]
+path = "../story-engine"
+version = 1

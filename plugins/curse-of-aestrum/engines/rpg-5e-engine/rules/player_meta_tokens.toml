@@ -1,0 +1,174 @@
+# Canterbury — player-meta tokens (Calliope gate Row 10), machine-readable mirror.
+#
+# Deterministic-lint sidecar for the closed-vocabulary subset of player_meta_tokens.md.
+# The .md remains the canonical, model-facing spec (with mundane-use guidance and
+# rewrite hints); this .toml is the subset a runtime linter can enforce on sight.
+#
+# v1 carries ONLY the "any occurrence" tokens whose .md flag_patterns are "any
+# occurrence" (unambiguous mechanical abbreviations, dice notation, crit/cantrip).
+# The context-sensitive tokens (hit points, armor class, saving throw, initiative,
+# level, damage, check, slot, ...) require the .md's natural-language flag_patterns
+# to be formalized as regex; they are parked here as `enabled = false` until v2.
+
+version = 1
+
+# --- v1: unambiguous mechanical abbreviations (word-boundary, case-SENSITIVE) ---
+
+[[tokens]]
+token = "HP"
+match = "word"
+case_sensitive = true
+surfaces = ["narration", "dialogue"]
+rewrite_hint = "reframe as wounds / exhaustion / blood loss — sensory, not numeric"
+
+[[tokens]]
+token = "AC"
+match = "word"
+case_sensitive = true
+surfaces = ["narration", "dialogue"]
+rewrite_hint = "reframe as how hard they are to hit, the way they move/guard"
+
+[[tokens]]
+token = "DC"
+match = "word"
+case_sensitive = true
+surfaces = ["narration", "dialogue"]
+rewrite_hint = "reframe as difficulty, the size of the task, how steep it gets"
+
+# --- v1: dice notation (substring, so '1d20' is caught; case-sensitive 'd') ---
+
+[[tokens]]
+token = "d20"
+match = "exact"
+case_sensitive = true
+rewrite_hint = "drop the dice notation; the outcome stays in the fiction"
+
+[[tokens]]
+token = "d100"
+match = "exact"
+case_sensitive = true
+rewrite_hint = "drop the dice notation; the outcome stays in the fiction"
+
+[[tokens]]
+token = "d12"
+match = "exact"
+case_sensitive = true
+rewrite_hint = "drop the dice notation; the outcome stays in the fiction"
+
+[[tokens]]
+token = "d10"
+match = "exact"
+case_sensitive = true
+rewrite_hint = "drop the dice notation; the outcome stays in the fiction"
+
+[[tokens]]
+token = "d8"
+match = "exact"
+case_sensitive = true
+rewrite_hint = "drop the dice notation; the outcome stays in the fiction"
+
+[[tokens]]
+token = "d6"
+match = "exact"
+case_sensitive = true
+rewrite_hint = "drop the dice notation; the outcome stays in the fiction"
+
+[[tokens]]
+token = "d4"
+match = "exact"
+case_sensitive = true
+rewrite_hint = "drop the dice notation; the outcome stays in the fiction"
+
+# --- v1: crit/fumble phrasing + cantrip (word-boundary) ---
+
+[[tokens]]
+token = "natural 20"
+match = "word"
+case_sensitive = false
+surfaces = ["narration", "dialogue"]
+rewrite_hint = "render the perfect blow in fiction, not the die phrasing"
+
+[[tokens]]
+token = "nat 20"
+match = "word"
+case_sensitive = false
+surfaces = ["narration", "dialogue"]
+rewrite_hint = "render the perfect blow in fiction, not the die phrasing"
+
+[[tokens]]
+token = "natural 1"
+match = "word"
+case_sensitive = false
+surfaces = ["narration", "dialogue"]
+rewrite_hint = "render the slip/failure in fiction, not the die phrasing"
+
+[[tokens]]
+token = "nat 1"
+match = "word"
+case_sensitive = false
+surfaces = ["narration", "dialogue"]
+rewrite_hint = "render the slip/failure in fiction, not the die phrasing"
+
+[[tokens]]
+token = "cantrip"
+match = "word"
+case_sensitive = false
+surfaces = ["narration", "dialogue"]
+rewrite_hint = "render the spell itself (the light at her fingertips), not the term"
+
+[[tokens]]
+token = "cantrips"
+match = "word"
+case_sensitive = false
+surfaces = ["narration", "dialogue"]
+rewrite_hint = "render the spells themselves, not the term"
+
+# --- v2 (parked): context-sensitive tokens — need flag_patterns formalized ---
+
+[[tokens]]
+token = "hit points"
+match = "pattern"
+enabled = false
+rewrite_hint = "fires only with a numeric quantifier / state report / damage verb"
+
+[[tokens]]
+token = "armor class"
+match = "pattern"
+enabled = false
+rewrite_hint = "fires only with a numeric value / combat verb / possessive"
+
+[[tokens]]
+token = "saving throw"
+match = "pattern"
+enabled = false
+rewrite_hint = "fires only with an ability name / make-fail-roll construction"
+
+[[tokens]]
+token = "initiative"
+match = "pattern"
+enabled = false
+rewrite_hint = "fires only as 'rolled/roll initiative', 'initiative order', ..."
+
+[[tokens]]
+token = "level"
+match = "pattern"
+enabled = false
+rewrite_hint = "fires only as 'level up', 'Nth-level spell', 'character level', ..."
+
+[[tokens]]
+token = "damage"
+match = "pattern"
+enabled = false
+rewrite_hint = "fires only with a damage-type modifier or numeric quantifier"
+
+[[tokens]]
+token = "check"
+match = "pattern"
+enabled = false
+rewrite_hint = "fires only with a skill/ability name or make-roll construction"
+
+[[tokens]]
+token = "spell slot"
+match = "pattern"
+enabled = false
+rewrite_hint = "fires only in the expenditure/level-slot mechanical sense"

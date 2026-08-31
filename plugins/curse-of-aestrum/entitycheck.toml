@@ -1,0 +1,143 @@
+# Entity-graph checker config (consumed by fiction-host's `entitycheck`).
+# Owned by the consumer (CoA): this is the machine-readable half of
+# `overrides/frontmatter.md`, which declares the same bindings in prose for the
+# skills to read. Keep the two in step — the override is the explanation, this is
+# the enforcement.
+#
+# Run:  py -m runtime entitycheck --config ../CurseOfAestrum/entitycheck.toml
+#
+# The invariants being checked are Aria's
+# (../story-engine/rules/authoring_entities.md, anchor entity-authoring.bindings);
+# everything below is this campaign's binding of them.
+version = 1
+
+[scan]
+root = "."
+# Per-instance play state is not canon and is not checked here.
+exclude = ["campaign_state", "Photos", "badges", ".git", "__pycache__"]
+
+[bindings]
+# Kind comes from the domain directory; `type:` carries this campaign's own
+# classifier (type: shop, type: main). See overrides/frontmatter.md.
+kind = "directory"
+# One flat namespace across the repo, disambiguated by type prefix.
+id_uniqueness = "prefix"
+containment_key = "parent"
+
+# References that are intentionally unresolved. Deliberately short: most of the
+# region-scale names that look like soft pointers are in fact defined entities in
+# the standalone-locations roster below, and declaring a defined entity "soft"
+# would suppress real findings against it.
+soft_ids = [
+  "loc_aestrum", "loc_setland", "loc_aestrum_boundary",
+]
+
+[domains.locations]
+path = "locations"
+kind = "location"
+prefix = "loc_"
+ref_fields = [
+  "connected_locations", "npcs_present", "related_locations", "sub_locations",
+  "shared_wall_with", "related_npc",
+]
+# Empty is an assertion (nobody is normally here); absent is a hole.
+required_fields = ["npcs_present"]
+# routes.md is a travel-time reference table and setland_east_corridor is a
+# chapter-state overlay of road segments — neither is a place with residents, so
+# both are excluded from the location domain rather than carrying npcs_present.
+exclude_files = ["_template.md", "*/_template.md", "chapter_1/routes.md", "chapter_2/setland_east_corridor.md"]
+
+# Regions, duchies and minor places are catalogued in one roster rather than a
+# file each: `## Name` sections with `**id:** loc_…` on their own field lines. A
+# section with no id is a promotion stub pointing at the dedicated file.
+[domains.locations.roster]
+files = ["chapter_1/standalone_locations.md"]
+section_level = 2
+
+[domains.npcs]
+path = "npcs"
+kind = "character"
+prefix = "npc_"
+ref_fields = ["location", "home_location", "groups"]
+exclude_files = ["archetypes.md"]
+
+# `location:` is a reference and holds an id, nothing else. When a character has
+# no place to point at — a stray that roams, someone in hiding, a town not yet
+# chosen — that goes in `location_status:` instead, so a state is never written
+# into a reference field where it could only ever dangle.
+[[domains.npcs.exclusive]]
+name = "placement"
+fields = ["location", "location_status"]
+required = true
+
+[domains.npcs.enums]
+location_status = ["roaming", "hidden", "itinerant", "tbd"]
+
+# The minor-NPC digests hold many characters in one file: one `## Name` section
+# each, fields on an inline `**id:** ... | **location:** ...` line. Sections with
+# no id are redirect stubs ("elevated to its own sheet", "moved to chapter 2") and
+# are correctly not entities — the character they name lives in the file they
+# point at.
+[domains.npcs.roster]
+files = ["*/remaining_npcs.md"]
+section_level = 2
+
+[domains.party]
+path = "party"
+kind = "character"
+prefix = "pc_"
+ref_fields = ["home_location", "groups"]
+exclude_files = ["preferences.md"]
+
+[domains.quests]
+path = "quests"
+kind = "goal"
+prefix = "quest_"
+ref_fields = ["related_npcs", "related_locations"]
+
+[domains.quests.enums]
+type = ["main", "side"]
+status = ["active", "complete", "failed"]
+
+[domains.factions]
+path = "factions"
+kind = "group"
+prefix = "faction_"
+ref_fields = ["leader", "rival", "former_rival", "allied_with", "commander", "members"]
+
+# The secrecy graph: `known_to` maps a member id -> the members who know they
+# belong. Directed (not reciprocal); every key and every value-id must itself be
+# a `members` id. Sparse — a member absent from the map is known to all members
+# (an open faction carries no `known_to` at all). See overrides/frontmatter.md.
+[[domains.factions.scoped_map]]
+field = "known_to"
+scope = "members"
+
+[domains.items]
+path = "items"
+kind = "item"
+prefix = "item_"
+ref_fields = ["held_by", "attuned_by", "location"]
+exclude_files = ["chapter_1/misc_items.md"]
+
+# --- Peer relations: authored on both ends ---------------------------------- #
+
+[[reciprocal]]
+name = "place <-> neighbouring place"
+a = { domain = "locations", field = "connected_locations" }
+b = { domain = "locations", field = "connected_locations" }
+
+[[reciprocal]]
+name = "character <-> where they are"
+a = { domain = "npcs", field = "location" }
+b = { domain = "locations", field = "npcs_present" }
+
+[[reciprocal]]
+name = "character <-> group"
+a = { domain = "npcs", field = "groups" }
+b = { domain = "factions", field = "members" }
+
+[[reciprocal]]
+name = "party member <-> group"
+a = { domain = "party", field = "groups" }
+b = { domain = "factions", field = "members" }

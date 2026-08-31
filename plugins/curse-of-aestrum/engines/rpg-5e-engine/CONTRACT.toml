@@ -1,0 +1,28 @@
+# Public contract surface of Canterbury (rpg-5e-engine).
+#
+# Anchors listed here are the wording-independent ids a consumer may cite as
+# `<file>#<id>` (matching `<!-- anchor: <id> -->` markers). The reference-integrity
+# checker enforces that consumer citations into this engine target a listed id, and
+# that the consumer's declared target version equals contract_version. Removing or
+# renaming a public anchor is a BREAKING change: bump contract_version.
+#
+# NOTE: Canterbury consumes Aria (story-engine) for the genre-agnostic core. The
+# former forks here have been de-duplicated: file_layering, progressive/connectable
+# authoring, and the neutral random-authoring procedure now live ONLY in Aria;
+# information_disclosure / private_information / scene_framing / random_character_
+# generation remain here as thin 5e LAYERS that point at their Aria base and add
+# only the 5e deltas (passive checks, the Novel/Game display mode, secret rolls,
+# party role coverage). campaign_lifecycle is an RPG-vocab overlay on Aria's
+# story_lifecycle. Aria's own public surface is pinned in story-engine/CONTRACT.toml;
+# the 5e-layer headings below are local and not part of a cross-tier contract yet.
+contract_version = 1
+
+[[anchor]]
+id   = "create-party.per-slot-mode"
+file = "create-party/core.md"
+note = "STEP 2 per-slot mode (player-built / random / guided) the consumer's party flow cites"
+
+[[anchor]]
+id   = "create-party.claude-controlled-party"
+file = "create-party/core.md"
+note = "Claude-controlled party NPCs and PC-harm boundary"

@@ -1,0 +1,30 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "py \"${CLAUDE_PLUGIN_ROOT}/engines/fiction-host/claude_code_gate/gate_prompt_hook.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "py \"${CLAUDE_PLUGIN_ROOT}/engines/fiction-host/claude_code_gate/gate_stop_hook.py\" --spec \"${CLAUDE_PLUGIN_ROOT}/engines/prose-engine/scene/gate/infrastructure_tokens.toml\" --spec \"${CLAUDE_PLUGIN_ROOT}/engines/rpg-5e-engine/rules/player_meta_tokens.toml\" --spec \"${CLAUDE_PLUGIN_ROOT}/overrides/gate_lint/forbidden_tokens.toml\""
+          },
+          {
+            "type": "command",
+            "command": "py \"${CLAUDE_PLUGIN_ROOT}/engines/fiction-host/claude_code_gate/staging_stop_hook.py\" --staging-glob \"${CLAUDE_PROJECT_DIR}/campaign_state/*/staging/*.md\""
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "curse-of-aestrum",
+  "owner": {
+    "name": "Cody Mallonee"
+  },
+  "plugins": [
+    {
+      "name": "curse-of-aestrum",
+      "source": "./plugins/curse-of-aestrum",
+      "description": "Curse of Aestrum \u2014 a Dungeons & Dragons 5e time-loop campaign played interactively in Claude Code. Chapter 1."
+    }
+  ]
+}
