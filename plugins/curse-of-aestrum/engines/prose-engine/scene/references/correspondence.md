@@ -2,7 +2,7 @@
 
 A discipline reference loaded on demand when a scene runs in the
 **`correspondence`** narration mode (see
-[`{{PLUGIN_ROOT}}/engines/prose-engine/scene/narration_modes.md`]({{PLUGIN_ROOT}}/engines/prose-engine/scene/narration_modes.md)). Governs the **form** of
+[{{PLUGIN_ROOT}}/engines/prose-engine/scene/narration_modes.md]({{PLUGIN_ROOT}}/engines/prose-engine/scene/narration_modes.md)). Governs the **form** of
 each written message and the **timing** of an exchange between parties
 who are not in one another's presence.
 
@@ -34,7 +34,7 @@ itself characterization. Do not add a salutation the author wouldn't
 write, and do not lift one into a separate header.
 
 The body is written in the author's **written register** (see
-[`{{PLUGIN_ROOT}}/engines/prose-engine/scene/registers.md`]({{PLUGIN_ROOT}}/engines/prose-engine/scene/registers.md)), which may differ from how they
+[{{PLUGIN_ROOT}}/engines/prose-engine/scene/registers.md]({{PLUGIN_ROOT}}/engines/prose-engine/scene/registers.md)), which may differ from how they
 speak. The message **is the entire turn's output** — there is no
 narration around it: no scene, no perceived environment, no action
 beat, no description of the author writing it. Render the artifact and

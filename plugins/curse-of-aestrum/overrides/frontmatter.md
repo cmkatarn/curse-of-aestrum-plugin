@@ -18,7 +18,7 @@ are declared exactly once — in this file.
 **Loaded by:** any skill that reads or authors campaign entity files — `scene`,
 `create-npc`, `create-character`, `create-party`, `author`, and any future
 authoring skill. It is a data-shape override, not a rules override: campaign
-mechanics live in [`{{PLUGIN_ROOT}}/rules/`]({{PLUGIN_ROOT}}/rules/), which layers on Canterbury. This file
+mechanics live in [`{{PLUGIN_ROOT}}/rules`]({{PLUGIN_ROOT}}/rules), which layers on Canterbury. This file
 layers on Aria.
 
 ---

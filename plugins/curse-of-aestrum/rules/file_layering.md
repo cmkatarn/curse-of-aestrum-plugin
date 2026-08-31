@@ -24,8 +24,8 @@ Rules — game mechanics, race/class definitions, homebrew rulings — follow th
 
 | Layer | Path Convention | Purpose |
 |---|---|---|
-| **Engine** | `{{PLUGIN_ROOT}}/engines/rpg-5e-engine/rules/[file].md` | Canterbury — generic D&D 5e mechanics. Setting-agnostic. Vendored inside the plugin. |
-| **Campaign** | `{{PLUGIN_ROOT}}/rules/[file].md` | Curse of Aestrum — homebrew that applies to every playthrough of CoA (time loop, dead zones, revert, etc.). Overlays Canterbury. |
+| **Engine** | Canterbury's `rules/` tree (`rpg-5e-engine`) | Generic D&D 5e mechanics. Setting-agnostic. |
+| **Campaign** | `rules/[file].md` (this repo) | Curse of Aestrum — homebrew that applies to every playthrough of CoA (time loop, dead zones, revert, etc.). Overlays Canterbury. |
 | **Instance** | `{{PROJECT_ROOT}}/campaign_state/<instance>/rules/[file].md` | This specific playthrough — table rulings, non-standard PC backgrounds, custom Oaths/lineages, one-off mechanics tied to a specific party. Overlays both Engine and Campaign. |
 
 Load order is **Engine → Campaign → Instance**. Last loaded wins on conflict.

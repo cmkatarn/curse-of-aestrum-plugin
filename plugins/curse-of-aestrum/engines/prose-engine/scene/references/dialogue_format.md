@@ -113,7 +113,7 @@ being referred to.**
 inaudibility.** Speech the anchor cannot receive — out of earshot,
 behind a door, drowned by ambient, in a language outside their
 comprehension set, below an active threshold gate (see
-[`{{PLUGIN_ROOT}}/engines/prose-engine/scene/narration_modes.md`]({{PLUGIN_ROOT}}/engines/prose-engine/scene/narration_modes.md)) — does not go on the
+[{{PLUGIN_ROOT}}/engines/prose-engine/scene/narration_modes.md]({{PLUGIN_ROOT}}/engines/prose-engine/scene/narration_modes.md)) — does not go on the
 page, and the beat renders **the not-hearing**: *"Bob says something to
 her at the far end of the room; the crowd takes all of it."* That is
 the sense-availability rule working. It is categorically different from

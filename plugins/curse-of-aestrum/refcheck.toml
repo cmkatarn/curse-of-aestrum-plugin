@@ -7,11 +7,10 @@ version = 1
 
 [scan]
 # Roots whose *.md are scanned for outbound links, relative to this file's dir.
-# In the source workspace this listed the campaign repo plus its three SIBLING
-# engine repos. In the plugin the engines are vendored at engines/<name>/, i.e.
-# beneath this file — so "." already covers them, and re-listing them here would
-# scan every engine file twice. Scanning them at all still matters: it keeps
-# Calliope/Canterbury/Aria internally green, not just their citations from CoA.
+# The campaign repo plus the sibling engines it cites. story-engine (Aria) is the
+# canonical home for the genre-agnostic scene/authoring rules CoA now reads
+# directly (Canterbury consumes Aria); scanning it keeps Aria internally green.
+# Engines are vendored beneath this file, so "." already covers them.
 roots = ["."]
 
 # Path segments never scanned: generated per-instance state and binary assets.
@@ -21,7 +20,9 @@ exclude = ["campaign_state", "Photos", "badges", ".git", "__pycache__"]
 # reference a "saved/" overlay that only resolves inside a live campaign instance
 # (campaign_state/<id>/.../saved/...), so it is legitimately absent from the canon
 # tree. These are not validated. See story-engine file_layering (base/overlay).
-ignore_targets = ["saved/*", "*/saved/*"]
+# Trees excluded from this bundle (see EXCLUDE_DIRS in build/assemble.py):
+# links into them are intentional soft pointers, not breakage.
+ignore_targets = ["saved/*", "*/saved/*", "*Photos/*", "*analysis/*", "*badges/*", "*chapter_2/*", "*paper/*", "*prior_art/*", "*tests/*"]
 
 # Engine-contract pins: the contract_version this consumer was written against.
 # A fragment citation into an engine must target a PUBLIC anchor listed in that
@@ -36,7 +37,7 @@ version = 1
 path = "engines/rpg-5e-engine"
 version = 1
 
-# Aria (story-engine), vendored at engines/story-engine: the genre-agnostic scene/authoring layer CoA now reads
+# Aria (story-engine): the genre-agnostic scene/authoring layer CoA now reads
 # directly for the de-duplicated rules (Canterbury → Aria; CoA → Aria for the
 # base, + Canterbury's 5e layer where one exists).
 [engines.aria]

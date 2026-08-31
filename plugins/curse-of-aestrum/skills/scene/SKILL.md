@@ -61,16 +61,13 @@ surfaced to the user, or parent-side planning becomes visible.
 
 ## Path resolution
 
-Every path below is written `{{PLUGIN_ROOT}}/...` and resolves against this
-plugin's bundled root — not this file's location, and not the working
-directory. The engines are vendored inside the plugin: Calliope is at
-`{{PLUGIN_ROOT}}/engines/prose-engine/...`, Canterbury at
-`{{PLUGIN_ROOT}}/engines/rpg-5e-engine/...`, Aria at
-`{{PLUGIN_ROOT}}/engines/story-engine/...`. There is no sibling engine repo to
-reach for, and no path leaves the plugin. Play state is the one exception: it
-lives under `{{PROJECT_ROOT}}/campaign_state/…` and is the only place this skill
-writes. If a read 404s, re-resolve the placeholder against the plugin root
-before assuming the file is missing.
+Every relative path below resolves against the **CoA project root**
+(`{{PLUGIN_ROOT}}`), not this file's location.
+Engine paths carry their own prefix — read each one exactly as written below
+rather than rewriting it against some other base. Play state is the one
+exception: it lives under `{{PROJECT_ROOT}}/campaign_state/…` and is the only tree this skill
+writes. If a read 404s, retry from the project root before assuming the file is
+missing.
 
 ## Load order (run once at scene start; reuse across turns)
 
@@ -477,8 +474,8 @@ triggers above.
 
 For non-scene work (commits, file ops, asking Claude something
 unrelated), the player **pauses first**. After the pause ack, the next
-prompt lands at the harness level normally; skills like
-`commit-and-push` work; Claude can answer freely.
+prompt lands at the harness level normally; other skills and tools work
+as usual; Claude can answer freely.
 
 ---
 
@@ -504,7 +501,7 @@ from scratch per the override's staging format.
 Bypass` is per-process and a harmless no-op off-Windows):
 
 ```
-if command -v pwsh >/dev/null 2>&1; then pwsh -NoProfile -ExecutionPolicy Bypass -File "{{PLUGIN_ROOT}}/scripts/flush_campaign_staging.ps1" -Campaign <C> -RepoRoot "{{PROJECT_ROOT}}"; else powershell -NoProfile -ExecutionPolicy Bypass -File "{{PLUGIN_ROOT}}/scripts/flush_campaign_staging.ps1" -Campaign <C> -RepoRoot "{{PROJECT_ROOT}}"; fi
+if command -v pwsh >/dev/null 2>&1; then pwsh -NoProfile -ExecutionPolicy Bypass -File scripts/flush_campaign_staging.ps1 -Campaign <C>; else powershell -NoProfile -ExecutionPolicy Bypass -File scripts/flush_campaign_staging.ps1 -Campaign <C>; fi
 ```
 
 The script is deterministic. It reads the staging file and **appends**

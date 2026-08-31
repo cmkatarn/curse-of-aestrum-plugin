@@ -60,7 +60,9 @@ COPY_SPECS: list[tuple[Path, str]] = [
     (COA / "npcs", "npcs"),
     (COA / "factions", "factions"),
     (COA / "items", "items"),
+    (COA / "quests", "quests"),
     (COA / "party", "party"),
+    (COA / "scripts" / "flush_campaign_staging.ps1", "scripts/flush_campaign_staging.ps1"),
     (DOCS / "prose-engine" / "scene", "engines/prose-engine/scene"),
     (DOCS / "prose-engine" / "CONTRACT.toml", "engines/prose-engine/CONTRACT.toml"),
     (DOCS / "story-engine" / "rules", "engines/story-engine/rules"),
@@ -75,6 +77,11 @@ COPY_SPECS: list[tuple[Path, str]] = [
     # backends / dispatch / state (those are for the standalone host, unneeded in the plugin).
     (DOCS / "fiction-host" / "runtime" / "__init__.py", "engines/fiction-host/runtime/__init__.py"),
     (DOCS / "fiction-host" / "runtime" / "lint", "engines/fiction-host/runtime/lint"),
+    # The integrity checkers: stdlib-only, so they vendor without pulling the host in.
+    # Their CLI is build/assets/plugin_runtime_main.py (see emit_runtime_main), NOT
+    # fiction-host's own __main__, which imports the whole engine/backends chain.
+    (DOCS / "fiction-host" / "runtime" / "refcheck.py", "engines/fiction-host/runtime/refcheck.py"),
+    (DOCS / "fiction-host" / "runtime" / "entitycheck.py", "engines/fiction-host/runtime/entitycheck.py"),
 ]
 ROOT_FILES = ["entitycheck.toml", "refcheck.toml"]   # CoA root files -> plugin root
 
@@ -150,7 +157,11 @@ def resolve_ref(token: str, bases: list[Path]) -> str | None:
             return "{{PROJECT_ROOT}}/campaign_state/" + rel.as_posix() + frag
         except ValueError:
             pass
-        if target.is_file():
+        # Directories count, not just files: prose cites trees as often as leaves
+        # (`../rpg-5e-engine/rules/`, `../rules/`). An is_file() test silently left
+        # every such mention pointing at a sibling layout that does not exist in the
+        # bundle — the reader is told to look somewhere the plugin has no path to.
+        if target.exists():
             plug = map_source_to_plugin(target)
             if plug is not None:
                 return "{{PLUGIN_ROOT}}/" + plug + frag
@@ -159,7 +170,7 @@ def resolve_ref(token: str, bases: list[Path]) -> str | None:
     return None                                           # shorthand / display text — leave
 
 
-_MD_LINK = re.compile(r"\]\(([^)\s]+)\)")
+_MD_LINK = re.compile(r"\[([^\]\n]*)\]\(([^)\s]+)\)")
 _INLINE_CODE = re.compile(r"`([^`\n]+)`")
 _BARE_ENGINE = re.compile(r"(?:\.\./)+(?:" + _ENGINE_NAMES + r")/[\w./-]+\.\w+")
 _BARE_STATE = re.compile(r"(?<![\w/{`($])campaign_state/[\w./<>*-]+")
@@ -176,7 +187,28 @@ def rewrite_text(text: str, src_file: Path) -> str:
         r = resolve_ref(inner, bases)
         return wrap(r if r is not None else inner)
 
-    text = _MD_LINK.sub(lambda m: repl(m.group(1), lambda s: f"]({s})"), text)
+    def link_repl(m: "re.Match[str]") -> str:
+        label, href = m.group(1), m.group(2)
+        r = resolve_ref(href, bases)
+        new_href = r if r is not None else href
+        # Rewrite the LABEL too when it is itself a sibling-relative path. The href
+        # is what the model follows, but the label is what a human reads — leaving
+        # `[../rules/x.md]({{PLUGIN_ROOT}}/rules/x.md)` renders as a path that does
+        # not exist in the bundle. Only `../`-style labels are touched: a plain
+        # `[rules/x.md](…)` label is ordinary display text and stays readable.
+        inner = label.strip("`")
+        if inner.startswith("../"):
+            # A label may be a bare path, or a path followed by a section title
+            # ("…/core.md § Some Heading"). Rewrite only the leading path token so
+            # the human-readable remainder survives intact.
+            head, sep, tail = inner.partition(" ")
+            lr = resolve_ref(head, bases)
+            if lr is not None:
+                inner = lr + sep + tail
+                label = f"`{inner}`" if label.startswith("`") else inner
+        return f"[{label}]({new_href})"
+
+    text = _MD_LINK.sub(link_repl, text)
     text = _INLINE_CODE.sub(lambda m: repl(m.group(1), lambda s: f"`{s}`"), text)
     # belt-and-suspenders: un-wrapped engine escapes / campaign_state mentions in prose
     text = _BARE_ENGINE.sub(lambda m: resolve_ref(m.group(0), bases) or m.group(0), text)
@@ -296,6 +328,128 @@ def extract_rating_block() -> tuple[str, str]:
     return table.group(0).strip(), limits.group(0).strip()
 
 
+_DECL_ID = re.compile(r"^\s*(?:\*\*)?id:?(?:\*\*)?:?\s*([a-z][a-z0-9_]*)", re.M | re.I)
+
+
+def ids_declared_in_excluded_trees() -> list[str]:
+    """Entity ids that exist in CoA canon but are not bundled.
+
+    Chapter-1 content forward-references Chapter-2 entities as a matter of correct
+    authoring — a faction's roster names the pieces it will play, a Chapter-1 duchy
+    names its duke. Those ids are declared under `npcs/chapter_2/…`, which
+    EXCLUDE_DIRS keeps out of a Chapter-1 bundle, so entitycheck sees the reference
+    with no declaration behind it.
+
+    Neither alternative is acceptable: bundling Chapter-2 stubs would ship next-chapter
+    identities into a Chapter-1 plugin (against the campaign's own spoiler discipline),
+    and stripping the references would make the bundle assert something false about its
+    own canon — a faction with fewer members than it has.
+
+    So the ids are declared as intentional soft pointers. Derived, not hand-listed, so
+    it cannot drift; and because only ids that genuinely ARE declared in an excluded
+    tree are collected, a typo'd reference still fails the check rather than being
+    quietly absorbed.
+    """
+    found: set[str] = set()
+    for md in COA.rglob("*.md"):
+        parts = set(md.relative_to(COA).parts)
+        if not (parts & EXCLUDE_DIRS) or "campaign_state" in parts:
+            continue
+        try:
+            found.update(_DECL_ID.findall(md.read_text(encoding="utf-8")))
+        except OSError:
+            continue
+    if not found:
+        return []
+    # Keep only what the bundle actually points at. An excluded chapter declares far
+    # more than Chapter 1 reaches for, and a soft_id nothing references is dead
+    # config that quietly widens what the checker will forgive.
+    bundled = "\n".join(
+        p.read_text(encoding="utf-8", errors="ignore") for p in OUT.rglob("*.md"))
+    return sorted(i for i in found if i in bundled)
+
+
+def emit_runtime_main() -> None:
+    """Install the plugin-only checker CLI as `runtime.__main__`.
+
+    fiction-host's own `__main__` dispatches the entire host (engine, backends,
+    config, spec_drift) and imports that whole chain. The plugin vendors only the
+    two stdlib-only checkers, so it gets a purpose-built entrypoint exposing just
+    `refcheck` and `entitycheck`. Kept as a build asset rather than inlined here so
+    it stays readable and lintable as ordinary Python.
+    """
+    src = HERE / "assets" / "plugin_runtime_main.py"
+    dst = OUT / "engines/fiction-host/runtime/__main__.py"
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(src, dst)
+    print(f"  emitted        engines/fiction-host/runtime/__main__.py")
+
+
+def retarget_checker_configs() -> None:
+    """Rewrite the copied refcheck.toml for the bundled layout.
+
+    refcheck.toml is authored for the SOURCE workspace, where the engines are
+    sibling repos (`../prose-engine`). In the bundle they are vendored beneath the
+    config itself, so the roots and every engine pin must be retargeted — and the
+    scan roots collapse to "." because the engines are now inside it.
+
+    Also declares what is dangling *by design* here: chapter_2 content is excluded
+    from a Chapter-1 plugin (EXCLUDE_DIRS), so chapter_1 links into it cannot
+    resolve and must not be reported as breakage.
+    """
+    # Both configs document how to invoke them, against the SOURCE checkout
+    # ("--config ../CurseOfAestrum/..."). In the bundle the config sits at the
+    # plugin root and the runtime is vendored beneath it.
+    for name in ("refcheck.toml", "entitycheck.toml"):
+        c = OUT / name
+        if not c.exists():
+            continue
+        s = c.read_text(encoding="utf-8")
+        s = s.replace(
+            f"# Run:  py -m runtime {name[:-5]} --config ../CurseOfAestrum/{name}",
+            "# Run, from the plugin's engines/fiction-host directory:\n"
+            f"#   py -m runtime {name[:-5]} --config <plugin-root>/{name}")
+        s = s.replace("(../story-engine/rules/authoring_entities.md",
+                      "(engines/story-engine/rules/authoring_entities.md")
+        if name == "entitycheck.toml":
+            extra = ids_declared_in_excluded_trees()
+            if extra:
+                block = "\n".join(f'  "{i}",' for i in extra)
+                s = s.replace(
+                    '  "loc_aestrum", "loc_setland", "loc_aestrum_boundary",\n',
+                    '  "loc_aestrum", "loc_setland", "loc_aestrum_boundary",\n'
+                    '  # Declared in CoA canon but not bundled here: Chapter-1 content\n'
+                    '  # forward-references Chapter-2 entities, and chapter_2/** is excluded\n'
+                    '  # from this bundle. Generated by build/assemble.py - do not hand-edit.\n'
+                    + block + "\n")
+                print(f"  soft-declared  {len(extra)} ids from excluded chapters")
+        c.write_text(s, encoding="utf-8")
+
+    cfg = OUT / "refcheck.toml"
+    if not cfg.exists():
+        return
+    t = cfg.read_text(encoding="utf-8")
+    t = t.replace(
+        'roots = [".", "../prose-engine", "../rpg-5e-engine", "../story-engine"]',
+        '# Engines are vendored beneath this file, so "." already covers them.\nroots = ["."]')
+    for eng in ("prose-engine", "rpg-5e-engine", "story-engine"):
+        t = t.replace(f'path = "../{eng}"', f'path = "engines/{eng}"')
+    # Anything in EXCLUDE_DIRS is deliberately absent from the bundle, so links
+    # into it dangle by design rather than by error. Derive the soft-pointer globs
+    # from that set so the two cannot drift apart: add a directory to EXCLUDE_DIRS
+    # and its inbound links stay correctly unreported without a second edit here.
+    # (campaign_state is already covered by the saved/* conventions.)
+    soft = [f'"*{d}/*"' for d in sorted(EXCLUDE_DIRS)
+            if d not in {"campaign_state", "__pycache__", ".git"}]
+    t = t.replace(
+        'ignore_targets = ["saved/*", "*/saved/*"]',
+        '# Trees excluded from this bundle (see EXCLUDE_DIRS in build/assemble.py):\n'
+        '# links into them are intentional soft pointers, not breakage.\n'
+        'ignore_targets = ["saved/*", "*/saved/*", ' + ", ".join(soft) + ']')
+    cfg.write_text(t, encoding="utf-8")
+    print("  retargeted     refcheck.toml (bundled engine layout)")
+
+
 def write_meta() -> None:
     root = "${CLAUDE_PLUGIN_ROOT}"
     proj = "${CLAUDE_PROJECT_DIR}"
@@ -409,6 +563,10 @@ def main() -> None:
         if sp.exists():
             process_file(sp, OUT / rf, is_skill_md=False)
             total += 1
+
+    emit_runtime_main()
+    retarget_checker_configs()
+    total += 1
 
     write_meta()
     print(f"\n  {total} files written to {OUT} (+ manifest / hooks / marketplace / README)")

@@ -28,13 +28,11 @@ version: 2.0.0
 Thin shell. Loads the rpg-5e engine's create-character walkthrough and
 the Curse of Aestrum setting overrides.
 
-**Path resolution.** Every path below is written `{{PLUGIN_ROOT}}/...` and
-resolves against this plugin's bundled root — **not** this skill's own base
-directory, and **not** the working directory. The engines are vendored inside
-the plugin: Canterbury is at `{{PLUGIN_ROOT}}/engines/rpg-5e-engine/...`. There
-is no sibling engine repo to reach for, and no path leaves the plugin. If a read
-404s, re-resolve the placeholder against the plugin root before assuming the file
-is missing.
+**Path resolution.** Every relative path below resolves against the **CoA
+project root** (`{{PLUGIN_ROOT}}`), **not** this
+skill's own base directory. Engine paths carry their own prefix — read each one
+exactly as written below rather than rewriting it against some other base. If a
+read 404s, retry from the project root before assuming the file is missing.
 
 ## Load order
 

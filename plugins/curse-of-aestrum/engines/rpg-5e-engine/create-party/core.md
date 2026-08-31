@@ -363,8 +363,8 @@ generic form is one option, not the default:
 The party is in <opening region>. <invitation to act, in-register>
 ```
 
-From here, the campaign is live. Other skills (scene,
-write-chapter) handle ongoing play. This skill is done.
+From here, the campaign is live. The consumer's own play and prose skills
+handle it from this point. This skill is done.
 
 ---
 
