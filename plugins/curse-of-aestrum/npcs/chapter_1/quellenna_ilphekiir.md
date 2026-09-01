@@ -91,6 +91,27 @@ What Aidra has always known — and what Quellenna has always given her — is n
 
 ## DM Notes
 
+### Why the relationship is hidden — conflict of interest, not prejudice
+
+**Setland is not homophobic, and neither is Nortmunde.** Two women together draws
+no censure anywhere in this campaign's world; no NPC treats it as remarkable, and
+no scene should imply otherwise.
+
+What the secrecy protects is **institutional**. The Duke's General and the Duke's
+Advisor are the two offices that check each other — she proposes the war, she
+commands it, and one of them is supposed to be able to tell Malak the other is
+wrong. Exposed as a couple, every joint recommendation either has ever made is
+retroactively suspect: the appointment Quellenna lobbied for, every council vote
+they landed on the same side of, every campaign Aidra was given. It would read as
+a bloc, because functionally it is one. That is a genuine conflict of interest and
+the court would be right to call it a scandal.
+
+So they are careful for the reason two senior officials in any government would
+be careful. Play it as tradecraft — discretion, separate arrivals, the tunnel,
+arguing honestly in council because the arguments are real — never as shame, and
+never as fear of being found out for *what they are*. They are hiding a conflict
+of interest, not a relationship.
+
 ### The War Council — What It Cost Her
 
 **Author-only.** Quellenna did not want the invasion. She could not say so.

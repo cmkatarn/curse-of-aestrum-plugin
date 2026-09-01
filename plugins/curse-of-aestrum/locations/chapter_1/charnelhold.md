@@ -34,6 +34,13 @@ The castle is named for what is in the walls.
 
 The castle itself is large and functional rather than ornate. Malak du Leon does not dress his power in gold. The power is in what he has already absorbed. Setland reds and blacks dominate the interior; lion-headed motifs appear at every transition — door pulls, hearth-surrounds, the brass at every fixture. Servants in dull crimson livery move on quiet routines. A household that runs smoothly because Quellenna runs it, although Quellenna is, of course, only the advisor.
 
+**Court norms.** Charnelhold's court polices *conflicts of interest*, not private
+lives. Who a courtier takes to bed is nobody's business and draws no censure —
+Setland has no prejudice about it and neither does Nortmunde. What the court will
+not forgive is two offices that are supposed to check each other turning out to be
+one bloc. This is the standard the Quellenna–Aidra secrecy is measured against;
+see [`{{PLUGIN_ROOT}}/npcs/chapter_1/aidra_calemthor.md`]({{PLUGIN_ROOT}}/npcs/chapter_1/aidra_calemthor.md).
+
 Charnelhold is **outside Aestrum's loop entirely.** Time and magic behave normally. Nothing about the castle resets.
 
 ## What's Here

@@ -302,8 +302,12 @@ def _cmd(s: str) -> dict:
     return {"type": "command", "command": s}
 
 
-def extract_rating_block() -> tuple[str, str]:
-    """Lift the T/M/AO table and the hard-limits list verbatim out of CoA's scene override.
+NOTES_RE = (r"^\*\*Content notes \(subject, not intensity\)\.\*\*"
+            r".*?(?=\n\s*\n\*\*)")
+
+
+def extract_rating_block() -> tuple[str, str, str]:
+    """Lift the T/M/AO table, hard limits, and content notes verbatim from CoA's scene override.
 
     overrides/scene.md is the single source of truth for the rating scale. The plugin README
     restates it for anyone deciding whether to install, so it is *extracted* rather than
@@ -325,7 +329,11 @@ def extract_rating_block() -> tuple[str, str]:
     if not limits:
         raise SystemExit(f"assemble: no hard-limits list under 'Content rating system' in {src}")
 
-    return table.group(0).strip(), limits.group(0).strip()
+    notes = re.search(NOTES_RE, section.group(1), re.M | re.S)
+    if not notes:
+        raise SystemExit(f"assemble: no content-notes block under 'Content rating system' in {src}")
+
+    return table.group(0).strip(), limits.group(0).strip(), notes.group(0).strip()
 
 
 _DECL_ID = re.compile(r"^\s*(?:\*\*)?id:?(?:\*\*)?:?\s*([a-z][a-z0-9_]*)", re.M | re.I)
@@ -493,7 +501,7 @@ def write_meta() -> None:
 
     support = (f"\n## Support\n\nIf you enjoy it and want to support continued development: "
                f"**{DONATION_URL}** — entirely optional.\n") if DONATION_URL else ""
-    rating_table, rating_limits = extract_rating_block()
+    rating_table, rating_limits, content_notes = extract_rating_block()
     (OUT / "README.md").write_text(f"""# Curse of Aestrum
 
 An interactive Dungeons & Dragons 5e campaign. Arrive in the duchy of Aestrum, where something is
@@ -514,6 +522,8 @@ Say *"switch to M"*, *"drop to T"*, or *"go AO for this scene"* at any point; it
 next response.
 
 {rating_limits}
+
+{content_notes}
 
 ## Requirements
 

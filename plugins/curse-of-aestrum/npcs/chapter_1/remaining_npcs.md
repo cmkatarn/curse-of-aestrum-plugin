@@ -68,13 +68,18 @@ He says this with a smile. He has said it ten thousand times. He will say it tom
 
 ## Andrei Vasik
 
-**Elevated to full profile.** See [`npcs/chapter_1/andrei_vasik.md`]({{PLUGIN_ROOT}}/npcs/chapter_2/andrei_vasik.md).
+**Elevated to full profile.** See [`{{PLUGIN_ROOT}}/npcs/chapter_1/andrei_vasik.md`]({{PLUGIN_ROOT}}/npcs/chapter_1/andrei_vasik.md).
 
 ---
 
-## Amblecrown (Duke of Skaarsdaam)
+## Hala Amblecrown (Duke of Skaarsdaam)
 
-**Moved to chapter 2.** See [`{{PLUGIN_ROOT}}/npcs/chapter_2/remaining_npcs.md`]({{PLUGIN_ROOT}}/npcs/chapter_2/remaining_npcs.md).
+**id:** npc_amblecrown | **name:** Hala Amblecrown | **location:** loc_skaarsdaam | **cycle_aware:** false | **alignment:** neutral_good
+
+Miri Amblecrown's father and the ruling Duke of Skaarsdaam. Regarded as a benevolent and just ruler, genuinely well-loved by his subjects. Has been visibly sorrowful for approximately eleven years — the duration of his daughter's disappearance. The party has not met him.
+
+**DM Notes — Ledger Secrets:**
+- Secret 1 — The Empty Coffers: In the eleven years since Miri disappeared, Amblecrown has secretly funded expedition after expedition to find her — sums vast enough to have essentially emptied Skaarsdaam's treasury. No one in his court knows the full scope. If this becomes public, it calls his fitness to govern directly into question and potentially collapses his claim on Nortmunde's throne. This is the most Board-changing secret in the Ledger.
 
 ---
 
@@ -136,7 +141,15 @@ A Halfling nobleman — third-born son of the Duke of Beluir. Currently in Duskw
 
 ## Dorvael Dunwick
 
-**Moved to chapter 2.** See [`{{PLUGIN_ROOT}}/npcs/chapter_2/remaining_npcs.md`]({{PLUGIN_ROOT}}/npcs/chapter_2/remaining_npcs.md).
+**id:** npc_dorvael_dunwick | **race:** Half-Elf | **location:** loc_dalihad | **cycle_aware:** false | **alignment:** lawful_evil
+
+Duke of Dalihad. Half-Elf nobleman who carries himself as though everything within eyeshot already belongs to him. Formal, unhurried, and deeply transactional — he does not negotiate so much as allow others to bid for his attention. Has not yet been encountered by the party.
+
+**Behavioral Profile:** Not competing for the throne. Knows he is not in the running and shows no interest in pretending otherwise. His vote is a commodity — he will cast it for whoever makes Dalihad's position most comfortable. When the party approaches Dunwick, he clearly and plainly lays out exactly what he needs to see before he commits his vote. He needs concrete evidence that Setland's military is beatable — documented supply vulnerabilities, a visible battlefield loss, or successful sabotage. Rhetoric does not move him. Results do. Malak's agents have tried intimidation. It has not worked.
+
+**DM Notes — The labor pipeline and Blooddigger imprisonment:** See `factions/agents_of_setland.md` and `{{PLUGIN_ROOT}}/party/thagnog_blooddigger.md` for full detail. Dunwick runs forced labor across his quarry operations. Spent workers are transferred to "secondary work camps" in Mikaelvad — where they are fed upon by vampires. He has constructed deliberate ignorance about what happens there. When the Blooddigger clan completed a bounty contract for him and were preparing to leave Dalihad, he had them seized and imprisoned in his quarries. Some members have since been transferred to Mikaelvad.
+
+**Shar's approach:** She does not come to Dunwick as a threat. She comes as a confidant: *I know about the transfers. I know what happens to them. I can ensure it never becomes public. All I need is your vote at the right moment.* He will not realize he is being owned until it is too late.
 
 ---
 
@@ -332,6 +345,39 @@ Theatrical, conspiratorial warmth — the patter of a market-stall showman who t
 
 ---
 
+## Odile Trambeathen
+
+**id:** npc_odile_trambeathen | **location:** loc_wand_and_whisk | **cycle_aware:** false | **alignment:** true_neutral | **race:** Human
+
+Lisandre Trambeathen's second wife, married within a year of Elsinoor's death and
+conspicuously younger than him — enough that Duskwall raises its eyebrows and she
+has stopped noticing that it does. She went into the arrangement clear-eyed and
+for money, considers that a fair trade honestly made, and is neither ashamed of it
+nor under any illusion that it is a love match; what she will not tolerate is being
+condescended to about it by people who married no better for worse reasons.
+
+She has not heard the rumors out of Dunleaven and does not know what her husband
+did. But she is not oblivious, and her not-asking is a decision rather than a
+blind spot: she has clocked the morning routine, clocked that he never explains
+it, and made a deliberate judgment that the marriage is better with that door shut
+than open. If someone opens it for her, that judgment is what breaks — not her
+heart.
+
+**On his morning routine:** *"He checks something every morning before anything
+else. He's never told me what. I've learned not to ask."*
+
+**On Elsinoor:** *"He doesn't talk about her much. I think it's still too raw."*
+
+**DM Notes:** She is a credible witness to Lisandre's daily pattern and does not
+know it is evidence. Played straight she corroborates the scrying routine without
+understanding why anyone cares. If the party tells her what he did, she believes
+them faster than they expect — she has been holding the shape of it without the
+content for years — and her response is practical, not shattered: she wants to
+know what it means for her, and she is not sentimental about him. She is not a
+lever to be threatened, and a party that treats her as one gets nothing.
+
+---
+
 ## Mieke
 
 **id:** npc_mieke | **location:** loc_mieke_mercenary_camp | **cycle_aware:** false | **reset_baseline:** injured (missing leg) | **alignment:** true_neutral
@@ -426,7 +472,15 @@ A Gargantuan Spider inhabiting the Misty Forest. If slain, it stays **permanentl
 
 ## Tarwick Grale
 
-**Moved to chapter 2.** See [`{{PLUGIN_ROOT}}/npcs/chapter_2/remaining_npcs.md`]({{PLUGIN_ROOT}}/npcs/chapter_2/remaining_npcs.md).
+**id:** npc_tarwick_grale | **location:** loc_nortmunde_capital | **cycle_aware:** false
+
+Regent of Nortmunde. Holds the capital city and is tasked with executing the previous king's standing rules and mandates until a new king is crowned. Carries no real political power of his own. Publicly presents as a proud family man, deeply attached to his family name and crest. Cold, formal, and self-important. The party has not yet met him.
+
+**DM Notes — Character model:** Grand Moff Tarkin meets Tywin Lannister.
+
+**The king's last night:** Before the king died, Tarwick received a warning letter from Veyra Sollin identifying the poisoning. He did not act — he calculated that a king dying of natural causes was tidier than a king dying of confirmed poisoning. He then used the company seal on Veyra's letter to identify and locate her, and has been searching for her since.
+
+**Shar's approach:** She has not yet moved on Tarwick. When she does, it will not be a threat — it will be an offer. His value to her is procedural: he controls the timing and legitimacy of the vote itself. A Regent who slows proceedings, denies procedural legitimacy to Amblecrown's claim, or manufactures administrative delays can reshape the entire succession timeline.
 
 ---
 
@@ -442,19 +496,32 @@ A powerful undead creature whose bones are covered in magical runes providing pr
 
 ## Veyra Sollin (The Whistleblower)
 
-**Moved to chapter 2.** See [`{{PLUGIN_ROOT}}/npcs/chapter_2/remaining_npcs.md`]({{PLUGIN_ROOT}}/npcs/chapter_2/remaining_npcs.md).
+**id:** npc_veyra_sollin | **location_status:** hidden | **cycle_aware:** false
+
+An ingredient supplier and aspiring Maester's apprentice. Deduced from ordering patterns that the King of Nortmunde's daily tonic was being adulterated with a slow poison (Greymist) by Councive Drethnal. She sent a warning letter to Tarwick Grale before the king died. She is not loop-aware and has no connection to Aestrum.
+
+*What becomes of her after the King's death is a Chapter 2 matter — see [`{{PLUGIN_ROOT}}/npcs/chapter_2/remaining_npcs.md`]({{PLUGIN_ROOT}}/npcs/chapter_2/remaining_npcs.md).*
 
 ---
 
 ## Councive Drethnal
 
-**Moved to chapter 2.** See [`{{PLUGIN_ROOT}}/npcs/chapter_2/remaining_npcs.md`]({{PLUGIN_ROOT}}/npcs/chapter_2/remaining_npcs.md).
+**id:** npc_councive_drethnal | **location_status:** itinerant | **cycle_aware:** false | **groups:** faction_shar
+The apprentice to the King of Nortmunde's personal Maester. Publicly: a skilled and experienced medical practitioner. Privately: an active Shar cultist. He administered Greymist through the king's daily respiratory tonic over approximately two years, under the guise of routine tonic preparation. Currently seeking a new position with another noble household. Has fielded interest. Is not in a hurry.
+
+**DM Notes:** His true ongoing function is intelligence harvesting, not assassination. Embedded near a powerful person, a Maester's apprentice learns everything private about that person's health and vulnerabilities. He passes these to Shar's network. He does not know a whistleblower exists. He does not know Tarwick received and suppressed a warning about his activities. The Maester's glowing letters of recommendation serve as his cover.
+
+Finding Drethnal: The Maester has no idea where he went and cannot help. The only reliable method of locating him is Sage's Bloodline Compass — which requires knowing his surname first, itself a product of investigation. He is a long-term recurring problem, not a character the party can close out in a single chapter.
 
 ---
 
 ## Bertram Holst (Mikaelvad)
 
-**Moved to chapter 2.** See [`{{PLUGIN_ROOT}}/npcs/chapter_2/remaining_npcs.md`]({{PLUGIN_ROOT}}/npcs/chapter_2/remaining_npcs.md).
+**id:** npc_bertram_holst | **location:** loc_mikaelvad | **cycle_aware:** false
+
+Duke of Mikaelvad. He operates almost exclusively through lieutenants and advisors, and appears publicly only at nighttime events. For daytime ceremonies a stand-in is used — typically someone in decorative full plate armor. Mikaelvad's court does not explain the arrangement and outsiders have learned not to press it. His succession stance is undeveloped.
+
+*Why the arrangement exists, and what it conceals, is Chapter 2 material — see [`{{PLUGIN_ROOT}}/npcs/chapter_2/remaining_npcs.md`]({{PLUGIN_ROOT}}/npcs/chapter_2/remaining_npcs.md).*
 
 ---
 

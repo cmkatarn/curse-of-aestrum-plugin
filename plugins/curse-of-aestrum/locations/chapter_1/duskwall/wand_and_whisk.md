@@ -4,7 +4,7 @@ name: Trambeathen's Wand and Whisk
 type: shop
 parent: loc_duskwall
 curse_affected: true
-npcs_present: [npc_lisandre_trambeathen]
+npcs_present: [npc_lisandre_trambeathen, npc_odile_trambeathen]
 ---
 
 ## Description

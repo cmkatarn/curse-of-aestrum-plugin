@@ -1097,9 +1097,52 @@ For each anaphoric or shared-past construction in dialogue:
 
 If the referenced conversation occurred earlier in the current scene
 between the same participants, the construction is grounded — the
-shared past is the running scene context. The check fires only on
+shared past is the running scene context. The check fires on
 references to conversations in prior scenes (or in unrecorded gaps
-between scenes).
+between scenes), **and on same-scene references that fail the test
+below.**
+
+#### The exception grounds the *participants*, never the *utterance*
+
+This is the exception's failure direction, and in a long scene it is the
+**likelier** of the two. Read strictly, "earlier in the current scene"
+licenses any callback between two characters who have been in the room
+together — which is exactly the condition under which a fabricated
+exchange is easiest to produce and hardest to catch. The drafter is
+holding hours of busy shared context; a plausible-sounding prior
+exchange assembles itself out of that context and the blanket exception
+waves it through without ever asking whether it happened.
+
+So the exception is conditional. A same-scene callback is grounded only
+when the invoked exchange is **actually on the page** — rendered in a
+prior beat of this scene, or recorded in the scene's staged or saved
+record. Co-presence grounds nothing by itself. *We have both been in
+this room all evening* is not evidence that A ever said the thing B is
+now quoting back.
+
+**The canonical shape is the near-miss**, not the invention from
+nothing. The two characters *did* interact, recently and memorably —
+but the interaction was adjacent to the one now being claimed, and
+different in kind:
+
+- Alice **overruled** Bob's proposal and substituted her own. Bob, two
+  beats later: *"She asked me if I was sure."* She did not ask him
+  anything; she talked over him. The emotional content Bob is reaching
+  for (Alice keeps winning these) is true; the exchange he cites to
+  carry it is manufactured.
+- Carol **declined** an offer flatly. Bob later: *"Carol said she'd
+  think about it."* Adjacent, plausible, false.
+
+The near-miss is dangerous precisely because the *feeling* is grounded.
+The check is not "would this character plausibly have said that?" — it
+is **"point at the beat."** If the drafter cannot name the prior beat
+the utterance occurred in, the exception does not apply and the row
+fires.
+
+The rewrite is usually cheap, because the true version is sitting right
+there: render what actually happened between them. Bob's line becomes
+*"She talked straight over me and then did it better"* — same
+grievance, same comedy, and it is true.
 
 ### Scope and cost
 
@@ -2644,10 +2687,14 @@ the epistemic-pass has already cleared.
      log the speaker could plausibly cite. If no such conversation
      is recorded, rewrite to a new-information register, surface as
      the speaker's own prior intention, or drop the anaphoric
-     clause. The same-scene exception applies: conversation earlier
-     in the current scene between the same participants is grounded.
-     This is the gate's defense against the cross-scene-conversation
-     failure mode above.
+     clause. The same-scene exception applies **only when the invoked
+     exchange is on the page** — rendered in a prior beat of this
+     scene, or in its staged/saved record. Co-presence through a long
+     scene grounds nothing: if you cannot **point at the beat** the
+     utterance occurred in, the exception does not apply and the row
+     fires. Watch for the near-miss, where the two characters did
+     interact but not in the way now claimed. This is the gate's
+     defense against the cross-scene-conversation failure mode above.
    - **The channel-attribution check.** For each NPC line that
      references something the PC has just done, felt, or thought,
      identify the source channel of the referenced content. If the

@@ -111,6 +111,27 @@ available to any scene that gets close enough to her to open it.
 - **The tunnel dynamic:** Quellenna had the tunnel built to exit into Aidra's cellar — constructed after Aidra took up residence, because Aidra's home was the destination worth building toward. Quellenna always comes to her. Every night. Aidra has never entered the tunnel from her end and has never been inside Quellenna's chambers — not because she doesn't know where they are (she does), but because Quellenna's space is Quellenna's space. If something went wrong and Quellenna did not come, she would enter the tunnel without a second thought. If the party comes through from Quellenna's end, they surface in Aidra's cellar. That encounter needs to be developed when the Charnelhold thread is designed.
 - **Post-Aestrum:** Not a recurring military antagonist. She is home. A thread attached to the Charnelhold / escape tunnel / Quellenna axis that becomes relevant if the party pursues it.
 
+### Why the relationship is hidden — conflict of interest, not prejudice
+
+**Setland is not homophobic, and neither is Nortmunde.** Two women together draws
+no censure anywhere in this campaign's world; no NPC treats it as remarkable, and
+no scene should imply otherwise.
+
+What the secrecy protects is **institutional**. The Duke's General and the Duke's
+Advisor are the two offices that check each other — she proposes the war, she
+commands it, and one of them is supposed to be able to tell Malak the other is
+wrong. Exposed as a couple, every joint recommendation either has ever made is
+retroactively suspect: the appointment Quellenna lobbied for, every council vote
+they landed on the same side of, every campaign Aidra was given. It would read as
+a bloc, because functionally it is one. That is a genuine conflict of interest and
+the court would be right to call it a scandal.
+
+So they are careful for the reason two senior officials in any government would
+be careful. Play it as tradecraft — discretion, separate arrivals, the tunnel,
+arguing honestly in council because the arguments are real — never as shame, and
+never as fear of being found out for *what they are*. They are hiding a conflict
+of interest, not a relationship.
+
 **Standing authorial note — the relationship holds:** No matter what else occurs in the campaign, Aidra and Quellenna remain together. If Quellenna's ties to Shar are exposed, Aidra does not leave — she understands what she is learning and chooses to stay anyway. Do not break it. Do not use it as a tragedy. It is the tonal anchor.
 
 **Pre-departure quote to Quellenna:**

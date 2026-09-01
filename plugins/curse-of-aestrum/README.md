@@ -31,6 +31,27 @@ next response.
 - Operational instructions outside the fiction (synthesis routes for real
   drugs/weapons/etc.).
 
+**Content notes (subject, not intensity).** The tiers above govern *how* a thing
+is rendered; these name *what* the campaign contains, so a player can decline a
+**subject** rather than a rating. Chapter 1 includes:
+
+- Reproductive coercion and repeated pregnancy loss — a husband forcing a
+  contraceptive on his wife.
+- Domestic abuse and intimate-partner murder, including a killing by confinement
+  and enforced sleeplessness that ends in the victim's suicide.
+- Stalking and obsessive "courtship," and the repeated murder of the same named
+  woman over years, her bodies kept.
+- A grave dug for a living child by a parent who believes it is a kindness.
+- Captivity, imprisonment, and prolonged loss of autonomy.
+- Memory violation as the setting's premise — people rewritten nightly without
+  knowledge or consent.
+- Corpse imagery at scale; desecrated religious sites.
+- Animal companions can die permanently — the reset does not return them.
+
+Most of these are discovered or background rather than staged, and the list is
+not a promise that any of them is dwelt on. It exists so a player who needs to
+avoid one can say so before the first session, and the DM can route around it.
+
 ## Requirements
 
 - **Claude Code** and your own Claude access (Pro/Max/API).

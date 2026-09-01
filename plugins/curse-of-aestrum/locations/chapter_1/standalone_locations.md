@@ -198,7 +198,7 @@ By day Mireval looks like any prosperous Nortmunde capital: markets, magistrates
 
 **Notable establishments:**
 - **The Vesper Hall** — a private society in the central district. See [`locations/mireval/vesper_hall.md`]({{PLUGIN_ROOT}}/locations/chapter_2/mireval/vesper_hall.md).
-- **Vasik's Practice** — a respected private physician's clinic in the professional quarter. See [`npcs/chapter_1/andrei_vasik.md`]({{PLUGIN_ROOT}}/npcs/chapter_2/andrei_vasik.md).
+- **Vasik's Practice** — a respected private physician's clinic in the professional quarter. See [`{{PLUGIN_ROOT}}/npcs/chapter_1/andrei_vasik.md`]({{PLUGIN_ROOT}}/npcs/chapter_1/andrei_vasik.md).
 
 **DM only:** Mireval is where the civilized vampire-mortal coexistence of Mikaelvad is most visible. Holst's keep is here; many of his lieutenants reside in townhouses in the upper districts. The Vesper Hall is the cleanest social-register access point to that circle the party will encounter.
 

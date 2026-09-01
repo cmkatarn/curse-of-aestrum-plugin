@@ -19,7 +19,7 @@ them has been missing for ten years.
 
 | Member | Role | `known_to` |
 |---|---|---|
-| [Duke Amblecrown]({{PLUGIN_ROOT}}/npcs/chapter_2/remaining_npcs.md) | Duke of Skaarsdaam | **all** |
+| [Duke Amblecrown]({{PLUGIN_ROOT}}/npcs/chapter_1/remaining_npcs.md) | Duke of Skaarsdaam | **all** |
 | [Miri Amblecrown]({{PLUGIN_ROOT}}/npcs/chapter_1/miri_amblecrown.md) | daughter; heir | **all** |
 
 A ducal house is public, and this one is a father and a daughter. The table is short
