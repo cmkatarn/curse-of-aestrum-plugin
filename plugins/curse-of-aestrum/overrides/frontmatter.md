@@ -249,26 +249,24 @@ Existing files are already conformant on this point; no migration is needed.
 
 ---
 
-## Known Gaps
+## Conformance
 
-Point-in-time conformance, 2026-08-22 — **16 open issues across 173 entities.**
-**Do not trust this table over the checker.** Run
+The entity graph is **machine-checked**; there is no hand-maintained findings
+list here, because one drifts out of true the moment a gap is closed. For the
+live state, run
 
 ```
 py -m runtime entitycheck --config {{PLUGIN_ROOT}}/entitycheck.toml
 ```
 
-from `fiction-host` for the live list. The counts below go stale; the checker does not.
+from `fiction-host`. It reports every open finding with a file and line, and it
+is the authority — this file explains the bindings, the checker enforces them.
 
-| Binding | State |
-|---|---|
-| Unfiled places | 5 references to 3 places that have no file: **`loc_aidra_house`** (Aidra's house outside Charnelhold's wall, where Quellenna's tunnel exits), **`misty_forest_center`** ×2 (Aliss Perisdottir's house), **`duskwall_waterfront`** ×2 (Delmuir's daily practice ground). |
-| Malformed references | 2. `npcs_present: npc_rowan_deckard (night only)` carries a parenthetical inside a reference field — the note belongs in prose. `npc_luca_via_agents` reads as *"Luca acting through the Shrikes"* rather than a person. |
-| `npcs_present` absent | 9 locations omit the field: 5 chapter-1 sub-locations (antechamber, escape tunnel, larder, Trambeathen tomb, `routes.md`) and 4 chapter-2 places (Nebelhof, Sylvaeth, Tannmark, the Setland east corridor). Empty (`[]`) is a legitimate assertion; *absent* is a hole. `routes.md` is `type: reference` rather than a place and probably wants excluding from the rule instead. |
-
-**Everything else is closed.** Ids, prefixes, containment keys, placement, the
+**What it covers.** Ids, prefixes, containment keys, placement, the
 character↔place and character↔group edges, one-way edges, alias drift, and quest
-status vocabularies all pass.
+status vocabularies. A binding described in this file but absent from
+`{{PLUGIN_ROOT}}/entitycheck.toml` is unenforced — that gap is worth closing in the config, not
+recording here.
 
 Only kingdom- and duchy-scale names outside the filed set (`loc_aestrum`,
 `loc_setland`, and the two road corridors) are **declared soft pointers**. Most

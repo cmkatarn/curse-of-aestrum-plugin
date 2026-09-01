@@ -555,6 +555,61 @@ engines, bundled here. See each `engines/*/` subtree for its own license/contrac
 """, encoding="utf-8")
 
 
+# Link targets that legitimately do not ship. The plugin deliberately excludes some
+# trees (later chapters, the badge tier) that Chapter 1 files still point at as
+# forward-references. Everything here is intentional; anything dangling and NOT
+# listed is a build error. Prune an entry when its target starts shipping.
+ALLOWED_DANGLING = {
+    "locations/chapter_2/setland_east_corridor.md",  # chapter-2 overlay of a chapter-1 road
+    "locations/chapter_2/mireval/vesper_hall.md",    # chapter-2 venue
+    "npcs/chapter_2/remaining_npcs.md",              # chapter-2 secrets overlay
+    "badges/side_quests.md",                         # badge tier is not bundled
+}
+
+_PLUGIN_LINK = re.compile(r"\]\(\{\{PLUGIN_ROOT\}\}/([^)#]+)(?:#[^)]*)?\)")
+
+
+def check_dangling_refs() -> None:
+    """Fail the build on any {{PLUGIN_ROOT}} link whose target was never copied.
+
+    This is the one check that runs against the *bundle's* own link graph, and it
+    exists because nothing else can catch this class. SOURCE_MAP resolves refs into
+    chapter_2 (and other excluded trees) perfectly well, so they are rewritten to
+    {{PLUGIN_ROOT}} form and never appear in the UNMAPPED log — mapping succeeds,
+    copying does not. refcheck runs against the source repo, where those targets do
+    exist, so it is blind here too. Deliberate forward-references live in
+    ALLOWED_DANGLING; anything else means a ref points at a file the plugin ships
+    no copy of, and the model will hit a dead path at play time.
+    """
+    missing: dict[str, list[str]] = {}
+    for f in sorted(OUT.rglob("*")):
+        if not (f.is_file() and f.suffix in TEXT_EXT):
+            continue
+        for target in _PLUGIN_LINK.findall(f.read_text(encoding="utf-8", errors="ignore")):
+            target = target.strip()
+            if target in ALLOWED_DANGLING or (OUT / target).exists():
+                continue
+            missing.setdefault(target, []).append(str(f.relative_to(OUT)))
+
+    if missing:
+        lines = [f"\n  BROKEN REFERENCES - {len(missing)} target(s) referenced but not shipped:"]
+        for target, srcs in sorted(missing.items()):
+            lines.append(f"    {target}")
+            for s in sorted(set(srcs)):
+                lines.append(f"        from {s}")
+        lines.append("\n  Either add the target to COPY_SPECS, retarget the reference in the")
+        lines.append("  source repo, or (if it is a deliberate forward-reference to content")
+        lines.append("  this release does not ship) add it to ALLOWED_DANGLING with a reason.")
+        raise SystemExit("\n".join(lines))
+
+    stale = sorted(t for t in ALLOWED_DANGLING if (OUT / t).exists())
+    if stale:
+        print(f"\n  NOTE: {len(stale)} ALLOWED_DANGLING entr(y/ies) now ship and can be pruned:")
+        for t in stale:
+            print(f"    {t}")
+    print(f"\n  bundle links resolve ({len(ALLOWED_DANGLING)} allowed forward-reference(s)).")
+
+
 def main() -> None:
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -580,6 +635,7 @@ def main() -> None:
 
     write_meta()
     print(f"\n  {total} files written to {OUT} (+ manifest / hooks / marketplace / README)")
+    check_dangling_refs()
     if UNMAPPED:
         print("\n  UNMAPPED references (left untouched — review):")
         for k, v in sorted(UNMAPPED.items(), key=lambda x: -x[1]):
