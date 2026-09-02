@@ -76,7 +76,7 @@ He says this with a smile. He has said it ten thousand times. He will say it tom
 
 **id:** npc_amblecrown | **name:** Hala Amblecrown | **location:** loc_skaarsdaam | **cycle_aware:** false | **alignment:** neutral_good
 
-Miri Amblecrown's father and the ruling Duke of Skaarsdaam. Regarded as a benevolent and just ruler, genuinely well-loved by his subjects. Has been visibly sorrowful for approximately eleven years — the duration of his daughter's disappearance. The party has not met him.
+Miri Amblecrown's father and the ruling Duke of Skaarsdaam. Regarded as a benevolent and just ruler, genuinely well-loved by his subjects. Has been visibly sorrowful for approximately eleven years — the duration of his daughter's disappearance. He is not encountered in Chapter 1.
 
 **DM Notes — Ledger Secrets:**
 - Secret 1 — The Empty Coffers: In the eleven years since Miri disappeared, Amblecrown has secretly funded expedition after expedition to find her — sums vast enough to have essentially emptied Skaarsdaam's treasury. No one in his court knows the full scope. If this becomes public, it calls his fitness to govern directly into question and potentially collapses his claim on Nortmunde's throne. This is the most Board-changing secret in the Ledger.
@@ -504,7 +504,7 @@ A Gargantuan Spider inhabiting the Misty Forest. If slain, it stays **permanentl
 
 **id:** npc_tarwick_grale | **location:** loc_nortmunde_capital | **cycle_aware:** false
 
-Regent of Nortmunde. Holds the capital city and is tasked with executing the previous king's standing rules and mandates until a new king is crowned. Carries no real political power of his own. Publicly presents as a proud family man, deeply attached to his family name and crest. Cold, formal, and self-important. The party has not yet met him.
+Regent of Nortmunde. Holds the capital city and is tasked with executing the previous king's standing rules and mandates until a new king is crowned. Carries no real political power of his own. Publicly presents as a proud family man, deeply attached to his family name and crest. Cold, formal, and self-important. He is not encountered in Chapter 1.
 
 **DM Notes — Character model:** Grand Moff Tarkin meets Tywin Lannister.
 

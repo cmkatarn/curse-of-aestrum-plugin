@@ -80,7 +80,7 @@ Tune to party level. As a baseline (Chapter 1, party of 4–5):
 
 - **Three to five Black-Arrows operatives** — Scout statistics with longbows, shortswords, leather armor and Black Arrows pins. Skirmishers; flank and snipe.
 - **One lieutenant** — Veteran statistics with longsword, shortbow, and chain mail. Mieke's second; takes command if Mieke goes down or is occupied.
-- **Optional reinforcement** for parties of 5 or harder difficulty: a small group of summoned or hired undead. The session-record version of this encounter included skeletons led by a Runic Skeleton (see Session Record below); if used, treat as flavor reinforcement and tune to party level.
+- **Optional reinforcement** for parties of 5 or harder difficulty: a small group of hired or summoned undead, tuned to party level. This is a difficulty dial only — the Runic Skeleton is a single entity anchored to the Dunleaven Deadery and is **not** part of this encounter.
 
 The full band fits in the camp without crowding (see [mieke_mercenary_camp.md]({{PLUGIN_ROOT}}/locations/chapter_1/mieke_mercenary_camp.md)).
 
@@ -101,7 +101,3 @@ The full band fits in the camp without crowding (see [mieke_mercenary_camp.md]({
 - **He does not know Quellenna placed the contract.** Black Arrows commissioners are not named on writs. He knows the contract came through a Charnelhold contact. A party that asks him who hired him will get exactly that — *"Charnelhold contact, standard channel. Names are not on the writ."*
 - **He believes Jiasha is from Aestrum.** He doesn't know she's a Setland-side hermit; his band grabbed her near the boundary and crossed her before any of them realized the duchy worked differently. To him, she's "the local woman who lied about knowing the area." This misunderstanding is part of why he keeps her — he's still trying to make her be the guide he thought he was taking.
 - **Roleplay register:** plain, hard, professional. Do not perform villainy. Mieke is the kind of NPC who makes the encounter feel like a job interview gone wrong, not a moral confrontation. The horror, if any, is the structural one: a man who is very good at his work, ruined by a duchy he cannot understand.
-
-## Session Record
-
-*Historical note from the in-person playthrough:* the rescue encounter included "mercenaries and skeletons led by the Runic Skeleton" per [the_abduction_of_jiasha.md]({{PLUGIN_ROOT}}/quests/chapter_1/the_abduction_of_jiasha.md). The Runic Skeleton's presence at the camp is canon for that playthrough; for future runs, treat it as optional reinforcement at the DM's discretion (the canonical Runic Skeleton is otherwise in the Dunleaven Deadery per [routes.md]({{PLUGIN_ROOT}}/locations/chapter_1/routes.md), so a second one at the camp requires either narrative justification or a willingness to treat "Runic Skeleton" as a category rather than a unique entity).

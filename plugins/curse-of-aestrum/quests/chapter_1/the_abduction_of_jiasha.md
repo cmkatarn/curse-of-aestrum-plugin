@@ -139,8 +139,15 @@ After Jiasha is freed:
 
 ---
 
-## Session Record (Historical)
+## Design Note — why the path runs through Aliss
 
-*From the original in-person playthrough, preserved for reference.* The party discovered Jiasha's hut burned and were led to her by a "trail" the DM described — physical drag-marks leading into the Misty Forest. The party followed the trail and reached a clearing where Jiasha was held by mercenaries and skeletons led by the Runic Skeleton. The party engaged the captors in a difficult battle, defeating them and freeing Jiasha from her chains.
+A physical trail was considered as the route to Jiasha and **rejected**: tracks and
+drag-marks cannot persist across the loop's resets, so no party can follow spoor to
+the camp. The Aliss route above — the ambient rumor, the reading, the three signals —
+exists to solve that, and is the only canonical mechanism. Do not reintroduce a
+followable trail.
 
-*Reconciliation note:* the trail of drag-marks was a DM flub — physical evidence should not have persisted across the loop's resets at that point in the timeline. The forward-looking canonical mechanism above (Aliss + the three-signal vision) replaces the trail. The Runic Skeleton's presence at the camp is preserved as an optional reinforcement at the DM's discretion (see [mieke.md]({{PLUGIN_ROOT}}/npcs/chapter_1/mieke.md) Session Record).
+The Runic Skeleton belongs to the Dunleaven Deadery and is a single entity; it is not
+stationed at the camp. If it appears near the rescue it is because something drew it
+out of the crypt (see [dunleaven.md]({{PLUGIN_ROOT}}/locations/chapter_1/dunleaven.md) — an
+unclosed magic-immune door lets it range and track), not because a second one exists.

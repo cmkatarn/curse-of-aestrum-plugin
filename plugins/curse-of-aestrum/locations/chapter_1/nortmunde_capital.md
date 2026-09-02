@@ -15,7 +15,7 @@ stands empty. **The capital carries the same name as the kingdom** — one very 
 land-locked city at the geographical center of Nortmunde, with the five duchies
 radiating outward from it, each bordering two others (see
 [standalone_locations.md]({{PLUGIN_ROOT}}/locations/chapter_1/standalone_locations.md), *Nortmunde
-(Kingdom)*). The party has not been here.
+(Kingdom)*). No Chapter 1 content brings a party here.
 
 The shared name is why this file is `loc_nortmunde_capital` and the kingdom is
 `loc_nortmunde` — two entities, one name, distinguished by id.

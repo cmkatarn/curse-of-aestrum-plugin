@@ -92,7 +92,7 @@ Approximately a quarter-mile off the main path into the Nahamkate Desert. Identi
 **curse_affected:** true  
 **npcs_present:** [npc_assaneela]
 
-An ancient structure dedicated to the Yuan-Ti deity Sathraza, located in a box canyon deep in the Nahamkate Desert, marked by smoke from everlasting torches. The party located the temple, encountered a group of Yuan-Ti including the priestess Assaneela, solved a gemstone puzzle room using the Mounted Ruby, and discovered the large tangerine quartz flame relic in a hidden chamber. The party escaped through a rear tunnel.
+An ancient structure dedicated to the Yuan-Ti deity Sathraza, located in a box canyon deep in the Nahamkate Desert, marked by smoke from everlasting torches. A group of Yuan-Ti under the priestess Assaneela hold the upper chambers. Inside is a gemstone puzzle room whose door is keyed to the **Mounted Ruby**, and beyond it a hidden chamber holding the large tangerine quartz flame relic. A rear tunnel exits the complex past a mummy and several traps. Full detail: [nahamkate_temple.md]({{PLUGIN_ROOT}}/locations/chapter_1/nahamkate_temple.md).
 
 ---
 
@@ -162,7 +162,7 @@ An extradimensional space serving as an antechamber to Shar's realm, reached whe
 **type:** duchy  
 **duke:** npc_dorvael_dunwick
 
-A duchy within Nortmunde, renowned throughout the kingdom for its stonework. Dalihad quarries produce the pale grey stone found in Nortmunde's most significant structures. Dalihad guild masons are known for tight-fitted, mortar-free construction. The duchy's stone trade has made it wealthy and politically difficult to antagonize. Sage passed through briefly en route to Aestrum. The party has not yet visited.
+A duchy within Nortmunde, renowned throughout the kingdom for its stonework. Dalihad quarries produce the pale grey stone found in Nortmunde's most significant structures. Dalihad guild masons are known for tight-fitted, mortar-free construction. The duchy's stone trade has made it wealthy and politically difficult to antagonize. Sage passed through briefly en route to Aestrum. Not visited during Chapter 1.
 
 *DM convention: Any elegant, well-constructed, or notably durable building described going forward should reference Dalihad stone or craftsmanship as the source.*
 

@@ -111,7 +111,7 @@ Tools to use:
 
 **Personalization is the campaign's lever — and it is Selûne's hand, not Jiasha's intuition.** Each amulet's *material* is keyed to the PC's race, class, or background. **A PC who is handed an amulet that looks like it was made for them is significantly more likely to wear it.** This is the design intent. The personalization is real: Selûne knew who was coming and instructed Jiasha accordingly, even if Jiasha herself did not know specific names.
 
-Material conventions (canonical assignments from the in-person campaign — see [items/chapter_1/moon_amulets.md]({{PLUGIN_ROOT}}/items/chapter_1/moon_amulets.md)):
+Material conventions (canonical assignments — see [items/chapter_1/moon_amulets.md]({{PLUGIN_ROOT}}/items/chapter_1/moon_amulets.md)):
 
 - **Dwarf →** carved stone
 - **Dragonborn →** carved bone
