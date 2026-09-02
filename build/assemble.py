@@ -563,6 +563,8 @@ ALLOWED_DANGLING = {
     "locations/chapter_2/setland_east_corridor.md",  # chapter-2 overlay of a chapter-1 road
     "locations/chapter_2/mireval/vesper_hall.md",    # chapter-2 venue
     "npcs/chapter_2/remaining_npcs.md",              # chapter-2 secrets overlay
+    "timelines/chapter_2/nortmunde_regional.md",     # chapter-2 half of the succession timeline
+    "factions/chapter_2/shar.md",                    # chapter-2 half of Shar's board
     "badges/side_quests.md",                         # badge tier is not bundled
 }
 

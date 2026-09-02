@@ -149,7 +149,6 @@ Duke of Dalihad. Half-Elf nobleman who carries himself as though everything with
 
 **DM Notes — The labor pipeline and Blooddigger imprisonment:** See `factions/agents_of_setland.md` and `{{PLUGIN_ROOT}}/party/thagnog_blooddigger.md` for full detail. Dunwick runs forced labor across his quarry operations. Spent workers are transferred to "secondary work camps" in Mikaelvad — where they are fed upon by vampires. He has constructed deliberate ignorance about what happens there. When the Blooddigger clan completed a bounty contract for him and were preparing to leave Dalihad, he had them seized and imprisoned in his quarries. Some members have since been transferred to Mikaelvad.
 
-**Shar's approach:** She does not come to Dunwick as a threat. She comes as a confidant: *I know about the transfers. I know what happens to them. I can ensure it never becomes public. All I need is your vote at the right moment.* He will not realize he is being owned until it is too late.
 
 ---
 
@@ -408,6 +407,28 @@ The former vizier to Duke Lognan Tallwood. Tasked with designing a secure escape
 
 Patriarch of The Black Arrows. Openly allied with Duke Malak du Leon. Father of Theren. Placed Theren on the Aestrum tax expedition as cover for the Galadiil bounty — at the time of placement, Roland considered the cover sound and the mission viable. His **"disposable and doomed to fail"** stance is **reactive, not pre-baked**: it forms only once he reads the roster Setland's clerks assembled around his son. The stance scales with how much that particular roster offends his xenophobia — the more outsiders and non-Nortmunde races he sees attached to Theren, the harder his contempt lands. In his view the "lessers" around Theren, whoever they turn out to be, are what will prevent him from accomplishing the bounty, not the country itself. He has not shared this forecast with Theren and has no channel to do so. Privately lobbies Quellenna for diplomatic resolution — ostensibly over taxes, but also to protect his son from the failure he now expects. Does not know Theren is trapped in the loop.
 
+**He knows the Galadiil contract is Quellenna's** — not because anyone told him,
+but because he knows Quellenna. The Charnelhold contact did not fool him and was
+never going to; its purpose was never concealment from Roland, it was to leave her
+something to hold up if the contract ever came back on her. He understands that
+exactly and honors it absolutely. **He will not broach the subject with her, at any
+level of pressure, ever** — the whole value of the arrangement to a woman in her
+position is that she gets to go on being someone who did not do this, and he is not
+going to be the man who takes that from her. She can pretend as long as she likes.
+
+He is also not troubled by it. A woman signing a death warrant for her own sister
+is not something he needs explained; he ran the same arithmetic on some of his own
+once, and the only reason it stayed arithmetic is that the numbers never came out
+right. His register on the subject is professional sympathy, not judgment.
+
+*DM note — the tell is what he doesn't do.* Roland never asks who is behind the
+contract, never speculates, and never seems to wonder. On a commission of that size
+and that political weight, incuriosity is the anomaly. A PC watching him closely
+(Black Arrows ties, or a second conversation) can notice that he is the only person
+in the chain with no questions — and that is the thread. He deflects direct
+questions the way he deflects everything: pleasantly, and by talking about the job.
+He does not lie about it. He declines to discuss it.
+
 ---
 
 ## Rose Landon
@@ -448,17 +469,26 @@ A child living in the house nearest Darwinnith Dundelver the Second's home in Ro
 
 **id:** npc_shar | **type:** deity | **domain:** darkness_pain_loss_secrets
 
-The goddess of darkness, pain, and loss — evil twin sister of Selûne. Her followers operate as secret cultists rather than public worshippers. The primary divine antagonist. Evidence of her influence: desecrated Shrine of Selûne in Duskwall, bedroom ceiling of Rowan Deckard, repeated murders of Miri Amblecrown. Directly confronted the party in her Antechamber, inflicting severe phantom pain before expelling them.
+The goddess of darkness, pain, and loss; evil twin sister of Selûne, and the campaign's
+primary divine antagonist. **This entry is her scene presence — who the party meets and
+how she plays at the table.** Everything else about her is in the faction file: who she
+is, what she wants, the Aestrum operation, the pieces she holds, and how she behaves
+once the cycle ends. Do not restate that material here.
 
-**Behavioral Profile:** Operates through devotees exclusively. Never acts directly unless the loop itself is threatened. Values patience over urgency. Manages secrets like a banker — never spending more than necessary, always keeping reserves. Her truest domain is not darkness — it is the unknown.
+- **Full profile:** [`{{PLUGIN_ROOT}}/factions/chapter_1/shar.md`]({{PLUGIN_ROOT}}/factions/chapter_1/shar.md)
+- **Nortmunde-succession half:** [`{{PLUGIN_ROOT}}/factions/chapter_2/shar.md`]({{PLUGIN_ROOT}}/factions/chapter_2/shar.md) *(Chapter 2)*
+- **Where she is met:** [`{{PLUGIN_ROOT}}/locations/chapter_1/antechamber_of_shar.md`]({{PLUGIN_ROOT}}/locations/chapter_1/antechamber_of_shar.md)
 
-She does not rage when defied. She demonstrates. The phantom pain inflicted in her Antechamber was not punishment — it was a memo. "Even Selûne will never know what happened to you" is not a boast. It is an accurate description. She keeps receipts.
+**Running her in a scene.** She does not appear in humanoid form; in the Antechamber she
+is a purple disc of light on the flat wall, and she speaks by putting words inside the
+subject's skull with silence between them. She never confirms, denies, or volunteers
+anything — see *HARD RULE — Information* in the faction file, which binds every line she
+speaks. She does not rage when defied; she demonstrates, briefly and clinically, and
+dismisses. She does not argue with mortals any more than a chess player argues with a
+pawn.
 
-Cannot be out-planned. Any plan the party makes, she has already accounted for — or will the moment she learns of it. Their only viable path is to operate in her blind spots: removing or converting her pieces quietly, relying on speed and luck rather than strategy.
-
-**Post-Aestrum:** When the cycle ends, Shar recovers the enormous divine resources she committed to maintaining it. She does not forgive. She accelerates. Every Shar worshipper across the continent receives a psychic broadcast of each party member's appearance. The party is marked.
-
-**Current pieces in Nortmunde:** Quellenna Ilphekiir (embedded with Malak; held by resentment and devotion), Tarwick Grale (target, not yet secured; held by his tower families), Dorvael Dunwick (held by the vampire feeding pipeline he willfully ignored), Bertram Holst (held by his complicity in the same pipeline).
+*Whether the party has ever stood in the Antechamber, and what she did to them there, is
+per-playthrough — it belongs in that campaign's overlay, never here.*
 
 ---
 
@@ -480,7 +510,6 @@ Regent of Nortmunde. Holds the capital city and is tasked with executing the pre
 
 **The king's last night:** Before the king died, Tarwick received a warning letter from Veyra Sollin identifying the poisoning. He did not act — he calculated that a king dying of natural causes was tidier than a king dying of confirmed poisoning. He then used the company seal on Veyra's letter to identify and locate her, and has been searching for her since.
 
-**Shar's approach:** She has not yet moved on Tarwick. When she does, it will not be a threat — it will be an offer. His value to her is procedural: he controls the timing and legitimacy of the vote itself. A Regent who slows proceedings, denies procedural legitimacy to Amblecrown's claim, or manufactures administrative delays can reshape the entire succession timeline.
 
 ---
 

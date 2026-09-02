@@ -23,7 +23,7 @@ Shar does not appear in humanoid form. In the Antechamber, she is a purple disc 
 
 The goddess of darkness, pain, and loss — known as the evil twin sister of Selûne. Her followers operate as secret cultists rather than public worshippers. She does not establish overt temples; her devotees are merchants, servants, guards, and minor nobles embedded invisibly in society.
 
-Evidence of her influence in Aestrum: the desecrated Shrine of Selûne in Duskwall, the bedroom ceiling of Rowan Deckard's estate, the repeated murders of Miri Amblecrown. She is the primary divine antagonist of the campaign.
+Evidence of her influence in Aestrum: the desecrated Shrine of Selûne in Duskwall, the bedroom ceiling of Rowan Deckard's estate, the repeated murders of Miri Amblecrown. She is the primary divine antagonist of the campaign. **Her truest domain is not darkness — it is the unknown.**
 
 ## Membership
 
@@ -139,11 +139,10 @@ it in the currency it was owed.**
 
 - **Quellenna Ilphekiir** — embedded with Malak as royal advisor; held by resentment and devotion. A true believer, not merely leveraged. **Shar did not create that resentment — she found it and widened it.** The sisters never got along, and Quellenna resented Galadiil from the moment the change to her engagement was made known; that much needed no divine hand. What Shar arranged was the substitution itself, turning an existing fracture into a lasting grievance, because a woman nursing a wound that keeps deepening will eventually go looking for meaning — and Shar intended to be what she found. Malak hired her on the strength of "the bearing of a woman who had recently been wronged." She had been, genuinely, and by her sister. Shar's contribution was to make certain of it. Galadiil was the means and knows nothing of it; she is **not** an agent and is correctly absent from the roster above (see [the Aestrum court]({{PLUGIN_ROOT}}/factions/chapter_1/aestrum_court.md)).
 
-**This is her method, not an exception to it.** Every piece on this board is held by something that was already true — Dunwick's willing ignorance, Holst's complicity, Rowan's obsession, which she did not create either. She reads a fracture and leans on it. She does not have to invent anyone's weakness.
-- **Tarwick Grale** (Nortmunde Regent) — held by his imprisoned tower families; not yet secured, still a target.
-- **Dorvael Dunwick** (Duke of Dalihad) — held by his willing ignorance of the vampire feeding pipeline he constructed.
-- **Bertram Holst** (Duke of Mikaelvad) — held by his complicity in the same pipeline.
+**This is her method, not an exception to it.** Every piece on this board is held by something that was already true — Quellenna's resentment above, Rowan's obsession below, and the same holds for the pieces she keeps outside Aestrum. She reads a fracture and leans on it. She does not have to invent anyone's weakness.
 - **Rowan Deckard** — adherent, not an instrument. His obsession with Miri emerged organically — Shar discovered what happened the first time Miri died and had to be brought back, and recognized that Rowan's behavior was improving on her original plan without any direction from her. She did not create or manage his fixation. She simply did not interfere with it.
+*Her Nortmunde-succession pieces — what holds Tarwick, Dunwick and Holst, and how she behaves once the cycle ends — are in the Chapter 2 overlay: [`{{PLUGIN_ROOT}}/factions/chapter_2/shar.md`]({{PLUGIN_ROOT}}/factions/chapter_2/shar.md).*
+
 - **Malak du Leon** — not a Shar piece. He is a candidate she is positioning to win. She does not need to hold him; she holds his advisor.
 
 ## Behavioral Profile
@@ -152,7 +151,7 @@ Shar speaks with the unhurried certainty of someone who was already moving befor
 
 She is dismissive bordering on contemptuous of mortals, but not hateful. Hate implies the other party matters enough to be worth the emotion. Mortals are pieces on a board. The dukes of Nortmunde are not people to her — they are votes.
 
-**Secrets as intelligence.** Like a commander who reads an enemy through their art, Shar reads everyone through their secrets. She doesn't need to spy on a room to know what someone will do — she needs only to know what they're hiding and what they're protecting. Every piece she holds, she holds through a secret. Every secret is a leash. She does not need to threaten people with what she knows — simply knowing it is enough to anticipate their every move.
+**Secrets as intelligence.** Like a commander who reads an enemy through their art, Shar reads everyone through their secrets. She doesn't need to spy on a room to know what someone will do — she needs only to know what they're hiding and what they're protecting. Every piece she holds, she holds through a secret. Every secret is a leash. She does not need to threaten people with what she knows — simply knowing it is enough to anticipate their every move. She manages secrets like a banker: never spending more than necessary, always keeping reserves.
 
 **Can't be out-planned.** A party cannot defeat Shar strategically. Any plan they make, she has already accounted for — or will the moment she learns of it. Their only viable path is to operate in her blind spots: removing or converting her pieces quietly, before her intelligence can respond.
 
@@ -160,7 +159,7 @@ She is dismissive bordering on contemptuous of mortals, but not hateful. Hate im
 
 **She is not above spite.** Selûne was not a serious threat to Shar's plans — hadn't positioned against her, hadn't interfered. Shar trapped Selûne's Chosen in a repeating cycle not because she had to, but because the opportunity was there. Decades of divine expenditure, an entire duchy locked in torment: all of it, at its root, a petty dig at her sister. For all her patience and precision, she is very good at spite.
 
-**She does not rage when defied. She demonstrates.** When a mortal directly transgresses, expect a brief, clinical illustration of capability — phantom pain inflicted with surgical precision in the Antechamber, words delivered, dismissal. Not punishment. A memo. She does not brood on slights. She schedules them.
+**She does not rage when defied. She demonstrates.** When a mortal directly transgresses, expect a brief, clinical illustration of capability — phantom pain inflicted with surgical precision in the Antechamber, words delivered, dismissal. Not punishment. A memo. She does not brood on slights. She schedules them. She keeps receipts.
 
 ## HARD RULE — Information
 
@@ -193,14 +192,6 @@ The point is the memo, not the damage. She does not negotiate, does not engage w
 - **Hairline fractures** in her control — small inconsistencies, brief absences of the suppressive fuzzball, glimpses of the seam.
 
 These are the visible symptoms. She refuses to release the cycle even as the strain compounds.
-
-**After the cycle ends — Chapter 2 and beyond.** When the cycle breaks, Shar recovers the enormous divine resources committed to maintaining it. She does not forgive. She does not move on. She accelerates.
-
-- **The party is marked.** Every Shar worshipper across the continent receives a psychic broadcast: the appearance of each party member. From that point forward, Shar's devotees will actively work against the party — without revealing their devotion. Strangers who seem to recognize them, doors that close, opportunities that quietly disappear. The network is invisible until it isn't.
-- **Secrets as weapons.** Shar holds knowledge of the party's vulnerabilities accumulated during their time in Aestrum. She deploys these strategically — not all at once, but to fracture trust, close exits, and force choices.
-- **Force no-win scenarios.** If the party helps Amblecrown claim Nortmunde, she works to corrupt or undermine him from within. If they fail or Malak wins, she has her puppet. The party should never feel like they've cleanly won a political engagement.
-- **Shar's expansion looks like nothing from the outside** — shadow cells embedded in society, not shrines.
-- **Miri Amblecrown loose in the world and growing into her abilities is Shar's most urgent priority post-Aestrum.**
 
 **The Ledger** documents the secret held over each piece. Any NPC Shar has recruited or cultivated will have a Ledger entry documenting what she holds over them.
 

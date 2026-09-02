@@ -71,7 +71,6 @@ Remaining unknowns marked **[TBD]**.
 | Army coalesces outside Setland; Aidra departs at column head *[conditional]* | Day +1 | Kythorn 26, 1490 DR |
 | Army stages outside Aestrum *[conditional]* | Day +2 | Kythorn 27, 1490 DR |
 | Aidra's forces move on Aestrum *[conditional]* | Day +5 | Kythorn 30, 1490 DR |
-| Drethnal departs the capital with letters of recommendation (approx.) | ~Day +7 | ~Flamerule 2, 1490 DR |
 
 ---
 
@@ -216,8 +215,8 @@ Tarwick's agents arrive the day after he sends them. Veyra witnesses the break-i
 
 **[Day −15 — Kythorn 10, 1490 DR]** — *Roland Elakian receives a bounty notice on Galadiil Ilphekiir* ⚓
 Roland Elakian, leader of the Black Arrows gang, is given a notice: a bounty has been placed on **Galadiil Ilphekiir**, who is believed to be somewhere in or around Aestrum. Roland files this and begins considering how to use it — specifically whether to involve any Black Arrows assets attached to the imminent Aestrum expedition.
-↳ **Roland knows.** **Galadiil does not know** — she is inside the loop. *(Bounty issuer is [TBD] — see pending.)*
-*Cross-ref: Roland Elakian (NPC), Galadiil Ilphekiir (NPC), Black Arrows (Organization)*
+↳ **Roland knows — including that the principal is Quellenna**, which he works out from knowing her, not from being told; he will never say so to her. **Galadiil does not know** — she is inside the loop. *(Commissioned by Quellenna Ilphekiir through an unnamed Charnelhold contact, routed via the Black Arrows — see her sheet for the chain and the proof terms, and Roland's entry for why the intermediary still matters to him. The contact's identity is an open callback slot on Quellenna's sheet.)*
+*Cross-ref: Roland Elakian (NPC), Galadiil Ilphekiir (NPC), Quellenna Ilphekiir (NPC), Black Arrows (Organization)*
 
 ---
 
@@ -265,10 +264,10 @@ The council decides: Aestrum invasion, executed with Aidra's logistics. Sagrona 
 ---
 
 **[Day 0 — Kythorn 25, 1490 DR]** — *The King of Nortmunde dies; conscription announced* ⚓ ANCHOR
-Natural causes, per official record. Tarwick Grale assumes the Regency. The succession clock begins. Five ducal votes must determine the next king.
+Natural causes, per official record. What the succession then does is Chapter 2 — see the overlay.
 
 Malak announces conscription the same day. Setland begins mobilizing.
-↳ **Tarwick holds** executive authority and succession proceedings. **Malak's candidacy formally activates.** **Quellenna's political architecture deploys in full.**
+↳ **Setland begins mobilizing.** The political consequences deploy off-page; inside Aestrum only the army's arrival is visible.
 
 *This night: Quellenna descends through the escape tunnel to Aidra — their last night before she marches.*
 *Cross-ref: Tarwick Grale (NPC), Malak du Leon (NPC), Quellenna (NPC), Aidra Calemthor (NPC)*
@@ -302,17 +301,9 @@ Five days after receiving orders, Aidra's army advances on Aestrum. Chapter 1 en
 *(Preempted if the party has broken the cycle and resolved the political situation before this date.)*
 *Cross-ref: Aidra (NPC)*
 
----
-
-**[~Day +7 — ~Flamerule 2, 1490 DR]** — *Drethnal departs with letters of recommendation* ⚓
-Drethnal presents himself to the King's Maester to formally close out his service. The Maester provides glowing letters of recommendation and apologizes to Drethnal for the difficult environment during the illness. Drethnal is now seeking a new noble employer. He has left no traceable thread — only the Bloodline Compass (requiring his surname) can locate him.
-↳ **The Maester does not know** Drethnal caused the King's death. **Drethnal is now unfindable** by conventional means.
-*Cross-ref: Drethnal (NPC), The King's Maester (NPC)*
-
----
-
-**[Day +? — TBD per instance]** — *Party exits Aestrum; Chapter 2: A Crown With No Head begins*
-Whenever the party emerges from the loop, they re-enter a Nortmunde that has been in succession crisis since Kythorn 25. The world they were hired into has ceased to exist. Specific exit date and resulting state is per-instance — see saved.
+*Era V continues past the column's arrival — the Regency, the succession clock, and
+Drethnal's disappearance — in the Chapter 2 overlay:
+[`{{PLUGIN_ROOT}}/timelines/chapter_2/nortmunde_regional.md`]({{PLUGIN_ROOT}}/timelines/chapter_2/nortmunde_regional.md).*
 
 ---
 
@@ -320,7 +311,6 @@ Whenever the party emerges from the loop, they re-enter a Nortmunde that has bee
 
 | Item | Status |
 |------|--------|
-| Holst/Dunwick pipeline, exact year established | TBD |
-| Galadiil bounty — who issued it, and why? | TBD |
+| Holst/Dunwick pipeline, exact year established | TBD — Era I places it *~pre-1488 DR*; nothing narrows it further, and the Blooddigger imprisonment that depends on it is also undated. |
 
 *Per-instance pending items (party-specific TBDs, session counts, etc.) live in the saved overlay.*

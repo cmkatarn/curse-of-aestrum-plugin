@@ -111,6 +111,9 @@ path = "factions"
 kind = "group"
 prefix = "faction_"
 ref_fields = ["leader", "rival", "former_rival", "allied_with", "commander", "members"]
+# chapter_2/shar.md is a chapter overlay, not a second faction: it adds the
+# Nortmunde-succession leverage to the roster defined in the chapter_1 base.
+exclude_files = ["chapter_2/shar.md"]
 
 # The secrecy graph: `known_to` maps a member id -> the members who know they
 # belong. Directed (not reciprocal); every key and every value-id must itself be
