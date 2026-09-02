@@ -24,7 +24,7 @@ Aestrum is trapped in a magical daily cycle. Dead zones are immune to the reset.
 3. **Silencing a Selûne-devoted region:** Aestrum historically worshipped Selûne above all other deities. The loop suppresses that devotion — residents cycle endlessly through days without spiritual growth, memory, or connection to their goddess.
 4. **Seizing control of Nortmunde:** Shar's ultimate goal is to install a puppet ruler over Nortmunde through Quellenna Ilphekiir. With the king dead and Aestrum neutralized, Setland's aggressive rise under Malak — steered by Quellenna — becomes the vehicle for that takeover.
 
-**What the party knows:** They know Shar is involved — the desecrated shrine, Rowan Deckard, and her direct confrontation in the Antechamber all point to her. They do not yet know she *created* the loop, nor that the loop was engineered around Miri's presence.
+**What the party can learn in Chapter 1:** that Shar is involved — the desecrated shrine and Rowan Deckard both point to her, and an Antechamber confrontation, if one occurs, removes all doubt. What stays out of reach is that she *created* the loop, and that it was engineered around Miri's presence. *(How much any given party has actually pieced together is per-playthrough and belongs in that campaign's overlay.)*
 
 ## The Dead Zones — Origin
 
@@ -50,15 +50,7 @@ The political situation has two phases hinged on the King's death (**Day 0**; se
 - **Setland / Duke Malak du Leon:** on Day −14 Malak dispatches a contracted party (the player party) to recover Aestrum's decade of unpaid taxes and tribute — the **inciting job and its stated, public purpose.** The kingdom is on a peaceful footing; the road into and out of Aestrum is **open**; no army has moved. *(DM only: the same day, Malak begins secret invasion planning — the tax expedition doubles as the pretext. None of it is public or yet in the field.)*
 - **The party's frame:** hired into a stable kingdom under a living king for a straightforward-looking — if daunting — tax-recovery contract on Nortmunde's behalf. They do not know the King will die, that an invasion is being planned, or what Aestrum's silence actually is.
 
-### Starting on Day 0 (the King's death — the succession crisis the party returns to)
-
-The state the world has moved into by the time the party emerges from the loop. The party is **not** meant to learn of any of it until Aestrum is invaded.
-
-**The succession crisis:** The King of Nortmunde is dead with no heir, triggering a crisis among the duchies. Duke Malak du Leon of Setland is the most aggressive claimant, marching on Aestrum to secure his flank before turning military force on the other duchies (Skaarsdaam, Mikaelvad, Dalihad). The Setland army has crossed inside Aestrum's border; the road out is sealed.
-
-**Shar's long game (DM only):** Shar is running two simultaneous operations:
-1. **The Aestrum suppression** — the time loop, the desecrated shrine, Rowan's murder cycle, Jiasha's disconnection. Her primary focus in the region.
-2. **The Nortmunde long game** — installing a puppet king through Quellenna Ilphekiir. Quellenna has been shown a vision: Malak as King of Nortmunde, herself as his Queen, Aidra Calemthor as Maîtresse-en-titre. She is working toward it with full conviction. Malak believes he is pursuing Nortmunde for his own ambitions. Neither has the full picture.
+*The state the world moves into once the King dies is Chapter 2: [`{{PLUGIN_ROOT}}/lore/chapter_2/key_lore_summary.md`]({{PLUGIN_ROOT}}/lore/chapter_2/key_lore_summary.md).*
 
 ## Divine Conflict
 

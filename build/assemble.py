@@ -565,6 +565,7 @@ ALLOWED_DANGLING = {
     "npcs/chapter_2/remaining_npcs.md",              # chapter-2 secrets overlay
     "timelines/chapter_2/nortmunde_regional.md",     # chapter-2 half of the succession timeline
     "factions/chapter_2/shar.md",                    # chapter-2 half of Shar's board
+    "lore/chapter_2/key_lore_summary.md",             # chapter-2 half of the lore summary
     "badges/side_quests.md",                         # badge tier is not bundled
 }
 
