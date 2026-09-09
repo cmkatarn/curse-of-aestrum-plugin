@@ -5,7 +5,7 @@ parent: loc_misty_forest
 region: aestrum
 curse_affected: true
 connected_locations: [loc_misty_forest, loc_misty_forest_dead_zone, loc_misty_forest_shrine]
-npcs_present: [npc_mieke, npc_jiasha]
+npcs_present: [npc_mieke, npc_hollis_tarn, npc_danic_ordwell, npc_reyn_cobbet, npc_jiasha]
 chapter: 1
 ---
 

@@ -231,7 +231,13 @@ tightly coupled. All prompts are plain markdown.
 9. **Combat stats** — HP (max at level 1, then average or rolled for
    higher levels — ask), AC, initiative, speed, attack bonuses, save DCs.
 10. **Personality** — Trait, ideal, bond, flaw (from background table or
-    custom). **If the subject is a companion NPC,** `Read`
+    custom). `Read` `{{PLUGIN_ROOT}}/engines/story-engine/rules/authoring_personality.md` and author
+    against it: the 5e four are a *format*, not a generator, and filled in as
+    adjectives they produce a character the narrator plays from its own defaults.
+    Its floor — standing want, guarded thing, contradiction, pressure behavior
+    (boredom included), and what the voice does under stress — is what this step
+    owes, whatever the four fields are called on the sheet. **If the subject is a
+    companion NPC,** also `Read`
     `{{PLUGIN_ROOT}}/engines/story-engine/rules/authoring_connectable.md` and apply it to the flaw/bond
     design: the companion must be reachable, and its flaws must complicate
     bonds rather than prevent them.
@@ -259,8 +265,11 @@ anti-conflict list described there.
 Then walk the STEP 2B stages **silently**, making each decision yourself,
 consistent with the rolled build — pick a campaign hook from the override's
 tables that matches the rolled background / race / class (STEP 3), run the
-anatomy pass (STEP 3.5), and for a companion NPC apply
-`{{PLUGIN_ROOT}}/engines/story-engine/rules/authoring_connectable.md` at the personality stage. The anatomy pass is
+anatomy pass (STEP 3.5), and apply
+`{{PLUGIN_ROOT}}/engines/story-engine/rules/authoring_personality.md` at the personality stage — plus
+`{{PLUGIN_ROOT}}/engines/story-engine/rules/authoring_connectable.md` for a companion NPC. A rolled
+character has nobody pushing back on it, so the personality rule's bleed test is what
+keeps a random build from staying a build line. The anatomy pass is
 **not** skippable for random characters.
 
 Surface the result briefly before writing (the format is in

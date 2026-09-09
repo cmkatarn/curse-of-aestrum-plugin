@@ -387,6 +387,46 @@ Captain of the Black Arrows-contracted mercenary band pursuing the Galadiil boun
 
 ---
 
+## Hollis Tarn
+
+**id:** npc_hollis_tarn | **location:** loc_mieke_mercenary_camp | **cycle_aware:** false | **groups:** faction_mieke_band | **alignment:** lawful_neutral | **race:** Human
+
+Lieutenant of [Mieke's band]({{PLUGIN_ROOT}}/factions/chapter_1/mieke_band.md) and his second. A woman in her late forties, Setland-born, who came up as a company quartermaster rather than a fighter and has the bearing of someone who counts things for a living. She runs the camp — the watch rotation, the ration line, the weapons cache inventory — while Mieke runs the contract.
+
+**Her function in the camp:** she is Mieke's midday council. She is also the only member of the band who says out loud, every single day, that the contract is not closing and they should withdraw to the boundary and send word. Mieke overrules her every single day. Neither of them remembers the previous instance of the argument, so it never escalates and it never resolves — it is simply the shape their afternoons take.
+
+**If Mieke goes down:** she takes command, and her instinct is the opposite of his. Mieke holds the line; Hollis preserves the crew. She calls a withdrawal rather than a last stand, and she will trade the captive for a clean disengagement if the party gives her the opening. A party that drops Mieke first may find the fight ends faster than they expected.
+
+**DM Notes:** Hollis is the band's competence, not its conscience — she wants to leave because the job is unprofitable, not because holding Jiasha troubles her. She is the negotiation surface for a party that argues economics. Loop-bound; resets each midnight with the withdrawal argument un-made again.
+
+---
+
+## Danic Ordwell
+
+**id:** npc_danic_ordwell | **location:** loc_mieke_mercenary_camp | **cycle_aware:** false | **groups:** faction_mieke_band | **alignment:** true_neutral | **race:** Human
+
+An operative in [Mieke's band]({{PLUGIN_ROOT}}/factions/chapter_1/mieke_band.md) and its best bow. A lean, quiet man in his thirties who has walked more perimeters than he has slept nights. He takes the patrol rotation by preference — it keeps him out of the fire's conversation, which he finds tedious.
+
+**What he has noticed:** Danic is the one who named the ground east of the shrine "haunted" and will not cross it. He is describing the [Misty Forest dead zone]({{PLUGIN_ROOT}}/locations/chapter_1/misty_forest_dead_zone.md) accurately and has filed it under superstition, because superstition is the only category he has for it. He has told the others and they humor him. He is the only member of the band who has observed something true about Aestrum, and it is the observation that would save all of them if any of them could carry it past midnight.
+
+**Where the party meets him:** on the perimeter. A party approaching the camp from any direction other than the east meets Danic before it meets anyone else.
+
+**DM Notes:** Do not let him reason from the dead zone to the loop — he lacks both the framework and the cross-day memory. If a party presses him on the "haunted" ground he gets defensive and clams up; if a party tells him he is right, he has no idea what to do with that. Loop-bound; resets each midnight.
+
+---
+
+## Reyn Cobbet
+
+**id:** npc_reyn_cobbet | **location:** loc_mieke_mercenary_camp | **cycle_aware:** false | **groups:** faction_mieke_band | **alignment:** true_neutral | **race:** Human
+
+The youngest operative in [Mieke's band]({{PLUGIN_ROOT}}/factions/chapter_1/mieke_band.md) — early twenties, first contract outside Setland, and visibly still doing the arithmetic on whether he likes the work. He drew the captive detail because nobody else wanted it, and he has kept it because he turned out to be steady at it.
+
+**The captive detail:** Reyn is the one who feeds and waters [Jiasha]({{PLUGIN_ROOT}}/npcs/chapter_1/jiasha.md), checks the picket rope, and moves her into shade when the day turns. He does it without cruelty and without kindness — he does it the way a man does a chore he has decided not to think about. He is the reason she is unharmed. He is also the reason she is still tied to a tree.
+
+**DM Notes:** Reyn is the band's soft seam, and he should be genuinely soft rather than secretly heroic. He is uneasy; he is not going to act on it alone, and a party that expects him to free her is going to be disappointed. What he will do is talk — he is the only one who answers a question without checking Mieke's face first. A party that separates him from the camp gets more than they would get from anyone else in it, and a party that offers him a way out of a contract he is starting to regret has something real to work with. Loop-bound; resets each midnight, with the doubt reset to its first-day size.
+
+---
+
 ## Miklas of Thundertree
 
 **id:** npc_miklas | **status:** deceased | **cycle_aware:** was loop-aware

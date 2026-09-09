@@ -156,8 +156,10 @@ the whole session:
 - [registers.md]({{PLUGIN_ROOT}}/engines/prose-engine/scene/registers.md) — prose registers and how to
   switch between them.
 - [narration_modes.md]({{PLUGIN_ROOT}}/engines/prose-engine/scene/narration_modes.md) — whose perceptual envelope
-  the narrator is bound to (character-aligned, omniscient, split-anchor, or
-  correspondence). Orthogonal to register. **Locked at scene start; does not
+  the narrator is bound to — the camera modes (character-aligned,
+  omniscient, split-anchor) — or, for the artifact modes
+  (correspondence, dialog-only, screenplay), the form the turn's output
+  takes. Orthogonal to register. **Locked at scene start; does not
   switch mid-scene** (unlike register). Includes the sense-availability sub-rule
   (full and threshold gates on the active anchor's senses).
 
@@ -186,6 +188,12 @@ reference can still load `{{PLUGIN_ROOT}}/engines/prose-engine/scene/references/
   body) and the timing protocol for an asynchronous, point-in-time
   written exchange (the read/send clock stamps, who supplies them, and
   the read-to-send window).
+- [references/screenplay.md]({{PLUGIN_ROOT}}/engines/prose-engine/scene/references/screenplay.md) —
+  on demand when the scene runs in the `screenplay` narration mode: the
+  six page elements (scene heading, action, character cue, dialogue,
+  parenthetical, transition), the unfilmable test that keeps action
+  lines camera-observable, spec-format camera discipline, and how the
+  player's turn and the handoff adapt to the page.
 
 The override may add: in-fiction time-reference conventions (e.g., banning
 project-internal day indices from dialogue and substituting a calendar

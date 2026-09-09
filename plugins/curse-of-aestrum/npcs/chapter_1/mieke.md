@@ -76,13 +76,22 @@ Setland-accented Common, plain and direct. Soldier's diction — short sentences
 
 ## The Band
 
-Tune to party level. As a baseline (Chapter 1, party of 4–5):
+Mieke commands three: his lieutenant **Hollis Tarn** (Veteran) and two operatives,
+**Danic Ordwell** and **Reyn Cobbet** (Scouts). Four total, fixed — the roster, the stat
+blocks, the encounter weight and the tuning levers all live on the band's own file:
+[factions/chapter_1/mieke_band.md]({{PLUGIN_ROOT}}/factions/chapter_1/mieke_band.md#the-band-in-a-fight).
 
-- **Three to five Black-Arrows operatives** — Scout statistics with longbows, shortswords, leather armor and Black Arrows pins. Skirmishers; flank and snipe.
-- **One lieutenant** — Veteran statistics with longsword, shortbow, and chain mail. Mieke's second; takes command if Mieke goes down or is occupied.
-- **Optional reinforcement** for parties of 5 or harder difficulty: a small group of hired or summoned undead, tuned to party level. This is a difficulty dial only — the Runic Skeleton is a single entity anchored to the Dunleaven Deadery and is **not** part of this encounter.
+What belongs here is the command relationship. Mieke brought these three, supplied them
+himself, and holds himself responsible for them — the folded letter in his tent settling
+their back wages is the clearest thing in the campaign about who he is (see
+[mieke_mercenary_camp.md]({{PLUGIN_ROOT}}/locations/chapter_1/mieke_mercenary_camp.md)). He fights
+from the center of their line and spends Commander's Strike to aim them rather than to
+save himself. **Loyalty to the band is the lever a negotiating party actually has**: he
+will not trade them for the contract, and he will hear an offer that gets them out of
+Aestrum whole.
 
-The full band fits in the camp without crowding (see [mieke_mercenary_camp.md]({{PLUGIN_ROOT}}/locations/chapter_1/mieke_mercenary_camp.md)).
+He does not know that Hollis argues for withdrawal every afternoon and that he overrules
+her every afternoon, because neither of them carries it past midnight.
 
 ## Cycle Behavior
 

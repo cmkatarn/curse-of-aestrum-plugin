@@ -55,6 +55,8 @@ The engine's `core.md` will direct on-demand reads of:
 
 - `{{PLUGIN_ROOT}}/engines/rpg-5e-engine/rules/random_character_generation.md` (Random source).
 - `{{PLUGIN_ROOT}}/engines/story-engine/rules/authoring_progressive.md` (stub / completeness).
+- `{{PLUGIN_ROOT}}/engines/story-engine/rules/authoring_personality.md` (personality — every NPC,
+  companion and incidental alike, stub included).
 - `{{PLUGIN_ROOT}}/engines/story-engine/rules/authoring_connectable.md` (companion personality).
 - `{{PLUGIN_ROOT}}/engines/rpg-5e-engine/rules/race_anatomy.md` (STEP 3.5 anatomy pass — runs even
   for a stub).
@@ -87,7 +89,9 @@ is **not** canon.
 ## Workflow
 
 Follow the engine workflow in `{{PLUGIN_ROOT}}/engines/rpg-5e-engine/create-character/core.md`
-(STEP 0 → STEP 4) with subject type = NPC and the CoA override applied. For a
-companion, apply `authoring_connectable.md` at the personality stage so the NPC
-is reachable. Stubs leave an `## Open Slots — To Develop in Play` section and
+(STEP 0 → STEP 4) with subject type = NPC and the CoA override applied. Apply
+`authoring_personality.md` at the personality stage — random + stub being the NPC
+default, its floor is what keeps a rolled sheet from playing as the narrator's
+defaults, and of the five the **want** is the one a stub carries. For a companion,
+also apply `authoring_connectable.md` there so the NPC is reachable. Stubs leave an `## Open Slots — To Develop in Play` section and
 `status: stub`; flesh out later per `authoring_progressive.md`.

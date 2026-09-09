@@ -175,6 +175,28 @@ sentence-position element of the spoken line.
 
 ---
 
+## Narration modes that bend this format
+
+Two of the artifact modes in
+[{{PLUGIN_ROOT}}/engines/prose-engine/scene/narration_modes.md]({{PLUGIN_ROOT}}/engines/prose-engine/scene/narration_modes.md) change the format above.
+Neither touches the **content** rules — every audible line reaches the
+page, the PC's line is rendered, attribution stays outside the quoted
+speech — only the shape that carries them.
+
+- **`dialog_only`** narrows the optional action-beat slot to a
+  **delivery beat**: the audible manner of the utterance and nothing
+  else. If it could not be heard with the eyes closed, it is not a
+  delivery beat — no gesture, no body language, no movement, no
+  scenery. The speaker label and the unlabeled PC line are unchanged.
+
+- **`screenplay`** supersedes the labeling convention outright: the
+  format cues **every** speaker on its own line in CAPS, the PC
+  included, and the action-beat slot becomes the format's action and
+  parenthetical elements. See
+  [screenplay.md]({{PLUGIN_ROOT}}/engines/prose-engine/scene/references/screenplay.md).
+
+---
+
 ## When a subsystem is active
 
 If the override activates a per-response subsystem (audio cue, etc.),

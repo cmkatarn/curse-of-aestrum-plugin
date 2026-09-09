@@ -1,20 +1,50 @@
 ---
 name: narration_modes
-description: Narration modes for the scene skill — controls whose perceptual envelope the narrator is bound to. Orthogonal to register. Loaded by the skill on demand.
+description: Narration modes for the scene skill — controls whose perceptual envelope the narrator is bound to, or, for the artifact modes, the form the turn's output takes. Orthogonal to register. Loaded by the skill on demand.
 ---
 
 # Narration Modes
 
-The narration mode governs **whose perceptual envelope the narrator is
-bound to** — which character's senses (if any) constrain what the
-narration may describe. Orthogonal to register: register controls *how*
-the prose sounds; narration mode controls *what the narrator is allowed
-to see, hear, smell, taste, and touch on behalf of the reader.*
+The narration mode governs **what the turn is allowed to put on the
+page** — for most modes, by binding the narrator to a character's
+perceptual envelope: which character's senses (if any) constrain what
+the narration may describe. For the artifact modes it does so by fixing
+the form the output takes instead (see *Two families of mode* below).
+Orthogonal to register: register controls *how* the prose sounds;
+narration mode controls *what the narrator is allowed to see, hear,
+smell, taste, and touch on behalf of the reader* — and, where there is
+no camera, what shape the turn's output has at all.
 
 > **Register vs. narration mode.** *Register* (`{{PLUGIN_ROOT}}/engines/prose-engine/scene/registers.md`) and
 > *narration mode* (this file) are orthogonal axes. Both apply at draft
 > time. Register may switch mid-scene; narration mode is **locked at
 > scene start.**
+
+---
+
+## Two families of mode
+
+The modes divide into two families, and the division governs which of
+this file's sub-rules apply to a given mode.
+
+- **Camera modes** — `character_aligned`, `omniscient`, `split_anchor`.
+  The turn's output is narrated prose, and the mode binds a
+  **perceptual envelope**: whose senses (or none) constrain what the
+  camera may render. The sense-availability sub-rule lives here.
+
+- **Artifact modes** — `correspondence`, `dialog_only`, `screenplay`.
+  The turn's output is not narrated prose at all but a **composed
+  artifact** of a declared form — a written message, a spoken exchange,
+  a page of screenplay. The mode binds the **form of what the turn
+  emits**, and constrains perception only insofar as the form admits it
+  (`correspondence` renders no environment; `dialog_only` renders only
+  what is audible; `screenplay` renders only what a lens and a
+  microphone could record).
+
+Both families are locked at scene start, both are orthogonal to
+register, and both leave the epistemic gate fully in force. What
+differs is that a camera mode answers *what may the narrator see*, and
+an artifact mode answers *what shape does the turn take.*
 
 ---
 
@@ -60,10 +90,12 @@ named at scene start:
 | `omniscient` | None. No anchor exists. |
 | `split_anchor` | **Required.** The user names two or more anchors in their alternation order. Each section is labeled with its anchor. |
 | `correspondence` | **Required.** Each message names its author. A message may be authored by one character on behalf of a group they speak for; the author's knowledge boundary governs (see [references/correspondence.md]({{PLUGIN_ROOT}}/engines/prose-engine/scene/references/correspondence.md)). |
+| `dialog_only` | Implicit. Defaults to the PC. Governs **audibility only** — which lines reach the page — never description. The user may name a different anchor at scene start. |
+| `screenplay` | None. No anchor exists. |
 
 ---
 
-## The four modes
+## The six modes
 
 ### `character_aligned`
 
@@ -87,7 +119,11 @@ No anchor. The narrator's perceptual envelope is unconstrained — the
 camera may render any **observable surface** in the scene, including
 surfaces no character is currently perceiving.
 
-The sense-availability sub-rule is **inactive** under this mode.
+The sense-availability sub-rule is **inactive as a rendering
+constraint** under this mode. Its second job is not: what each
+character perceives still follows the gates, and the camera's freedom
+is exactly what lets it show a character failing to perceive something
+the audience can see (see *Job 2 — perception as staged fact* below).
 
 **Scope: external surfaces only.** The omniscient camera sees what an
 ideally-positioned, sober eye and ear could register — bodies,
@@ -166,15 +202,210 @@ Useful for: scenes whose entire substance is the written exchange —
 organizing or negotiating something by letter, email, or message —
 with no in-person beat at all.
 
+### `dialog_only`
+
+**The auditory channel and nothing else.** The turn's entire output is
+the spoken exchange. Three things reach the page and no fourth:
+
+1. **Who spoke** — the speaker label.
+2. **What they said** — the line, quoted, complete.
+3. **How they said it** — the *audible* manner of the utterance.
+
+There is no narrated environment: no room, no weather, no light, no
+time of day, no furniture, no distance, no movement, no gesture, no
+body language, no interior state. The reader hears the scene and does
+not see it.
+
+The anchor is implicit (the PC by default) and does **one** job:
+it fixes **audibility** — which lines were within earshot and therefore
+reach the page. It does not license description. The
+sense-availability sub-rule applies to this mode **on the auditory
+channel only** as a rendering constraint (see its Job 1 table below).
+Its second job is unaffected: the characters' other senses are still
+live world state, still shape what they know and how they answer, and
+simply have no channel through which to reach the page except as
+someone says so.
+
+**The delivery beat.** The optional action-beat slot in
+[references/dialogue_format.md]({{PLUGIN_ROOT}}/engines/prose-engine/scene/references/dialogue_format.md) narrows,
+under this mode, to a **delivery beat**: the audible manner of the
+utterance and nothing else. Volume, pace, a pause taken before the
+line, a break or catch in the voice, a laugh riding under it, an accent
+thickening, a shift into another language, a line delivered flat.
+
+**The test: could it be heard with the eyes closed?** If not, it is not
+a delivery beat. *A hand set flat on a table*, *a look away*, *a step
+closer* — all out, however much they would sharpen the line. The
+delivery beat is optional and is often best omitted; a line that
+carries its own delivery does not need to be told how it sounded.
+
+**Audible manner, not named interior.** The omniscient scope rule
+applies with full force to the delivery beat, which is the one place in
+this mode where interior state can leak. Render the sound, not its
+meaning: *a laugh under the words*, not *bitterly*; *a half-beat before
+the answer*, not *reluctantly*. A delivery beat that names what the
+speaker felt is the interior-state leak of the `omniscient` scope rule
+arriving through the only door this mode leaves open.
+
+**The one environmental exception: deixis.** When a spoken line is
+unintelligible without its referent — a deictic (*"this one," "that,"
+"here," "again"*) pointing at something the words alone do not supply —
+the referent may be carried in the **minimum** words needed to make the
+line parse, and only there. This is the whole of the
+"relevant-to-what-is-being-said" carve-out: it licenses the **referent
+of a line**, never the room around it, and never a detail that merely
+enriches. If the exchange can be followed without it, it does not go on
+the page.
+
+**Inaudibility is still rendered as inaudibility.** The
+every-audible-line rule in `dialogue_format.md` binds unchanged: speech
+the anchor received goes on the page complete, and speech the anchor
+could **not** receive is rendered as the not-hearing — in the same
+stripped register, as briefly as the fact can be stated.
+
+**The handoff lives in the dialogue.** There is no prose in which to
+write an in-register invitation, so the invitation is carried by the
+**speech itself** — a question, a line that plainly waits, a marked
+pause. This narrows
+[references/action_prompt.md]({{PLUGIN_ROOT}}/engines/prose-engine/scene/references/action_prompt.md) rather than
+suspending it: the invariant function (the player knows unambiguously
+that control has passed) still binds; only the available surface form
+is confined to what someone can say. Never append an out-of-fiction
+prompt to close the beat.
+
+**The PC's line is still rendered** — unlabeled, per `dialogue_format.md`.
+Under this mode that rule is load-bearing rather than stylistic: the
+spoken line is the only thing on the page, so dropping the PC's leaves
+the exchange with a visible hole.
+
+Useful for: interrogations, negotiations, and confrontations whose
+whole substance is verbal; exchanges over a channel that carries voice
+and nothing else (a phone, a radio, a door between the parties); scenes
+written to be heard.
+
+### `screenplay`
+
+**No anchor; the camera is a camera.** The turn's output is a page of
+screenplay — scene headings, action, character cues, dialogue — written
+so it could be handed to a crew and shot as part of a larger picture.
+
+The perceptual scope is **identical to `omniscient`**: observable
+surfaces only, no interiors. Screenplay convention already enforces
+exactly this, which is why the two fit together without friction — an
+action line can describe only what a lens and a microphone could
+record. **The camera cannot photograph a thought.** Every prohibition
+in the `omniscient` scope rule above (interior states; intent,
+rehearsal, preparation, history; future plans; the epistemic suite's
+knowledge boundaries) applies here word for word.
+
+**Sense availability is inactive only as a rendering constraint.** The
+camera is not bound to anyone's senses, so nothing gates what the page
+may show. What each character *perceives* is untouched by that, still
+follows the gates, and is frequently the load-bearing fact of the beat:
+that one character does not hear another come in, that a character
+keeps talking to a room that has stopped listening. This is not a
+second-order concern in this mode — it is the format's native
+material, because non-perception is **blocking**, and blocking is what
+a screenplay is for. Stage it in the action lines (see *Perception and
+non-perception are blocking* in
+[references/screenplay.md]({{PLUGIN_ROOT}}/engines/prose-engine/scene/references/screenplay.md)), and see *Job 2 —
+perception as staged fact* below.
+
+**The epistemic gate binds, and the format accommodates it natively.**
+A character whose name is not yet established in the fiction is cued
+descriptively (`MAN IN THE GREY COAT`) and switches to the name once
+the page has earned it — which is standard screenplay practice, not a
+concession the engine invented. The identity-before-introduction row
+and the format's own convention want the same thing.
+
+**Register still applies, on a short leash.** Action lines are lean by
+convention. Register modulates what the camera is pointed at, how long
+it holds, and the rhythm of the action lines — it never licenses them
+to carry prose interiority.
+
+**`dialogue_format.md`'s labeling convention is superseded.** That
+file's rule that the PC gets no speaker label is a prose-format
+convention; screenplay format cues **every** speaker, PC included. The
+rule it does *not* supersede is the content rule underneath: the PC's
+line still reaches the page, and every audible line is rendered
+complete rather than summarized in an action line.
+
+The **format** — scene headings, action lines, cues, parentheticals,
+extensions, transitions, and the disciplines that keep the page
+shootable — is governed by
+[references/screenplay.md]({{PLUGIN_ROOT}}/engines/prose-engine/scene/references/screenplay.md), loaded on demand
+when this mode is active.
+
+Useful for: scenes authored as production material; scenes whose
+interest is blocking, staging, and cutting rather than interiority; a
+scene meant to sit inside a larger film or episode.
+
 ---
 
 ## Sense-availability sub-rule
 
-Applies to **`character_aligned`** and **`split_anchor`**. Inactive
-under `omniscient` and `correspondence` (neither binds the narration
-to a perceiving anchor — `omniscient` because the camera is
-unconstrained, `correspondence` because there is no perceived
-environment to render at all).
+### The sub-rule does two jobs — only one of them is mode-scoped
+
+Sense availability is used twice, for different purposes, and the modes
+switch **one** of them off and never the other.
+
+**Job 1 — the rendering constraint.** Sense availability bounds *what
+the narrator may put on the page*: the camera describes environment
+only through the active anchor's currently-available senses. This job
+is **mode-scoped**, per the table below.
+
+**Job 2 — perception as staged fact.** Sense availability determines
+*what each character in the scene actually perceives*, and therefore
+what they know, how they behave, and what they can react to. This job
+is **active in every mode, without exception.** A gated sense is world
+state, not a camera setting. A character who did not hear someone come
+in did not hear them, whatever the narration is free to describe — and
+that non-perception is often the most important thing in the beat.
+
+The two jobs are easy to conflate because in `character_aligned` they
+collapse into one: the anchor's senses bound both the character and the
+camera at once. In the modes where the camera is not a character's
+senses, they come apart, and only Job 1 goes quiet.
+
+### Job 1 — where the rendering constraint applies
+
+| Mode | Rendering constraint |
+|---|---|
+| `character_aligned` | **In full.** The anchor's available senses bound the description. |
+| `split_anchor` | **In full,** per section, scoped to whichever anchor is active. |
+| `dialog_only` | **Auditory channel only.** The anchor exists solely to fix audibility, so the hearing gates below (deafness, magical silence, unconsciousness; the sleep, earplug, and loud-ambient threshold gates) determine which lines reach the page and which are rendered as the not-hearing. The other senses have no channel to reach the page through, so their gates are moot *for rendering* — see Job 2. |
+| `omniscient` | **Inactive.** The camera is unconstrained; a lens and a microphone are not a character's senses. |
+| `screenplay` | **Inactive,** for the same reason. |
+| `correspondence` | **Inactive.** There is no perceived environment to render at all. |
+
+### Job 2 — perception as staged fact, in every mode
+
+What a character perceives still follows the gates below in **all six
+modes.** Three consequences, and they bind regardless of what the
+camera is allowed to show:
+
+- **A character cannot react to what they did not perceive.** This is
+  the sense-gate feeding the epistemic gate's knowledge boundaries: a
+  gated sense is one of the ordinary ways a character fails to acquire
+  a fact. A character who responds to a line they could not hear is a
+  knowledge-boundary violation whose cause is a missed sense gate.
+- **Non-perception is stageable, and often the point.** *Character A
+  does not see Character B come in; Character B is looking straight at
+  them* is a beat, not an omission — and in the anchorless modes the
+  camera can show **both** halves of it, which is precisely the
+  dramatic irony those modes exist to produce. Stage the failure to
+  register: a head that does not turn, a conversation that continues,
+  a hand that goes on writing.
+- **The gate lifting is an event.** When a character finally registers
+  the thing — the wake, the turn, the sentence stopping mid-word — that
+  transition is staged the same way in an anchorless mode as it is
+  narrated in an anchored one.
+
+The rest of this sub-rule — the senses, the gate types, the tables, the
+re-opening rule, attention, dreams — describes the gates themselves and
+so feeds **both** jobs.
+
+### The rendering rule
 
 The narrator may describe environment only through the active anchor's
 **currently-available** senses. When a sense is gated, the narration
@@ -311,5 +542,8 @@ the anchor's reallocated focus could not catch, per the *Attention*
 sub-rule — a `character_aligned` scene drifting between characters'
 perceptions, an unannounced section break in `split_anchor`, a
 `correspondence` beat rendering perceived environment or action around
-the message instead of the message alone) are caught in the same pass
-that catches other drafting-constraint failures.
+the message instead of the message alone, a `dialog_only` beat rendering
+anything the eyes-closed test excludes — scenery, gesture, movement, a
+delivery beat naming an interior — or a `screenplay` beat carrying an
+unfilmable in an action line) are caught in the same pass that catches
+other drafting-constraint failures.

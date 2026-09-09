@@ -44,6 +44,8 @@ The engine's `core.md` will direct on-demand reads of:
 - `{{PLUGIN_ROOT}}/engines/rpg-5e-engine/rules/race_anatomy.md` (STEP 3.5 anatomy pass).
 - `{{PLUGIN_ROOT}}/engines/rpg-5e-engine/rules/random_character_generation.md` (if the PC is
   rolled — Random source).
+- `{{PLUGIN_ROOT}}/engines/story-engine/rules/authoring_personality.md` (personality — every PC,
+  whether the sheet is provided, guided, or rolled).
 - `{{PLUGIN_ROOT}}/engines/story-engine/rules/authoring_progressive.md` (if built as a stub).
 
 ## Workflow
