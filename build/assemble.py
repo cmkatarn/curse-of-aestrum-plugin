@@ -24,6 +24,7 @@ from __future__ import annotations
 import os
 import re
 import shutil
+from datetime import datetime
 from pathlib import Path
 
 # --------------------------------------------------------------------------- #
@@ -290,6 +291,47 @@ def copy_spec(src: Path, dst_rel: str) -> int:
 import json
 
 PLUGIN_NAME = "curse-of-aestrum"
+
+# Version scheme: <major>.<minor>.<YYYYMMDD><NN>  e.g. 0.2.2026090901
+#
+# Claude Code caches an installed plugin under
+# .claude/plugins/cache/<marketplace>/<plugin>/<version>/, so the version IS the cache key: a
+# rebuild that reuses it lands in a directory already holding the old files and `/plugin update`
+# has nothing new to key on. Deriving the patch from the build date + a daily counter means every
+# rebuild is uniquely keyed without anyone having to remember to bump anything.
+#
+# Date and build are deliberately concatenated into ONE component rather than split into a fourth.
+# The field is not semver-validated (Anthropic's own claude-security ships "0.10.2.3"), but a
+# 3-component numeric form stays sortable under BOTH a real semver comparison and a naive string
+# comparison — and the leading year digit guarantees no leading zero. A 4-component form would read
+# better and parse as semver not at all.
+#
+# MAJOR/MINOR are the hand-set part: bump them for a real release. The patch takes care of itself.
+PLUGIN_MAJOR_MINOR = "0.2"
+_VERSION_RE = re.compile(r"\d+\.\d+\.(\d{8})(\d{2})\Z")
+PLUGIN_VERSION = ""          # set by resolve_version(), before OUT is cleared
+
+
+def resolve_version() -> str:
+    """Next version for this build: same day -> increment the counter, new day -> start at 01.
+
+    Reads the version the PREVIOUS build wrote, so it must be called before main() clears OUT.
+    An unreadable/absent/malformed prior manifest just restarts the day's count, which is safe:
+    the date component alone already distinguishes it from every build before today.
+    """
+    today = datetime.now().strftime("%Y%m%d")
+    build = 1
+    prior = OUT / ".claude-plugin" / "plugin.json"
+    if prior.exists():
+        try:
+            m = _VERSION_RE.match(json.loads(prior.read_text(encoding="utf-8")).get("version", ""))
+            if m and m.group(1) == today:
+                build = int(m.group(2)) + 1
+        except (OSError, ValueError):
+            pass                                      # malformed prior manifest -> restart at 01
+    if build > 99:
+        raise SystemExit("assemble: 99 builds today already; bump PLUGIN_MAJOR_MINOR to continue")
+    return f"{PLUGIN_MAJOR_MINOR}.{today}{build:02d}"
 DESCRIPTION = ("Curse of Aestrum — an interactive Dungeons & Dragons 5e campaign. Arrive in the "
                "duchy of Aestrum, where something is deeply and secretly wrong. Chapter 1. "
                "For adults: mature themes throughout, with a content rating chosen per session "
@@ -466,7 +508,7 @@ def write_meta() -> None:
     (OUT / ".claude-plugin").mkdir(parents=True, exist_ok=True)
     (OUT / ".claude-plugin" / "plugin.json").write_text(json.dumps({
         "name": PLUGIN_NAME,
-        "version": "0.1.0",
+        "version": PLUGIN_VERSION,
         "description": DESCRIPTION,
         "author": {"name": AUTHOR},
         "keywords": ["dnd", "dnd5e", "ttrpg", "rpg", "interactive-fiction", "campaign"],
@@ -614,6 +656,9 @@ def check_dangling_refs() -> None:
 
 
 def main() -> None:
+    global PLUGIN_VERSION
+    PLUGIN_VERSION = resolve_version()               # reads the prior manifest; must precede rmtree
+    print(f"  version        {PLUGIN_VERSION}")
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir(parents=True)
