@@ -591,16 +591,20 @@ def write_meta() -> None:
         "keywords": ["dnd", "dnd5e", "ttrpg", "rpg", "interactive-fiction", "campaign"],
     }, indent=2) + "\n", encoding="utf-8")
 
+    # Every hook goes through run_hook.sh rather than naming an interpreter: one manifest string is
+    # shared by every platform, and `py` exists only on Windows while `python3` exists only off it.
+    # The wrapper resolves it at play time on the machine that knows. See its header for the detail.
+    launch = f'sh "{gate}/run_hook.sh"'
     hooks = {
         "hooks": {
             "UserPromptSubmit": [{"matcher": "*", "hooks": [
-                _cmd(f'py "{gate}/gate_prompt_hook.py"')]}],
+                _cmd(f'{launch} "{gate}/gate_prompt_hook.py"')]}],
             "Stop": [{"matcher": "*", "hooks": [
-                _cmd(f'py "{gate}/gate_stop_hook.py"'
+                _cmd(f'{launch} "{gate}/gate_stop_hook.py"'
                      f' --spec "{root}/engines/prose-engine/scene/gate/infrastructure_tokens.toml"'
                      f' --spec "{root}/engines/rpg-5e-engine/rules/player_meta_tokens.toml"'
                      f' --spec "{root}/overrides/gate_lint/forbidden_tokens.toml"'),
-                _cmd(f'py "{gate}/staging_stop_hook.py"'
+                _cmd(f'{launch} "{gate}/staging_stop_hook.py"'
                      f' --staging-glob "{proj}/campaign_state/*/staging/*.md"'),
             ]}],
         }
@@ -674,8 +678,9 @@ next response.
 ## Requirements
 
 - **Claude Code** and your own Claude access (Pro/Max/API).
-- **Python** on your PATH (the `py` launcher on Windows, or `python3`) — used by the play-time
-  epistemic-gate hooks.
+- **Python 3.11+** on your PATH — `py`, `python3`, or `python`, whichever your platform provides;
+  the play-time epistemic-gate hooks find it for you. (3.9 also works if you have the `tomli`
+  package installed; the gate reads TOML lint specs.)
 
 ## Install
 

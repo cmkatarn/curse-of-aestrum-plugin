@@ -55,8 +55,9 @@ avoid one can say so before the first session, and the DM can route around it.
 ## Requirements
 
 - **Claude Code** and your own Claude access (Pro/Max/API).
-- **Python** on your PATH (the `py` launcher on Windows, or `python3`) — used by the play-time
-  epistemic-gate hooks.
+- **Python 3.11+** on your PATH — `py`, `python3`, or `python`, whichever your platform provides;
+  the play-time epistemic-gate hooks find it for you. (3.9 also works if you have the `tomli`
+  package installed; the gate reads TOML lint specs.)
 
 ## Install
 
