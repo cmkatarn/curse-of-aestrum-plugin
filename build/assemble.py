@@ -641,9 +641,11 @@ own `campaign_state/` folder, so paste from it only what the report needs — an
     support = f"""
 ## Support
 
-Curse of Aestrum is free, and a one-person project from the prose to the plumbing. If it gave you a
-good night at the table and you want to say thanks: **[{donation_label}]({DONATION_URL})** — entirely
-optional, and it unlocks nothing, because nothing is locked.
+The campaign is free and will stay that way. That being said, it is a one-person project — the
+campaign, the (massive) bundled engines, and the build that assembles them — so if you enjoy your
+time in Aestrum and want to say thanks, consider donating here:
+**[{donation_label}]({DONATION_URL})**. Any contribution is entirely optional and unlocks nothing,
+because nothing is locked.
 """ if DONATION_URL else ""
     rating_table, rating_limits, content_notes = extract_rating_block()
     (OUT / "README.md").write_text(f"""# Curse of Aestrum

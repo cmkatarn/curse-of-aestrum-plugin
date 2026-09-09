@@ -22,10 +22,11 @@ the limits that hold regardless: [plugin README](plugins/curse-of-aestrum/README
 
 ## Support
 
-The campaign is free and stays that way. It is a one-person project — the campaign, the
-bundled engines, and the build that assembles them — so if it gave you a good night at the
-table and you want to say thanks: **[ko-fi.com/cmkatarn](https://ko-fi.com/cmkatarn)**.
-Entirely optional, and it unlocks nothing, because nothing is locked.
+The campaign is free and will stay that way. That being said, it is a one-person project — the
+campaign, the (massive) bundled engines, and the build that assembles them — so if you enjoy your
+time in Aestrum and want to say thanks, consider donating here:
+**[ko-fi.com/cmkatarn](https://ko-fi.com/cmkatarn)**. Any contribution is entirely optional and
+unlocks nothing, because nothing is locked.
 
 ## Repo layout
 
