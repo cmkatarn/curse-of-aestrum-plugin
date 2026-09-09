@@ -21,6 +21,7 @@ Run:  py build/assemble.py
 
 from __future__ import annotations
 
+import hashlib
 import os
 import re
 import shutil
@@ -307,37 +308,111 @@ PLUGIN_NAME = "curse-of-aestrum"
 # better and parse as semver not at all.
 #
 # MAJOR/MINOR are the hand-set part: bump them for a real release. The patch takes care of itself.
+#
+# The version moves ONLY when the bundle's content actually moved. A rebuild that reproduces a
+# byte-identical bundle keeps the version it had: the version is the installed side's cache key, so
+# bumping it for an unchanged bundle makes every consumer re-download the same 200-odd files, and
+# it turns "did this rebuild do anything?" into a question only a diff can answer. To make that
+# comparison possible the build runs with the PRIOR version in the manifest, and the real version
+# is decided at the end, in finalize_version(), once the content is known.
 PLUGIN_MAJOR_MINOR = "0.2"
 _VERSION_RE = re.compile(r"\d+\.\d+\.(\d{8})(\d{2})\Z")
-PLUGIN_VERSION = ""          # set by resolve_version(), before OUT is cleared
+PLUGIN_VERSION = ""          # set by main(), before OUT is cleared
 
 
-def resolve_version() -> str:
-    """Next version for this build: same day -> increment the counter, new day -> start at 01.
+def read_prior_version() -> str | None:
+    """The version the previous build wrote, or None if there is no readable prior bundle.
 
-    Reads the version the PREVIOUS build wrote, so it must be called before main() clears OUT.
-    An unreadable/absent/malformed prior manifest just restarts the day's count, which is safe:
-    the date component alone already distinguishes it from every build before today.
+    Must be called before main() clears OUT.
+    """
+    prior = OUT / ".claude-plugin" / "plugin.json"
+    if not prior.exists():
+        return None
+    try:
+        return json.loads(prior.read_text(encoding="utf-8")).get("version") or None
+    except (OSError, ValueError):
+        return None                                   # malformed prior manifest -> treat as absent
+
+
+def next_version(prior: str | None) -> str:
+    """Same day -> increment the counter; new day, or no parseable prior -> start at 01.
+
+    Restarting the count on an absent, legacy, or malformed prior is safe: the date component
+    alone already distinguishes this build from every build before today.
     """
     today = datetime.now().strftime("%Y%m%d")
     build = 1
-    prior = OUT / ".claude-plugin" / "plugin.json"
-    if prior.exists():
-        try:
-            m = _VERSION_RE.match(json.loads(prior.read_text(encoding="utf-8")).get("version", ""))
-            if m and m.group(1) == today:
-                build = int(m.group(2)) + 1
-        except (OSError, ValueError):
-            pass                                      # malformed prior manifest -> restart at 01
+    m = _VERSION_RE.match(prior or "")
+    if m and m.group(1) == today:
+        build = int(m.group(2)) + 1
     if build > 99:
         raise SystemExit("assemble: 99 builds today already; bump PLUGIN_MAJOR_MINOR to continue")
     return f"{PLUGIN_MAJOR_MINOR}.{today}{build:02d}"
+
+
+def fingerprint(root: Path) -> dict[str, str]:
+    """plugin-relative path -> sha256 of its bytes, for every file under root.
+
+    The assembler is deterministic — nothing but the version carries a timestamp — so two
+    fingerprints differ if and only if the sources did.
+    """
+    if not root.exists():
+        return {}
+    return {f.relative_to(root).as_posix(): hashlib.sha256(f.read_bytes()).hexdigest()
+            for f in sorted(root.rglob("*")) if f.is_file()}
+
+
+def finalize_version(prior_fp: dict[str, str], prior_version: str | None) -> bool:
+    """Compare the fresh bundle against the previous one; bump the version only if it moved.
+
+    The build wrote the prior version into the manifest, so an unchanged bundle is already
+    byte-identical and needs no further action. A changed one gets the next version stamped into
+    plugin.json, the only file this rewrites. Returns True if the bundle changed.
+    """
+    global PLUGIN_VERSION
+    new_fp = fingerprint(OUT)
+    changed = sorted(p for p in new_fp.keys() & prior_fp.keys() if new_fp[p] != prior_fp[p])
+    added = sorted(new_fp.keys() - prior_fp.keys())
+    removed = sorted(prior_fp.keys() - new_fp.keys())
+
+    if prior_fp and not (changed or added or removed):
+        print("\n  NO CHANGES - this rebuild reproduced the previous bundle exactly.")
+        print("  Nothing in the plugin was modified by this run.")
+        print(f"  Version stays {PLUGIN_VERSION}. There is nothing to commit, publish, or")
+        print("  update on an installed copy.")
+        return False
+
+    for label, paths in (("changed", changed), ("added", added), ("removed", removed)):
+        if not paths:
+            continue
+        print(f"\n  {len(paths)} {label}:")
+        for path in paths[:10]:
+            print(f"    {path}")
+        if len(paths) > 10:
+            print(f"    ... and {len(paths) - 10} more")
+
+    PLUGIN_VERSION = next_version(prior_version)
+    manifest = OUT / ".claude-plugin" / "plugin.json"
+    data = json.loads(manifest.read_text(encoding="utf-8"))
+    data["version"] = PLUGIN_VERSION
+    manifest.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+    print(f"\n  VERSION  {prior_version or '(new bundle)'} -> {PLUGIN_VERSION}")
+    return True
 DESCRIPTION = ("Curse of Aestrum — an interactive Dungeons & Dragons 5e campaign. Arrive in the "
                "duchy of Aestrum, where something is deeply and secretly wrong. Chapter 1. "
                "For adults: mature themes throughout, with a content rating chosen per session "
                "(T / M / AO; M by default, T the floor).")
 AUTHOR = "Cody Mallonee"
-DONATION_URL = ""      # set to a real donation link (Ko-fi / GitHub Sponsors) to add a Support section
+AUTHOR_URL = "https://github.com/cmkatarn"
+REPOSITORY = "https://github.com/cmkatarn/curse-of-aestrum-plugin"
+# HOMEPAGE is where a player lands for requirements, the rating scale, and how to start a game;
+# REPOSITORY is the source tree and the issue tracker. Distinct targets, so both fields earn a slot.
+HOMEPAGE = f"{REPOSITORY}/tree/main/plugins/curse-of-aestrum"
+ISSUES_URL = f"{REPOSITORY}/issues"
+MARKETPLACE_DESCRIPTION = ("Home of Curse of Aestrum — an interactive Dungeons & Dragons 5e "
+                           "campaign played in Claude Code, with the prose, story, and 5e engines "
+                           "it runs on bundled in.")
+DONATION_URL = "https://ko-fi.com/cmkatarn"   # empty suppresses the README's Support section entirely
 
 
 def _cmd(s: str) -> dict:
@@ -510,7 +585,9 @@ def write_meta() -> None:
         "name": PLUGIN_NAME,
         "version": PLUGIN_VERSION,
         "description": DESCRIPTION,
-        "author": {"name": AUTHOR},
+        "author": {"name": AUTHOR, "url": AUTHOR_URL},
+        "homepage": HOMEPAGE,
+        "repository": REPOSITORY,
         "keywords": ["dnd", "dnd5e", "ttrpg", "rpg", "interactive-fiction", "campaign"],
     }, indent=2) + "\n", encoding="utf-8")
 
@@ -536,13 +613,38 @@ def write_meta() -> None:
     (repo_root / ".claude-plugin").mkdir(parents=True, exist_ok=True)
     (repo_root / ".claude-plugin" / "marketplace.json").write_text(json.dumps({
         "name": PLUGIN_NAME,
-        "owner": {"name": AUTHOR},
+        "description": MARKETPLACE_DESCRIPTION,
+        "owner": {"name": AUTHOR, "url": AUTHOR_URL},
         "plugins": [{"name": PLUGIN_NAME, "source": "./plugins/curse-of-aestrum",
-                     "description": DESCRIPTION}],
+                     "description": DESCRIPTION,
+                     "author": {"name": AUTHOR, "url": AUTHOR_URL},
+                     "homepage": HOMEPAGE,
+                     "repository": REPOSITORY}],
     }, indent=2) + "\n", encoding="utf-8")
 
-    support = (f"\n## Support\n\nIf you enjoy it and want to support continued development: "
-               f"**{DONATION_URL}** — entirely optional.\n") if DONATION_URL else ""
+    # An installed player has no repo context — the marketplace id they typed is long gone from
+    # their scrollback - so the bundled README is the only place a bug channel can reach them, and
+    # the only place the model can read one out of when they ask mid-session.
+    bugs = f"""
+## Bugs & feedback
+
+Found a bug, a dead link, or a scene that went sideways? Open an issue:
+**[{ISSUES_URL.split("://", 1)[-1]}]({ISSUES_URL})**
+
+A useful report names the skill you were running (`scene`, `create-party`, …), the version from
+`claude plugin details {PLUGIN_NAME}`, and what you expected instead. Your play-state lives in your
+own `campaign_state/` folder, so paste from it only what the report needs — an issue is public.
+"""
+    # Tip jar, not a paywall: the link gates nothing, and saying so in the README is what keeps
+    # it readable as a thank-you rather than a storefront.
+    donation_label = DONATION_URL.split("://", 1)[-1].rstrip("/")
+    support = f"""
+## Support
+
+Curse of Aestrum is free, and a one-person project from the prose to the plumbing. If it gave you a
+good night at the table and you want to say thanks: **[{donation_label}]({DONATION_URL})** — entirely
+optional, and it unlocks nothing, because nothing is locked.
+""" if DONATION_URL else ""
     rating_table, rating_limits, content_notes = extract_rating_block()
     (OUT / "README.md").write_text(f"""# Curse of Aestrum
 
@@ -589,7 +691,7 @@ Open Claude Code in a **fresh, empty folder** (your play-state is written there,
 - `/{PLUGIN_NAME}:scene` — begin play.
 
 `/{PLUGIN_NAME}:mex` loads the core cycle mechanics if you want the how-it-works first.
-{support}
+{bugs}{support}
 ## Credits & license
 
 Curse of Aestrum by {AUTHOR}. Built on the Calliope (prose), Aria (story), and Bailly (5e)
@@ -657,8 +759,13 @@ def check_dangling_refs() -> None:
 
 def main() -> None:
     global PLUGIN_VERSION
-    PLUGIN_VERSION = resolve_version()               # reads the prior manifest; must precede rmtree
-    print(f"  version        {PLUGIN_VERSION}")
+    # Snapshot the previous bundle before it is cleared: its content is what "did anything change?"
+    # is measured against, and its version is what an unchanged rebuild keeps.
+    prior_fp = fingerprint(OUT)
+    prior_version = read_prior_version()
+    # Build carrying the prior version so the manifest is not itself a difference. finalize_version
+    # replaces it at the end if — and only if — the content moved.
+    PLUGIN_VERSION = prior_version or next_version(None)
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir(parents=True)
@@ -690,6 +797,7 @@ def main() -> None:
             print(f"    {v:3d}  {k}")
     else:
         print("\n  all references mapped.")
+    finalize_version(prior_fp, prior_version)
 
 
 if __name__ == "__main__":

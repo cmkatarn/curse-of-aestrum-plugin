@@ -1,13 +1,21 @@
 {
   "name": "curse-of-aestrum",
+  "description": "Home of Curse of Aestrum \u2014 an interactive Dungeons & Dragons 5e campaign played in Claude Code, with the prose, story, and 5e engines it runs on bundled in.",
   "owner": {
-    "name": "Cody Mallonee"
+    "name": "Cody Mallonee",
+    "url": "https://github.com/cmkatarn"
   },
   "plugins": [
     {
       "name": "curse-of-aestrum",
       "source": "./plugins/curse-of-aestrum",
-      "description": "Curse of Aestrum \u2014 an interactive Dungeons & Dragons 5e campaign. Arrive in the duchy of Aestrum, where something is deeply and secretly wrong. Chapter 1. For adults: mature themes throughout, with a content rating chosen per session (T / M / AO; M by default, T the floor)."
+      "description": "Curse of Aestrum \u2014 an interactive Dungeons & Dragons 5e campaign. Arrive in the duchy of Aestrum, where something is deeply and secretly wrong. Chapter 1. For adults: mature themes throughout, with a content rating chosen per session (T / M / AO; M by default, T the floor).",
+      "author": {
+        "name": "Cody Mallonee",
+        "url": "https://github.com/cmkatarn"
+      },
+      "homepage": "https://github.com/cmkatarn/curse-of-aestrum-plugin/tree/main/plugins/curse-of-aestrum",
+      "repository": "https://github.com/cmkatarn/curse-of-aestrum-plugin"
     }
   ]
 }

@@ -75,6 +75,21 @@ Open Claude Code in a **fresh, empty folder** (your play-state is written there,
 
 `/curse-of-aestrum:mex` loads the core cycle mechanics if you want the how-it-works first.
 
+## Bugs & feedback
+
+Found a bug, a dead link, or a scene that went sideways? Open an issue:
+**[github.com/cmkatarn/curse-of-aestrum-plugin/issues](https://github.com/cmkatarn/curse-of-aestrum-plugin/issues)**
+
+A useful report names the skill you were running (`scene`, `create-party`, …), the version from
+`claude plugin details curse-of-aestrum`, and what you expected instead. Your play-state lives in your
+own `campaign_state/` folder, so paste from it only what the report needs — an issue is public.
+
+## Support
+
+Curse of Aestrum is free, and a one-person project from the prose to the plumbing. If it gave you a
+good night at the table and you want to say thanks: **[ko-fi.com/cmkatarn](https://ko-fi.com/cmkatarn)** — entirely
+optional, and it unlocks nothing, because nothing is locked.
+
 ## Credits & license
 
 Curse of Aestrum by Cody Mallonee. Built on the Calliope (prose), Aria (story), and Bailly (5e)

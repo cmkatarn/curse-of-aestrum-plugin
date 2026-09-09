@@ -20,6 +20,13 @@ Then open Claude Code in a fresh, empty folder (your play-state is written there
 content rating you set per session that reaches fully explicit at its top tier. Scale, defaults, and
 the limits that hold regardless: [plugin README](plugins/curse-of-aestrum/README.md#content-rating).
 
+## Support
+
+The campaign is free and stays that way. It is a one-person project — the campaign, the
+bundled engines, and the build that assembles them — so if it gave you a good night at the
+table and you want to say thanks: **[ko-fi.com/cmkatarn](https://ko-fi.com/cmkatarn)**.
+Entirely optional, and it unlocks nothing, because nothing is locked.
+
 ## Repo layout
 
 - **`plugins/curse-of-aestrum/`** — the generated, installable plugin (self-contained: the
