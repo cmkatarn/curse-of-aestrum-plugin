@@ -60,7 +60,7 @@ The sense-availability sub-rule applies per `narration_modes.md`.
 
 CoA does not currently extend the perceptual envelope with
 setting-specific magical senses; D&D 5e perception extensions
-(darkvision, blindsight, tremorsense, true sight) belong in Canterbury
+(darkvision, blindsight, tremorsense, true sight) belong in Bailly
 (`rpg-5e-engine`) when added.
 
 ---
@@ -127,7 +127,7 @@ output.
 Curse of Aestrum is a *game*: checks with real stakes are **rolled**, and the
 character's sheet modifier decides the outcome. (A CoA run with no dice that
 bite would be a Pandora-style anthology wearing CoA's coat — dice-that-bite are
-the Canterbury layer CoA consumes and an anthology omits.) Two campaign-level
+the Bailly layer CoA consumes and an anthology omits.) Two campaign-level
 settings govern only how that resolution is *displayed*; they never change
 *whether* it resolves.
 
@@ -381,7 +381,7 @@ bare `cycle`/`the cycle` are legitimate in-fiction and must not be flagged.
 ### Player-meta vocabulary
 
 Activated by `rpg-5e-engine/rules/player_meta_tokens.md` (loaded at scene
-start). Canterbury supplies the 5e vocabulary — HP, AC, spell slots, saves,
+start). Bailly supplies the 5e vocabulary — HP, AC, spell slots, saves,
 DCs, initiative, modifiers, dice notation, advantage/disadvantage, ability
 scores — with structural disambiguators.
 
@@ -390,7 +390,7 @@ cycle, dead zone, revert, Recreate, Modify Memory*) are **in-fiction
 concepts** characters can know and use — not player-meta tokens. If a future
 CoA-specific mechanical subsystem produces dialogue leaks (e.g., a
 house-rule resource the party tracks numerically), add tokens here in
-Calliope's schema — not in Canterbury's shared file.
+Calliope's schema — not in Bailly's shared file.
 
 ### Future-state and identity-through-disguise
 
@@ -411,7 +411,7 @@ CoA **activates** the three asymmetric-aspect checks the engine appends as
 rows 16–18 of the gate.
 
 - **Language-comprehension (row 16) — ACTIVE.** Field source is the
-  Canterbury 5e sheet's spoken-language list, plus any readable-script
+  Bailly 5e sheet's spoken-language list, plus any readable-script
   literacy noted on the sheet or accrued in the campaign overlay. A
   character comprehends spoken content only in a language on that list, and
   reads only scripts in their literacy set. **Strict default if a character
@@ -681,7 +681,7 @@ Per the engine's generic scene-lifecycle (RESUME in
 [{{PLUGIN_ROOT}}/engines/prose-engine/scene/references/scene_lifecycle.md]({{PLUGIN_ROOT}}/engines/prose-engine/scene/references/scene_lifecycle.md#scene-lifecycle.resume)),
 Aria's
 [{{PLUGIN_ROOT}}/engines/story-engine/rules/story_lifecycle.md]({{PLUGIN_ROOT}}/engines/story-engine/rules/story_lifecycle.md)
-(the work-container mapping onto it), and Canterbury's RPG overlay
+(the work-container mapping onto it), and Bailly's RPG overlay
 [{{PLUGIN_ROOT}}/engines/rpg-5e-engine/rules/campaign_lifecycle.md]({{PLUGIN_ROOT}}/engines/rpg-5e-engine/rules/campaign_lifecycle.md),
 this override supplies:
 

@@ -23,7 +23,7 @@ the limits that hold regardless: [plugin README](plugins/curse-of-aestrum/README
 ## Repo layout
 
 - **`plugins/curse-of-aestrum/`** — the generated, installable plugin (self-contained: the
-  campaign content plus the bundled Calliope / Aria / Canterbury / gate engine files, with all
+  campaign content plus the bundled Calliope / Aria / Bailly / gate engine files, with all
   paths made portable). This is what the marketplace installs.
 - **`build/`** — the assembler that generates the plugin from the source repos (campaign +
   engines). Run with `py build/assemble.py`; point it at the source repos via the `COA_SRC`

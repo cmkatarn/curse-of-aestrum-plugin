@@ -9,7 +9,7 @@ version = 1
 # Roots whose *.md are scanned for outbound links, relative to this file's dir.
 # The campaign repo plus the sibling engines it cites. story-engine (Aria) is the
 # canonical home for the genre-agnostic scene/authoring rules CoA now reads
-# directly (Canterbury consumes Aria); scanning it keeps Aria internally green.
+# directly (Bailly consumes Aria); scanning it keeps Aria internally green.
 # Engines are vendored beneath this file, so "." already covers them.
 roots = ["."]
 
@@ -38,8 +38,8 @@ path = "engines/rpg-5e-engine"
 version = 1
 
 # Aria (story-engine): the genre-agnostic scene/authoring layer CoA now reads
-# directly for the de-duplicated rules (Canterbury → Aria; CoA → Aria for the
-# base, + Canterbury's 5e layer where one exists).
+# directly for the de-duplicated rules (Bailly → Aria; CoA → Aria for the
+# base, + Bailly's 5e layer where one exists).
 [engines.aria]
 path = "engines/story-engine"
 version = 1

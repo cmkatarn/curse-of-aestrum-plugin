@@ -1,4 +1,4 @@
-# Public contract surface of Canterbury (rpg-5e-engine).
+# Public contract surface of Bailly (rpg-5e-engine).
 #
 # Anchors listed here are the wording-independent ids a consumer may cite as
 # `<file>#<id>` (matching `<!-- anchor: <id> -->` markers). The reference-integrity
@@ -6,7 +6,7 @@
 # that the consumer's declared target version equals contract_version. Removing or
 # renaming a public anchor is a BREAKING change: bump contract_version.
 #
-# NOTE: Canterbury consumes Aria (story-engine) for the genre-agnostic core. The
+# NOTE: Bailly consumes Aria (story-engine) for the genre-agnostic core. The
 # former forks here have been de-duplicated: file_layering, progressive/connectable
 # authoring, and the neutral random-authoring procedure now live ONLY in Aria;
 # information_disclosure / private_information / scene_framing / random_character_

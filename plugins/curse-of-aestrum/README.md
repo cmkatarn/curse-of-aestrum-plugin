@@ -77,5 +77,5 @@ Open Claude Code in a **fresh, empty folder** (your play-state is written there,
 
 ## Credits & license
 
-Curse of Aestrum by Cody Mallonee. Built on the Calliope (prose), Aria (story), and Canterbury (5e)
+Curse of Aestrum by Cody Mallonee. Built on the Calliope (prose), Aria (story), and Bailly (5e)
 engines, bundled here. See each `engines/*/` subtree for its own license/contract.

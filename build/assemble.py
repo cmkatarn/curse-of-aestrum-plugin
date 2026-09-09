@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Curse of Aestrum plugin assembler.
 
-Reads the five source repos (CoA + Calliope/Aria/Canterbury/fiction-host), and emits a
+Reads the five source repos (CoA + Calliope/Aria/Bailly/fiction-host), and emits a
 self-contained, path-portable Claude Code plugin under ../plugins/curse-of-aestrum/.
 
 Path portability (see the plan's M0 RESULT): an installed plugin's skills get
@@ -592,7 +592,7 @@ Open Claude Code in a **fresh, empty folder** (your play-state is written there,
 {support}
 ## Credits & license
 
-Curse of Aestrum by {AUTHOR}. Built on the Calliope (prose), Aria (story), and Canterbury (5e)
+Curse of Aestrum by {AUTHOR}. Built on the Calliope (prose), Aria (story), and Bailly (5e)
 engines, bundled here. See each `engines/*/` subtree for its own license/contract.
 """, encoding="utf-8")
 

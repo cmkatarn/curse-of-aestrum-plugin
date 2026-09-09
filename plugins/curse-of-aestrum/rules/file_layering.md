@@ -24,13 +24,13 @@ Rules — game mechanics, race/class definitions, homebrew rulings — follow th
 
 | Layer | Path Convention | Purpose |
 |---|---|---|
-| **Engine** | Canterbury's `rules/` tree (`rpg-5e-engine`) | Generic D&D 5e mechanics. Setting-agnostic. |
-| **Campaign** | `rules/[file].md` (this repo) | Curse of Aestrum — homebrew that applies to every playthrough of CoA (time loop, dead zones, revert, etc.). Overlays Canterbury. |
+| **Engine** | Bailly's `rules/` tree (`rpg-5e-engine`) | Generic D&D 5e mechanics. Setting-agnostic. |
+| **Campaign** | `rules/[file].md` (this repo) | Curse of Aestrum — homebrew that applies to every playthrough of CoA (time loop, dead zones, revert, etc.). Overlays Bailly. |
 | **Instance** | `{{PROJECT_ROOT}}/campaign_state/<instance>/rules/[file].md` | This specific playthrough — table rulings, non-standard PC backgrounds, custom Oaths/lineages, one-off mechanics tied to a specific party. Overlays both Engine and Campaign. |
 
 Load order is **Engine → Campaign → Instance**. Last loaded wins on conflict.
 
-The Instance tier exists so a single playthrough can carry mechanical homebrew (a player's non-standard background, a custom subclass, a one-off ruling) without polluting the shared CoA `rules/` directory or the Canterbury engine. If the same homebrew appears across multiple campaigns, promote it upward to `rules/`.
+The Instance tier exists so a single playthrough can carry mechanical homebrew (a player's non-standard background, a custom subclass, a one-off ruling) without polluting the shared CoA `rules/` directory or the Bailly engine. If the same homebrew appears across multiple campaigns, promote it upward to `rules/`.
 
 ## Load Order
 

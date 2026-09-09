@@ -31,6 +31,6 @@ Each file codifies one game mechanic. Lore, motivation, and political context li
 - [consequences.md]({{PLUGIN_ROOT}}/rules/consequences.md) — How the world reacts to off-rail play. Three-tier model: proportional consequences for unexpected exploration, escalating danger for drifting from the story, wildcard danger for actively threatening canon.
 - [companion_animals.md]({{PLUGIN_ROOT}}/rules/companion_animals.md) — The two adoptable animals (dog, cat); no voice/POV, appearance indeterminate until adoption locks it, danger-alert (dog), judgment vs. treatment-based loyalty, undead instinct with per-scene acclimation, continuous memory, and the post-reveal realization beat. Content sheets: `{{PLUGIN_ROOT}}/npcs/chapter_1/stray_dog.md`, `stray_cat.md`.
 
-## Engine-Layer Mechanics (Canterbury)
+## Engine-Layer Mechanics (Bailly)
 
 Generic D&D 5e mechanics — combat presentation, turn order & pacing, active-effects tracking, scene framing, information disclosure, private information, social checks, searches & loot, race anatomy — live in the shared engine at `{{PLUGIN_ROOT}}/engines/rpg-5e-engine/rules` and are loaded per the `scene` skill's mechanics table. This index covers only Curse of Aestrum homebrew: the loop, antimagic, and the setting's overrides/extensions of engine rules (`item_persistence`, `travel`, `rest_and_recovery`, `death_and_dying`, `consequences`).

@@ -1,4 +1,4 @@
-# Canterbury — player-meta tokens (Calliope gate Row 10), machine-readable mirror.
+# Bailly — player-meta tokens (Calliope gate Row 10), machine-readable mirror.
 #
 # Deterministic-lint sidecar for the closed-vocabulary subset of player_meta_tokens.md.
 # The .md remains the canonical, model-facing spec (with mundane-use guidance and
