@@ -64,7 +64,7 @@ COPY_SPECS: list[tuple[Path, str]] = [
     (COA / "items", "items"),
     (COA / "quests", "quests"),
     (COA / "party", "party"),
-    (COA / "scripts" / "flush_campaign_staging.ps1", "scripts/flush_campaign_staging.ps1"),
+    (COA / "scripts" / "flush_campaign_staging.py", "scripts/flush_campaign_staging.py"),
     (DOCS / "prose-engine" / "scene", "engines/prose-engine/scene"),
     (DOCS / "prose-engine" / "CONTRACT.toml", "engines/prose-engine/CONTRACT.toml"),
     (DOCS / "story-engine" / "rules", "engines/story-engine/rules"),
@@ -75,10 +75,15 @@ COPY_SPECS: list[tuple[Path, str]] = [
     (DOCS / "rpg-5e-engine" / "rules", "engines/rpg-5e-engine/rules"),
     (DOCS / "rpg-5e-engine" / "CONTRACT.toml", "engines/rpg-5e-engine/CONTRACT.toml"),
     (DOCS / "fiction-host" / "claude_code_gate", "engines/fiction-host/claude_code_gate"),
-    # Only what the gate hooks import — runtime.lint (+ the package marker). NOT the LLM
-    # backends / dispatch / state (those are for the standalone host, unneeded in the plugin).
+    # Only what play-time tooling imports: runtime.lint for the gate hooks, runtime.state for the
+    # save flush (+ the package marker). NOT the LLM backends / dispatch — those are for the
+    # standalone host and are unneeded here.
     (DOCS / "fiction-host" / "runtime" / "__init__.py", "engines/fiction-host/runtime/__init__.py"),
     (DOCS / "fiction-host" / "runtime" / "lint", "engines/fiction-host/runtime/lint"),
+    # state.py is stdlib-only and holds append_delta, the one writer of the overlay byte format.
+    # scripts/flush_campaign_staging.py calls it rather than reimplementing it, so the format has
+    # exactly one implementation across the plugin and the standalone host.
+    (DOCS / "fiction-host" / "runtime" / "state.py", "engines/fiction-host/runtime/state.py"),
     # The integrity checkers: stdlib-only, so they vendor without pulling the host in.
     # Their CLI is build/assets/plugin_runtime_main.py (see emit_runtime_main), NOT
     # fiction-host's own __main__, which imports the whole engine/backends chain.
@@ -175,6 +180,11 @@ def resolve_ref(token: str, bases: list[Path]) -> str | None:
 _MD_LINK = re.compile(r"\[([^\]\n]*)\]\(([^)\s]+)\)")
 _INLINE_CODE = re.compile(r"`([^`\n]+)`")
 _BARE_ENGINE = re.compile(r"(?:\.\./)+(?:" + _ENGINE_NAMES + r")/[\w./-]+\.\w+")
+# A fenced command block is not inline code and not a markdown link, so neither of the wrapped
+# rewriters sees the script path in the save invocation. Left bare it resolved against the player's
+# own working directory at play time, where `scripts/` does not exist — the save step pointed at
+# nothing on every platform. Matched anywhere in the text, like the campaign_state rule below.
+_BARE_SCRIPT = re.compile(r"(?<![\w/{`($.-])scripts/[\w.-]+\.py\b")
 _BARE_STATE = re.compile(r"(?<![\w/{`($])campaign_state/[\w./<>*-]+")
 
 
@@ -215,6 +225,7 @@ def rewrite_text(text: str, src_file: Path) -> str:
     # belt-and-suspenders: un-wrapped engine escapes / campaign_state mentions in prose
     text = _BARE_ENGINE.sub(lambda m: resolve_ref(m.group(0), bases) or m.group(0), text)
     text = _BARE_STATE.sub(lambda m: "{{PROJECT_ROOT}}/" + m.group(0), text)
+    text = _BARE_SCRIPT.sub(lambda m: "{{PLUGIN_ROOT}}/" + m.group(0), text)
     return text
 
 
@@ -355,11 +366,17 @@ def fingerprint(root: Path) -> dict[str, str]:
 
     The assembler is deterministic — nothing but the version carries a timestamp — so two
     fingerprints differ if and only if the sources did.
+
+    Bytecode caches are excluded. The build clears OUT, so a __pycache__ only exists because
+    something RAN the bundled Python between builds — testing a hook or the flush script does it.
+    Counting those made the next build report a change and bump the version with no source edit
+    behind it, which is exactly the question this fingerprint exists to answer.
     """
     if not root.exists():
         return {}
     return {f.relative_to(root).as_posix(): hashlib.sha256(f.read_bytes()).hexdigest()
-            for f in sorted(root.rglob("*")) if f.is_file()}
+            for f in sorted(root.rglob("*"))
+            if f.is_file() and "__pycache__" not in f.parts}
 
 
 def finalize_version(prior_fp: dict[str, str], prior_version: str | None) -> bool:

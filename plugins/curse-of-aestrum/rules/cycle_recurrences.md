@@ -120,7 +120,7 @@ separate mechanism. When a deterministic, loop-repeatable beat first occurs (or 
 new branch is discovered), it is written into the in-flight **staging file**
 (`{{PROJECT_ROOT}}/campaign_state/<C>/staging/<sid>.md`) as part of that beat's deltas — the same
 compose-during-play staging tail that carries every other delta — and **flushed to
-the overlay on `save campaign state`** by `flush_campaign_staging.ps1`. The D1
+the overlay on `save campaign state`** by `flush_campaign_staging.py`. The D1
 explicit-save discipline holds: nothing reaches an overlay until an explicit save.
 
 **Staging routing + entry format.** A recurrence is staged as a self-identifying

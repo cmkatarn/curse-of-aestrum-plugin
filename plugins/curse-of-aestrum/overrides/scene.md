@@ -713,7 +713,7 @@ this override supplies:
 > format with CoA's domains, and the flush wiring.
 
 CoA **stages** each confirmed beat's deltas during play and **flushes** them
-at save time via `scripts/flush_campaign_staging.ps1` (the scene skill's
+at save time via `{{PLUGIN_ROOT}}/scripts/flush_campaign_staging.py` (the scene skill's
 "Save handling" invokes it). Two consequences for the save cost:
 
 - **The model never reads or writes an overlay at save time.** §5a's

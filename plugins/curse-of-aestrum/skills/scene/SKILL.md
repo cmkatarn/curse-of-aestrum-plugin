@@ -496,12 +496,12 @@ staging tail would. Save is the implicit acceptance of the latest beat.
 If the staging file does not yet exist (single-beat scene), `Write` it
 from scratch per the override's staging format.
 
-**Step 2 — invoke the flush script.** One `Bash` call, OS-agnostic
-(prefers `pwsh`, falls back to Windows PowerShell; `-ExecutionPolicy
-Bypass` is per-process and a harmless no-op off-Windows):
+**Step 2 — invoke the flush script.** One `Bash` call. It picks whichever
+Python the machine has (`py` on Windows, `python3` elsewhere) — the same
+interpreter the gate hooks already require, so this adds no dependency:
 
 ```
-if command -v pwsh >/dev/null 2>&1; then pwsh -NoProfile -ExecutionPolicy Bypass -File scripts/flush_campaign_staging.ps1 -Campaign <C>; else powershell -NoProfile -ExecutionPolicy Bypass -File scripts/flush_campaign_staging.ps1 -Campaign <C>; fi
+PY=$(command -v py || command -v python3 || command -v python); "$PY" {{PLUGIN_ROOT}}/scripts/flush_campaign_staging.py --campaign <C>
 ```
 
 The script is deterministic. It reads the staging file and **appends**
