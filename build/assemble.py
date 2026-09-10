@@ -152,6 +152,12 @@ def resolve_ref(token: str, bases: list[Path]) -> str | None:
         frag = "#" + rest
     if not token or token.startswith(_SKIP_PREFIX):
         return None
+    if not token.strip("./"):
+        # A token of nothing but dots and slashes (`..`, `../`, `./`) is prose
+        # talking *about* relative paths, not a reference to one. Resolved, `../`
+        # lands on the CoA root and rewrites to `{{PLUGIN_ROOT}}/.` — turning a
+        # rule that says "never use a `../`-style link" into gibberish.
+        return None
     if token.startswith("campaign_state/") or token == "campaign_state":
         return "{{PROJECT_ROOT}}/" + token + frag
     if not (token.endswith(_PATH_EXT) or token.startswith("../")):

@@ -53,7 +53,7 @@ The large forest within Aestrum. Contains Aliss Perisdottir's three-story stone 
 
 **The Misty Forest Shar Shrine (loop anchor):** A ruined structure of dark stone with only one wall still standing. Contains two stained glass windows, both stained deep magenta. Rowan built a personal effigy here (a replacement for the Shar statue Hati relocated to the Duskwall shrine). This shrine is the second prayer anchor point Shar uses to sustain the cycle — Rowan prays here each morning for one more day/chance to convince Miri.
 
-**The forest dead zone:** Third significant dead zone in Aestrum. Rowan returns inside it each night to preserve his memory.
+**The forest dead zone:** Third significant dead zone in Aestrum. **Empty by default** — Rowan's anchor is the Deckard Estate. He shelters here only when displaced from it, and his nightly dead-zone rule means he will reach some dead zone before midnight regardless (see [rowan_deckard.md]({{PLUGIN_ROOT}}/npcs/chapter_1/rowan_deckard.md)).
 
 ---
 

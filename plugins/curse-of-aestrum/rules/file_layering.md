@@ -12,9 +12,9 @@ The campaign uses a three-layer file model so that location, NPC, and faction st
 
 | Layer | Path Convention | Purpose |
 |---|---|---|
-| **Base** | `campaign/[domain]/[file].md` | The canonical campaign-start state. Chapter 1 default. Authored once, edited rarely. The world as it exists when a new playthrough begins. |
-| **Chapter** | `campaign/[domain]/chapter_N/[file].md` | A planned future state that applies once chapter N begins. Overlay on base. Authored deliberately as the campaign's chapter-level transitions are designed. |
-| **Current** | `campaign/[domain]/saved/[file].md` | The live, accumulating campaign state. Player actions, kills, decisions, observed events. Overlay on whatever chapter is active. |
+| **Base** | `[domain]/[file].md` | The canonical campaign-start state. Chapter 1 default. Authored once, edited rarely. The world as it exists when a new playthrough begins. |
+| **Chapter** | `[domain]/chapter_N/[file].md` | A planned future state that applies once chapter N begins. Overlay on base. Authored deliberately as the campaign's chapter-level transitions are designed. |
+| **Current** | `{{PROJECT_ROOT}}/campaign_state/<instance>/[domain]/saved/[file].md` | The live, accumulating campaign state. Player actions, kills, decisions, observed events. Overlay on whatever chapter is active. |
 
 `[domain]` is one of: `locations`, `npcs`, `party`, `factions`, `lore`, etc.
 
@@ -123,6 +123,29 @@ event, character, or item. If a canon edit can only be expressed by naming
 play-generated data, that fact belongs in `{{PROJECT_ROOT}}/campaign_state/` instead — not in
 canon. (This is the authoring-side companion to the play-time write-scope rule
 that already forbids *saves* from editing canon without explicit approval.)
+
+### How a `{{PROJECT_ROOT}}/campaign_state/` file cites canon (HARD)
+
+Play state lives under `{{PROJECT_ROOT}}/campaign_state/<instance>/…`; canon lives in the campaign
+content tree. **The two are not guaranteed to share a root.** In a plugin install
+they never do — canon ships inside the installed plugin, while `{{PROJECT_ROOT}}/campaign_state/`
+is written into the player's own working directory — so a `../`-style link from
+play state up into canon resolves to nothing, however many levels it climbs.
+
+Therefore, in any file written under `{{PROJECT_ROOT}}/campaign_state/`:
+
+- **Cite canon by its root-relative path in backticks** — `{{PLUGIN_ROOT}}/npcs/chapter_1/jiasha.md`,
+  `{{PLUGIN_ROOT}}/rules/optional_rules.md`, `{{PLUGIN_ROOT}}/party/preferences.md`. This is the form the
+  write-scope rules above already use, and it resolves in every deployment.
+- **Never cite canon as a `../`-prefixed markdown link.** Counting `../` levels
+  from a play-state file is guesswork — wrong about as often as it is right — and
+  wrong *by construction* wherever the two trees are split.
+- **Links that stay inside `{{PROJECT_ROOT}}/campaign_state/<instance>/` are fine.** One overlay
+  pointing at a sibling overlay never leaves a tree that always moves together;
+  an NPC overlay linking to `{{PROJECT_ROOT}}/campaign_state/<instance>/party/saved/<pc>.md`
+  is correct and stays.
+
+The same rule governs every scaffold a skill emits into `{{PROJECT_ROOT}}/campaign_state/`.
 
 ## Location NPC Manifest (`npcs_present`)
 

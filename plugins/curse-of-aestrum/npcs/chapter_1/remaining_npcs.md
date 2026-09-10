@@ -546,7 +546,7 @@ A Gargantuan Spider inhabiting the Misty Forest. If slain, it stays **permanentl
 
 Regent of Nortmunde. Holds the capital city and is tasked with executing the previous king's standing rules and mandates until a new king is crowned. Carries no real political power of his own. Publicly presents as a proud family man, deeply attached to his family name and crest. Cold, formal, and self-important. He is not encountered in Chapter 1.
 
-**DM Notes — Character model:** Grand Moff Tarkin meets Tywin Lannister.
+**DM Notes — Playing him:** Patrician cold. Immaculate formality used as distance rather than courtesy. He does not raise his voice, does not argue, and treats disagreement as a defect in the other person's understanding rather than a position owed an answer. Every decision runs through the family name first and the kingdom second — the crest is what he actually serves, and he would call that duty without hearing the irony. Cruelty arrives as administration: he does not relish a hard call, he files it. The tension worth playing is that **the bearing outruns the office** — he carries himself as an absolute authority while holding a caretaker's post with no power of its own, and he is careful never to let anyone test the gap.
 
 **The king's last night:** Before the king died, Tarwick received a warning letter from Veyra Sollin identifying the poisoning. He did not act — he calculated that a king dying of natural causes was tidier than a king dying of confirmed poisoning. He then used the company seal on Veyra's letter to identify and locate her, and has been searching for her since.
 

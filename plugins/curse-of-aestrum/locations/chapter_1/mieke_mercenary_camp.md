@@ -45,7 +45,7 @@ The camp is in a clearing about forty feet across. Mist persists in the canopy a
   is a quarter-mile east past the shrine, which puts the one shelter that keeps a party
   conscious five minutes' walk from the one camp that is defenceless while they are.
   Note the clock inside the window: **Teleport fires at 3:00 AM** and returns sleeping
-  individuals to their reset point, Jiasha included.
+  individuals to their reset point, Jiasha included. And note who else a dead zone keeps conscious: **Rowan is not slept by the loop either**, wherever he is sheltering — see the Rowan note in DM Notes before treating these six hours as empty.
 - **From the west (the trail / road approach):** the patrol's standard route covers the approach trail back toward the road. A stealthy party can flank by leaving the trail thirty feet out and circling through the brush.
 - **From the east (the shrine and dead-zone side):** less watched. The shrine — a quarter-mile east — is a soft cover spot to stage from; beyond it the band has noticed the dead zone but does not understand it, treats that ground as "haunted," and avoids it. A party approaching from the east has a cleaner line, and the patrol crosses the shrine-side only intermittently.
 - **From the flanks (north or south, through brush):** off-trail on either side; passable with a stealthy approach but slower going through the undergrowth.
@@ -84,7 +84,29 @@ The camp runs the same day every day:
 
 ## Hazards
 
-- **Rowan, in wolf form.** Rowan hunts the dead-zone perimeter during certain hours (see [misty_forest.md]({{PLUGIN_ROOT}}/locations/chapter_1/misty_forest.md)). The camp is inside his hunting territory but he has not attacked it — partly because four armed professionals keeping a standing watch are a bad hunt for a lone predator who has to go on living in this forest (they would notice him, they would hunt back, and they would cost him the quiet his whole routine depends on), and partly because his obsession is Miri, not Jiasha. **Note what the deterrent is not: danger.** Rowan is immune to nonmagical weapons that are not silvered ([combat profile]({{PLUGIN_ROOT}}/npcs/chapter_1/rowan_deckard.md#combat-profile)), and the band carries plain steel and plain arrows — nothing in this camp can put a scratch on him. He leaves them alone because killing them buys him nothing and costs him peace, not because they could stop him. **If Rowan is displaced from his normal cycle** (the party kills him on a prior day, moves his body, otherwise disrupts the murder cycle with Miri), he may turn on the camp. When he does it is not a battle, it is an execution: the camp gets slaughtered, Jiasha included, on the night Rowan's pattern breaks, and he has to do it in the evening window before midnight, because after 12:00 AM he is asleep in his own dead zone and the camp is unconscious anyway. Two awake and two in their tents is not a defence against something they cannot wound. The party racing to rescue Jiasha after disrupting Rowan needs to move quickly. See [misty_forest.md]({{PLUGIN_ROOT}}/locations/chapter_1/misty_forest.md) and [rowan_deckard.md]({{PLUGIN_ROOT}}/npcs/chapter_1/rowan_deckard.md).
+- **Rowan, in wolf form.** Rowan hunts the dead-zone perimeter during certain hours (see [misty_forest.md]({{PLUGIN_ROOT}}/locations/chapter_1/misty_forest.md)). The camp is inside his hunting territory but he has not attacked it — partly because four armed professionals keeping a standing watch are a bad hunt for a lone predator who has to go on living in this forest (they would notice him, they would hunt back, and they would cost him the quiet his whole routine depends on), and partly because his obsession is Miri, not Jiasha. **Note what the deterrent is not: danger.** Rowan is immune to nonmagical weapons that are not silvered ([combat profile]({{PLUGIN_ROOT}}/npcs/chapter_1/rowan_deckard.md#combat-profile)), and the band carries plain steel and plain arrows — nothing in this camp can put a scratch on him. He leaves them alone because killing them buys him nothing and costs him peace, not because they could stop him.
+- **If Rowan is displaced from his normal cycle** (the party kills him on a prior day,
+  moves his body, otherwise disrupts the murder cycle with Miri), he may turn on the
+  camp. When he does it is not a battle, it is an execution: the camp gets slaughtered,
+  Jiasha included, and two awake with two in their tents is not a defence against
+  something they cannot wound. The party racing to rescue Jiasha after disrupting Rowan
+  needs to move quickly. See [misty_forest.md]({{PLUGIN_ROOT}}/locations/chapter_1/misty_forest.md) and
+  [rowan_deckard.md]({{PLUGIN_ROOT}}/npcs/chapter_1/rowan_deckard.md).
+  - **Do not tie this to an hour or to where he sleeps.** A dead zone does not *put*
+    Rowan to sleep — it only fails to. He is sheltered from the loop's Sleep step
+    wherever he shelters, which makes him one of the few things in Aestrum that can be
+    awake and moving between midnight and 6 AM, and whether he actually is on any given
+    night is habit rather than mechanics. The displacement branch is by definition the
+    state in which that habit has already broken — [misty_forest.md]({{PLUGIN_ROOT}}/locations/chapter_1/misty_forest.md)
+    calls a displaced Rowan "off-rhythm, more volatile." **There is no hour at this camp
+    that is safe from him for mechanical reasons.**
+  - **Displacement moves him toward the camp, not away.** Driven off the estate he falls
+    back to the **Misty Forest dead zone** — a quarter-mile east past the shrine, rather
+    than the walk south to the Deckard Estate. So the branch that makes him dangerous to
+    the band also halves his distance to them. It has a second edge: that fallback is the
+    same shelter a party would be using to stay conscious through midnight (see
+    Approaches). By default it is empty and theirs; once he is displaced, they are
+    sharing it.
 - **The Misty Forest dead zone.** Useful — the dead-zone permanent-kill mechanic applies to Mieke and the band the same way it applies to Rowan (see his file). The party that figures it out for one threat figures it out for the other.
 - **Spider territory** is east of the forest's center, well away from the camp. Not a hazard at this location.
 

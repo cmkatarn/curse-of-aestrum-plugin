@@ -33,7 +33,7 @@ Created by the Acolypyrrhic Battles (~1280 DR), when multi-deity warfare concent
 Three major dead zones documented on the Salient Cartographer's map:
 - **The Deckard Estate** — largest, site of the divine intervention; the party's base
 - **Nahamkate Desert area** — where the Nahamkate Temple is located
-- **Misty Forest dead zone** — where the Shar effigy shrine is located; Rowan shelters here nightly to preserve his memory
+- **Misty Forest dead zone** — the third major dead zone. **Empty by default:** Rowan's anchor is the Deckard Estate and he shelters there, falling back to this one only if a party displaces him. The Shar effigy shrine sits roughly 100 yards **outside** its western boundary, deliberately — magic-based prayer cannot be heard from inside an antimagic field, so the shrine's position outside the zone is what lets it function as a loop anchor at all
 
 Numerous minor dead zone pockets are scattered throughout Aestrum. Mechanical behavior is codified in [dead_zones.md]({{PLUGIN_ROOT}}/rules/dead_zones.md).
 

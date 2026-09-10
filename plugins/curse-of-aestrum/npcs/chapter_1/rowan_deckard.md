@@ -34,17 +34,84 @@ Wakes at the Deckard Estate. The effigy is gone — it does not reset. He carves
 - **Trespass-triggered — senses fresh encroachment on his ground:** if he catches a transgressor near the shrine, he breaks off to **hunt them down instead of going to Miri,** sweeping **west** — toward the hunting-trail approach, the likeliest intruder ground (and where the Black Arrows band camps while Jiasha is held). The hunt is when he **transforms.** This is **conditional on a sensed trespass, not a daily event:** the mercenaries he otherwise tolerates at the edge of his range (he has not moved against them — see Behavioral Profile), and a fresh intruder like a tailing party is exactly what tips him into the hunt.
 - **Miri-lost end-state — believes he has no chance left:** if a party steals Miri away and he comes to accept the courtship is over, his days **collapse onto the shrine** — he no longer leaves for town, and stays there praying and guarding it. (This hardens anchor 2: he becomes far more difficult to keep away from the shrine — see the loop-breaking notes.)
 
-Returns to the estate dead zone at night to preserve his memory.
+**Shelters in a dead zone before every midnight — without exception.** This is the fixed point of his day, not a preference. He knows dead zones block the reset (he has tested the boundary), so he begins moving toward one at nightfall and does not cut it fine. The **Deckard Estate** is where he goes when he can; if he cannot, he goes to whichever dead zone he can reach — the [Misty Forest dead zone]({{PLUGIN_ROOT}}/locations/chapter_1/misty_forest_dead_zone.md) when displaced, or one of the minor pockets scattered through the duchy if he is caught far from both. **This priority outranks everything else he wants that day.** If nightfall finds him mid-hunt he breaks off the hunt; if it finds him with Miri anywhere but the estate, he leaves her. Nothing he is doing is worth the risk of being outside one at 12:00:00 AM.
 
 ## Behavioral Profile
 
 - Driven by possession, not love. He wants Miri; the ten years of the loop have collapsed the distinction between courtship and control.
+- **Getting inside a dead zone by midnight is his highest standing priority**, above the hunt, above the shrine, above Miri. It is the one behavior that has never varied in ten years, and it is why he is still the only person in Aestrum carrying a continuous memory. See Daily Routine — treat it as a hard behavioral rule, not a tendency to weigh against others.
 - His estate dead zone is his anchor. He will not willingly leave it for extended periods — it is the only place where he is fully himself.
 - When threatened, his first move is retreat into the dead zone. It preserves his memory and suppresses his lycanthropy; outside it, he is volatile and hypersensitive.
 - Follows Shar's direction only when it aligns with his own interests. He will defy her if she asks him to harm Miri.
 - Violence has collapsed from last resort to first resort. Thousands of cycles of failed courtship eroded the gap. He acts faster than he once did.
 - Thousands of cycles of failed courtship have primed him for "if I can't have her, no one can" territory; a party that disrupts his pattern — especially by taking his estate — tips him into it.
 - Everything is being stolen from him. His shrine statue — taken by Hati, relocated to Duskwall without his consent. His house — occupied by the party. Miri — perpetually out of reach, now actively protected. And every morning: Hati's idol sitting at his shrine, reset into place, her hands and her vision where his statue used to be. A replacement he didn't ask for. He cannot remove it permanently. The effigy he carves each day is the one thing he can place there that belongs entirely to him — the one act of ownership the loop cannot undo.
+
+## Speech Pattern
+
+**The shape of him:** wheedling, aggrieved and self-dramatizing underneath — a halting,
+stop-start cadence and a reach for words above his station — but *trained*, and carrying
+real presence when the training holds. A man built this way normally spends his life
+trying to be the strongest presence in the room while everyone watching can see him fail
+at it. Rowan does not fail. The difference is not talent; it is **ten years of rehearsal
+on one woman**, and it holds only over the ground he has rehearsed.
+
+### The two registers
+
+**The rehearsed voice** — with Miri, on script. Quiet, warm, unhurried, and uncannily
+well-timed. Slightly elevated, slightly old-fashioned diction, delivered without strain:
+*"most devoutly," "she has seen fit to favor me," "I would not presume."* A farmer talking
+above his station and getting away with it. He does not raise his voice and does not need
+to; he takes up the room by being the only person in it who already knows what happens
+next. Miri's own account is the whole of it — *"He knew everything that I was going to
+say, and he knew exactly how to respond."* That is literal. He does.
+
+**The real voice** — everyone else, always. Halting, stop-start, doubling back to revise
+mid-sentence. The same reach for elevated diction, now overshooting and landing wrong.
+Aggrieved, and it comes out as bookkeeping: things are *mine*, things were *taken*, he is
+*owed*. He narrates his own suffering to people who did not ask. When it cracks further
+the volume does not rise — the **speed** does, words crowding out in a rush and then
+stopping dead.
+
+### Why the suave register is brittle
+
+**It is iteration, not charm.** He has had roughly 3,650 runs at the same day and has sanded
+off every word that did not work. So it is flawless — over exactly the ground he has
+covered, and nowhere else.
+
+- **He has rehearsed the courtship. He has never once rehearsed the rejection.** Thousands
+  of attempts and he has never found words that survive her saying no — which is precisely
+  why every cycle ends in murder rather than an argument. The mask thins on the walk to
+  the estate ([miri_amblecrown.md]({{PLUGIN_ROOT}}/npcs/chapter_1/miri_amblecrown.md)) because *the script is running out*,
+  not because he stops trying.
+- **With the party he has no script at all.** They are new, they do not run his day, and he
+  has had no rehearsals on them. The real voice is what they get from the first sentence —
+  which is why everyone but Miri finds him asocial, difficult, and quick to destabilize.
+  This is the in-fiction reason his sheet gives him **CHA 10**: outside the script he is
+  genuinely bad at people.
+- **The tell is the seam between them.** He shifts registers mid-line and it is audible.
+  His canon opening does it in one breath: *"I prayed most devoutly to My Lady for one more
+  chance, and she has seen fit to favor me... You came back."* — high formal, then the drop
+  into plain and intimate. And *"So even now you struggle with it — under it"* is the
+  stop-start showing through the trained voice: he reaches, dislikes the word, and corrects
+  in front of you. A party listening for that seam can hear the rehearsal underneath.
+
+### Sample lines
+
+*Rehearsed (Miri, on script):*
+> *"You've been on your feet since the bell. Sit with me a while — the market will keep."*
+> *"I would not presume to know your mind. I only know you looked tired, and no one else thought to say so."*
+
+*Real (the party, or Miri once the script runs out):*
+> *"That's — that's not. You don't get to stand there and say that to me. On my own ground."*
+> *"They took the statue. Did she tell you that part? Walked onto my land and took it, and left me a — a substitute. As though I would not notice the difference."*
+> *"I have been patient. I have been more patient than anyone has ever once been with me."*
+
+**Rule of thumb:** if he is talking to Miri about anything he has said to her before, play
+him as the most attuned man she has ever met — because that is what she experiences and it
+is not an illusion, it is research. The moment the conversation goes somewhere he has not
+been, drop to the real voice mid-sentence and do not ease into it. The seam is the
+character.
 
 ## Combat Profile
 
@@ -210,6 +277,37 @@ midnight anyway.
 
 ## DM Notes
 
+- **He has never been snapshotted, and that is not luck — it is the nightly shelter rule
+  (see Daily Routine).** Per [snapshot.md]({{PLUGIN_ROOT}}/rules/snapshot.md), a subject who has
+  only ever slept inside a dead zone since the loop began has **no snapshot on file**;
+  one is taken the first midnight they sleep outside one. Rowan has made that midnight
+  every night for ten years. It is the mechanical reason he is the loop's one genuinely
+  free agent rather than another resident running the same day.
+- **Which makes "keep him out past midnight" a real and very hard party lever.** If
+  anyone ever holds him outside every dead zone through 12:00:00 AM — pinned, restrained,
+  cornered far from a pocket, or simply outrun — Shar takes his snapshot that night. He
+  does **not** lose the decade: the snapshot captures his memory as it stands, so he keeps
+  everything he knew walking into that midnight.
+- **What he loses is safety, not the ability to remember.** Once a snapshot exists, the
+  ordinary rules apply to him like anyone else: a dead-zone night still blocks the revert,
+  so he **does** keep accumulating new memory on any night he shelters — but the snapshot
+  stays on file forever, and the first midnight he ever spends outside a dead zone again,
+  the revert fires and everything since is gone
+  ([snapshot.md § Survives dead zones]({{PLUGIN_ROOT}}/rules/snapshot.md), [dead_zones.md]({{PLUGIN_ROOT}}/rules/dead_zones.md)).
+  He is not frozen; he is **one bad night away from being rolled back**, permanently and
+  for the rest of the loop. Every day he lives after that is provisional.
+  - The cruelty of it is that his nightly rule stops being caution and becomes the only
+    thing holding his life together. Before the snapshot, missing a midnight costs him a
+    day. After it, missing a *single* midnight costs him everything he has built since.
+    The party that snapshots him has not beaten him — it has put his decade on a thread
+    and handed him the job of never once dropping it. Treat that as a campaign-scale
+    outcome, not an encounter result.
+- **He keeps a wide margin because he does not know what it would actually cost.** His
+  Character Memory is explicit that he does not know how the loop works — only that dead
+  zones stop the reset, which he established by testing the boundary. He has never risked
+  finding out what one missed midnight does, and he assumes it would erase him. That fear
+  is why he starts moving at nightfall rather than at eleven. A party that understands the
+  snapshot mechanic understands his position better than he does.
 - **Werewolf mechanics:** Werewolf since birth. Dead zone suppresses the condition entirely; outside it he is hypersensitive and volatile. Silver vulnerability applies. Can transform during daylight — transformations are tied to emotional state and proximity to the dead zone rather than lunar cycles.
 - **Miri mechanics:** Miri's presence *amplifies* whatever the moon is already doing to Rowan — she intensifies, she does not suppress. Under a crescent moon, her presence deepens the quiet (the peace he calls "relief"). Under a full moon, her proximity amplifies the instincts — more powerful, more feral. The first murder may have occurred during a full moon; her amplifying presence combined with peak instinct may have been what pushed him past the threshold the first time. He cannot replicate any part of this effect with anyone else.
 - **Shar's role in Miri's resurrection:** Each night Miri dies within the dead zone, Shar retrieves her soul and recreates a new body — specifically to keep her trapped in Aestrum as part of the loop's purpose. Rowan has no knowledge of this; he simply notices Miri returns each morning.
@@ -220,6 +318,6 @@ midnight anyway.
 - **The large wolf:** Rowan hunts and ranges in wolf form near the Misty Forest Shar shrine. A party that has only glimpsed the wolf will not connect it to the man; the link becomes available on examining the area (wolf tracks giving way to boot prints).
 - **Post-Aestrum fate:** Undecided — the party may fight him, or Miri may convince him to live as a hermit. His value to Shar as a mobile asset depends on this outcome.
 
-**Confrontation dialog:** See `party/miri_amblecrown.md` — the full Rowan encounter dialog, Selûne's Mirror first use, and Shar's Debt trigger are documented there.
+**Confrontation dialog:** See [miri_amblecrown.md § DM Notes]({{PLUGIN_ROOT}}/npcs/chapter_1/miri_amblecrown.md#dm-notes) — the full Rowan encounter dialog, Selûne's Mirror first use, and Shar's Debt trigger are documented there.
 
 **Key DM note — Rowan's opening line:** He tells the party, from his own mouth, exactly what sustains the loop: *"I prayed most devoutly to My Lady for one more chance."* He does not know he is doing this.

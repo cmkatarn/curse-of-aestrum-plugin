@@ -46,6 +46,11 @@ Summary for this skill:
   (a change applies on the next scene). See
   [scene.md]({{PLUGIN_ROOT}}/overrides/scene.md#display-mode-and-dice-resolution), *Display mode and dice
   resolution*.
+- **Citing canon from either scaffold:** both files sit under `{{PROJECT_ROOT}}/campaign_state/`,
+  so they cite the canon file they overlay by its root-relative path in backticks
+  — `{{PLUGIN_ROOT}}/party/preferences.md`, `{{PLUGIN_ROOT}}/rules/optional_rules.md` — never as a `../`-prefixed
+  markdown link. See [{{PLUGIN_ROOT}}/rules/file_layering.md]({{PLUGIN_ROOT}}/rules/file_layering.md),
+  *How a `{{PROJECT_ROOT}}/campaign_state/` file cites canon*.
 
 If the user picks "new campaign" with a slug that already exists, error
 and ask for a different name (or to use the existing). After creating,
