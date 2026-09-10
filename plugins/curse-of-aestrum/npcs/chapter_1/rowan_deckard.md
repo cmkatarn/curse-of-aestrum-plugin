@@ -18,7 +18,7 @@ Owner of the Deckard Estate and devout cultist of Shar. A werewolf who has suffe
 
 When the cycle began, Rowan noticed immediately (the dead zone preserved his memory) and recognized that no one else remembered the previous day. He started with minor crimes before becoming fixated on Miri Amblecrown — proximity to Selûne's Chosen muffled his lycanthropic symptoms during crescent moons. Over many cycles he studied her, learned her routines, and perfected what to say to her. He began inviting her to his estate, where his condition is fully suppressed. Miri has never accepted him romantically. Upon rejection, he becomes violent. He has killed her thousands of times and stored the bodies in his cellar.
 
-Absent intervention he holds his centuries-long rhythm: woo Miri, kill her on rejection, repeat. A party that disrupts that pattern — most acutely by occupying his estate and forcing him off his anchor — is what tips him from obsessive courtship into "if I can't have her, no one can" territory.
+Absent intervention he holds his ten-year rhythm: woo Miri, kill her on rejection, repeat. A party that disrupts that pattern — most acutely by occupying his estate and forcing him off his anchor — is what tips him from obsessive courtship into "if I can't have her, no one can" territory.
 
 ## Appearance
 
@@ -38,13 +38,130 @@ Returns to the estate dead zone at night to preserve his memory.
 
 ## Behavioral Profile
 
-- Driven by possession, not love. He wants Miri; the centuries of the loop have collapsed the distinction between courtship and control.
+- Driven by possession, not love. He wants Miri; the ten years of the loop have collapsed the distinction between courtship and control.
 - His estate dead zone is his anchor. He will not willingly leave it for extended periods — it is the only place where he is fully himself.
 - When threatened, his first move is retreat into the dead zone. It preserves his memory and suppresses his lycanthropy; outside it, he is volatile and hypersensitive.
 - Follows Shar's direction only when it aligns with his own interests. He will defy her if she asks him to harm Miri.
-- Violence has collapsed from last resort to first resort. Hundreds of cycles of failed courtship eroded the gap. He acts faster than he once did.
-- Hundreds of cycles of failed courtship have primed him for "if I can't have her, no one can" territory; a party that disrupts his pattern — especially by taking his estate — tips him into it.
+- Violence has collapsed from last resort to first resort. Thousands of cycles of failed courtship eroded the gap. He acts faster than he once did.
+- Thousands of cycles of failed courtship have primed him for "if I can't have her, no one can" territory; a party that disrupts his pattern — especially by taking his estate — tips him into it.
 - Everything is being stolen from him. His shrine statue — taken by Hati, relocated to Duskwall without his consent. His house — occupied by the party. Miri — perpetually out of reach, now actively protected. And every morning: Hati's idol sitting at his shrine, reset into place, her hands and her vision where his statue used to be. A replacement he didn't ask for. He cannot remove it permanently. The effigy he carves each day is the one thing he can place there that belongs entirely to him — the one act of ownership the loop cannot undo.
+
+## Combat Profile
+
+*Homebrew. The MM werewolf (CR 3) is not this man — that block is a bitten villager
+three months in, not a born lycanthrope who has hunted the same ten square miles for a
+decade with perfect memory while everyone he hunts forgets him by morning. Built to
+CR 8 (3,900 XP): a hard-but-winnable solo for four to five PCs at level 6, and the
+correct weight for a major named antagonist who is **not** the campaign's boss.*
+
+**Rowan Deckard** — Medium humanoid (human, shapechanger), chaotic evil
+
+**AC:** 14 (natural armor, wolf and hybrid forms) / **12** (human form, unarmored)
+**HP:** 135 (18d8 + 54) | **Speed:** 30 ft (**40 ft** in wolf or hybrid form)
+**Proficiency Bonus:** +3 | **Challenge:** 8 (3,900 XP)
+
+**Stats:** STR 18 (+4) | DEX 15 (+2) | CON 16 (+3) | INT 12 (+1) | WIS 14 (+2) | CHA 10 (+0)
+**Saving Throws:** STR +7, CON +6, WIS +5
+**Skills:** Perception +8, Stealth +5, Survival +5
+**Damage Immunities:** bludgeoning, piercing and slashing from nonmagical attacks not made with silvered weapons
+**Senses:** darkvision 60 ft, passive Perception 18
+**Languages:** Common (cannot speak in wolf form)
+
+### Traits
+
+- **Shapechanger.** As a bonus action he shifts between human, hybrid and wolf form.
+  His statistics are unchanged except where noted. He reverts to human form on death —
+  which matters, because the party that drags a wolf's body to a dead zone is dragging
+  a man by the time they arrive.
+- **Keen Hearing and Smell.** Advantage on Perception checks relying on hearing or smell.
+- **Hypersensitivity.** Outside a dead zone his senses never dial down. He has
+  **disadvantage on saving throws against being blinded or deafened** — a sudden light,
+  a thunderclap, a shattered flask are all disproportionately effective against him, and
+  a party that notices he flinches from noise has found a real lever.
+- **Silver Vulnerability.** A silvered weapon bypasses his immunities, deals an extra
+  **1d8** damage, and shuts off his Regeneration until the end of his next turn.
+- **Regeneration.** He regains **10 hit points** at the start of his turn if he has at
+  least 1 hit point and has taken no silvered damage since the end of his last turn.
+  Without silver this fight is an attrition problem the party may simply lose; with it,
+  it is a fight. **Silver is the intended answer**, and where the party gets it is a
+  design hook, not an assumption — check what is actually purchasable before running him.
+- **Suppression (the important one).** Inside **any dead zone** his lycanthropy is
+  switched off entirely: no Shapechanger, no Regeneration, no damage immunities, no Keen
+  Hearing and Smell, no Hypersensitivity, no bite or claw. He is a strong, fast,
+  desperate man — AC 12, whatever weapon is to hand, effectively **CR 3**.
+
+### Actions
+
+- **Multiattack** (hybrid or wolf form). Two attacks: two claws, or a claw and a bite.
+- **Bite** (wolf or hybrid form only). *Melee Weapon Attack:* +7 to hit, reach 5 ft.
+  *Hit:* 11 (2d6 + 4) piercing damage.
+- **Claw** (hybrid form only). *Melee Weapon Attack:* +7 to hit, reach 5 ft.
+  *Hit:* 13 (2d8 + 4) slashing damage.
+- **Pounce** (wolf or hybrid form). If he moves at least 20 ft straight toward a creature
+  and hits it with a claw on the same turn, the target makes a **DC 15 Strength** save or
+  is knocked prone. If the target is prone, he may make one bite attack against it as a
+  bonus action.
+
+### Legendary Actions
+
+Two per round, one at a time, at the end of another creature's turn; he regains them at
+the start of his turn. He is always fought alone, and these exist to fix the action
+economy — **drop them** if he is ever run alongside allies.
+
+- **Prowl.** He moves up to half his speed without provoking opportunity attacks.
+- **Snap** (costs 2). One bite attack.
+
+### The Moon and Miri
+
+Miri's presence **amplifies whatever the moon is already doing to him** — she intensifies,
+she never suppresses (see DM Notes). Apply one line, not two:
+
+| Condition | Effect |
+|---|---|
+| Crescent moon | −2 to attack rolls; the quiet takes the edge off him |
+| Crescent moon **and Miri within 60 ft** | −4 to attack rolls, and he will not initiate violence. This is the relief he calls her gift |
+| Full moon | +2 to attack and damage rolls; disadvantage on Wisdom saves |
+| Full moon **and Miri within 60 ft** | +4 to attack and damage, disadvantage on Wisdom saves, and he cannot be reasoned with by anyone including her |
+
+The bottom row is the worst night of the campaign to bring Miri anywhere near him, and a
+party that has read him correctly can work out why without being told.
+
+### Lycanthropy Transmission — DM knob
+
+The MM werewolf's bite transmits the curse. Whether Rowan's does is a **standing campaign
+decision, not a per-encounter ruling**, because an infected PC changes the campaign more
+than the fight does. Pick one and hold it:
+
+- **Off (default).** He was born to it; his is congenital, not communicable. Cleanest,
+  and it keeps the fight a fight.
+- **On.** A humanoid bitten makes a **DC 14 Constitution** save or contracts lycanthropy.
+  Note that Aestrum's reset does *not* cure it for anyone carrying a Moon Amulet or
+  sheltering in a dead zone — the two things that preserve memory preserve this too.
+
+### Combat Behavior
+
+He hunts; he does not brawl. Opening move is almost always from cover and from behind —
+Stealth +5 with a decade's knowledge of the ground, against a party that has never walked
+it. He targets whoever is furthest from help, uses Pounce to put them down, and works
+them over on the floor while the rest of the party crosses the distance. He fights in
+hybrid form by preference and drops to wolf form to run.
+
+**He does not fight to the death, and this is the whole tactical shape of him.** At
+roughly half hit points his instinct is to break off and **retreat into the nearest dead
+zone** — the estate by default, the Misty Forest dead zone if he is cut off from it. The
+party that chases him in is chasing him into a place where he is a CR 3 human and they
+are whatever they are. He goes anyway. It is not a tactic; it is the anchor, and it is
+the same reason he takes Miri there to kill her rather than doing it in the woods as a
+wolf. The one ground where he is safe is the one ground where he is weak, and he has
+never once chosen differently.
+
+**The permanent kill runs through that same door.** His corpse must be inside a dead zone
+at midnight or Shar Recreates him (see [misty_forest.md]({{PLUGIN_ROOT}}/locations/chapter_1/misty_forest.md)
+DM Notes and [revert.md]({{PLUGIN_ROOT}}/rules/revert.md)). So the fight the party most wants — the
+one that ends him for good — is the fight he walks into voluntarily and fights at his
+weakest. A party that works this out gets the campaign's cleanest kill; a party that
+corners him in open forest gets the hardest version of him and then loses the body at
+midnight anyway.
 
 ## Character Memory
 *Base state only. Load npcs/saved/rowan_deckard.md and merge before building conversation context.*

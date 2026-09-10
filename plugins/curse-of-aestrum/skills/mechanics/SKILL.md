@@ -1,7 +1,7 @@
 ---
-name: mex
+name: mechanics
 description: >
-  Use this skill when the user invokes /mex, or asks to "load mechanics",
+  Use this skill when the user invokes /mechanics, or asks to "load mechanics",
   "reset mechanics context", or "load a fresh mechanics context". This skill
   loads the core Aestrum campaign mechanics — how the cycle works and how to
   break it — so they are authoritative in the current session. Designed to be

@@ -25,7 +25,7 @@ The Shar shrine is a quarter-mile **east** of the camp, on the far side of a sha
 
 - **The fire ring** — center of the camp. Stones piled into a low rim; a cookpot suspended on an iron tripod when meals are being prepared. The fire is lit most of the day; the band has nothing pressing them to conserve fuel and the forest is wet enough that they need the dry warmth.
 - **Mieke's tent** — the largest, on the north side of the fire. Plain canvas, no insignia. A camp table inside with the bounty writ, a small map of Aestrum (woefully out of date — pre-loop, when borders meant something different), a sealed letter of credit on Charnelhold, and Mieke's secondary blade. He sleeps here.
-- **The band's tents** — three or four smaller tents in a loose arc on the south and east sides. Two operatives per tent.
+- **The band's tents** — two smaller tents in a loose arc on the south and east sides. Hollis Tarn has one to herself; Danic Ordwell and Reyn Cobbet share the other. Three tents in the clearing all told, counting Mieke's — a party that scouts the camp and counts canvas gets the crew size right.
 - **The picket line** — a low rope strung between two trees on the west side of the camp, used to tether captives. Jiasha is restrained here when she is not under direct watch — wrists bound, the rope long enough to reach the fire but not the trail. The band feeds her, gives her water, does not abuse her. She is operational equipment; they treat her accordingly.
 - **The weapons cache** — a wooden chest near Mieke's tent containing spare bows, quivers, a few healing potions, the band's contract paperwork (in a sealed oilcloth), and a pouch of Setland coin for incidental expenses inside Setland (now useless, but Mieke does not yet realize this).
 - **The latrine** — a slit-trench about thirty feet east of the camp through low brush. Standard military discipline.
@@ -33,8 +33,19 @@ The Shar shrine is a quarter-mile **east** of the camp, on the far side of a sha
 
 ## Sightlines and Approach Cover
 
-The camp is in a clearing about forty feet across. Mist persists in the canopy and softens visibility past about twenty feet — a Stealth approach is possible but the band keeps a watch rotation (one operative on patrol around the perimeter, one awake by the fire at all hours).
+The camp is in a clearing about forty feet across. Mist persists in the canopy and softens visibility past about twenty feet — a Stealth approach is possible. Through the waking day the band keeps one on patrol and one awake at the fire; from evening to midnight that becomes two awake and two asleep (see Daily Pattern). On a four-person crew that rotation never degrades, because it never has to — the loop reverts them to snapshot every midnight ([rest_and_recovery.md]({{PLUGIN_ROOT}}/rules/rest_and_recovery.md)), so nobody at this camp is ever short of sleep. The same watch, the same argument and the same fatigue run again from 6 AM. Roll Stealth against the watcher: an operative is passive Perception **15** with advantage on any check relying on hearing or sight (Keen Hearing and Sight); Mieke is passive Perception **14** without the advantage.
 
+- **Between midnight and 6 AM — there is no watch at all.** The loop's **Sleep** step
+  fires at 12:00:00 AM and drops all four where they stand; **Wake** does not lift until
+  6:00:00 AM (see [time_loop.md]({{PLUGIN_ROOT}}/rules/time_loop.md)). In those six hours the camp
+  is not lightly guarded — it is four unconscious bodies in a clearing. The only way to
+  be awake for it is to have been **inside a dead zone when Sleep fired**; a Moon Amulet
+  does not help, it explicitly does not block Sleep
+  ([moon_amulets.md]({{PLUGIN_ROOT}}/items/chapter_1/moon_amulets.md)). The Misty Forest dead zone
+  is a quarter-mile east past the shrine, which puts the one shelter that keeps a party
+  conscious five minutes' walk from the one camp that is defenceless while they are.
+  Note the clock inside the window: **Teleport fires at 3:00 AM** and returns sleeping
+  individuals to their reset point, Jiasha included.
 - **From the west (the trail / road approach):** the patrol's standard route covers the approach trail back toward the road. A stealthy party can flank by leaving the trail thirty feet out and circling through the brush.
 - **From the east (the shrine and dead-zone side):** less watched. The shrine — a quarter-mile east — is a soft cover spot to stage from; beyond it the band has noticed the dead zone but does not understand it, treats that ground as "haunted," and avoids it. A party approaching from the east has a cleaner line, and the patrol crosses the shrine-side only intermittently.
 - **From the flanks (north or south, through brush):** off-trail on either side; passable with a stealthy approach but slower going through the undergrowth.
@@ -73,7 +84,7 @@ The camp runs the same day every day:
 
 ## Hazards
 
-- **Rowan, in wolf form.** Rowan hunts the dead-zone perimeter during certain hours (see [misty_forest.md]({{PLUGIN_ROOT}}/locations/chapter_1/misty_forest.md)). The camp is inside his hunting territory but he has not attacked it — partly because the band's number is uncomfortable for him and partly because his obsession is Miri, not Jiasha. **If Rowan is displaced from his normal cycle** (the party kills him on a prior day, moves his body, otherwise disrupts the murder cycle with Miri), he may turn on the camp. In that case, the camp gets slaughtered, Jiasha included, on the night Rowan's pattern breaks. The party racing to rescue Jiasha after disrupting Rowan needs to move quickly. See [misty_forest.md]({{PLUGIN_ROOT}}/locations/chapter_1/misty_forest.md) and [rowan_deckard.md]({{PLUGIN_ROOT}}/npcs/chapter_1/rowan_deckard.md).
+- **Rowan, in wolf form.** Rowan hunts the dead-zone perimeter during certain hours (see [misty_forest.md]({{PLUGIN_ROOT}}/locations/chapter_1/misty_forest.md)). The camp is inside his hunting territory but he has not attacked it — partly because four armed professionals keeping a standing watch are a bad hunt for a lone predator who has to go on living in this forest (they would notice him, they would hunt back, and they would cost him the quiet his whole routine depends on), and partly because his obsession is Miri, not Jiasha. **Note what the deterrent is not: danger.** Rowan is immune to nonmagical weapons that are not silvered ([combat profile]({{PLUGIN_ROOT}}/npcs/chapter_1/rowan_deckard.md#combat-profile)), and the band carries plain steel and plain arrows — nothing in this camp can put a scratch on him. He leaves them alone because killing them buys him nothing and costs him peace, not because they could stop him. **If Rowan is displaced from his normal cycle** (the party kills him on a prior day, moves his body, otherwise disrupts the murder cycle with Miri), he may turn on the camp. When he does it is not a battle, it is an execution: the camp gets slaughtered, Jiasha included, on the night Rowan's pattern breaks, and he has to do it in the evening window before midnight, because after 12:00 AM he is asleep in his own dead zone and the camp is unconscious anyway. Two awake and two in their tents is not a defence against something they cannot wound. The party racing to rescue Jiasha after disrupting Rowan needs to move quickly. See [misty_forest.md]({{PLUGIN_ROOT}}/locations/chapter_1/misty_forest.md) and [rowan_deckard.md]({{PLUGIN_ROOT}}/npcs/chapter_1/rowan_deckard.md).
 - **The Misty Forest dead zone.** Useful — the dead-zone permanent-kill mechanic applies to Mieke and the band the same way it applies to Rowan (see his file). The party that figures it out for one threat figures it out for the other.
 - **Spider territory** is east of the forest's center, well away from the camp. Not a hazard at this location.
 
@@ -88,7 +99,7 @@ The camp runs the same day every day:
 - **The camp's emotional register is "professionals in slow degradation."** Lean into the routine, the impatience, the unspoken fact that none of them are sure why this isn't working. Do not let the band perform menace; their dangerousness comes from being competent and trapped, not from theatrical cruelty.
 - **Jiasha's quiet matters.** When the party arrives, she will not cry out for them. She will not perform distress. She is exhausted, suppressed, and watching the situation carefully. She recognizes the party — they have the amulets she made — and her reaction to seeing them is small, internal, and devastating. Hold the moment. Don't narrate her relief; let it land in what she does not say.
 - **The camp is a workable infiltration scenario.** A stealthy or socially clever party can resolve the rescue without a full pitched battle. The dead-zone-side approach from the east is available, the Shar shrine (a quarter-mile east) is a staging point, Mieke is open to a conversation that gives him operational information. Reward creative approaches.
-- **The camp is also a workable fight.** A party that wants combat gets a competent skirmish — Mieke is a Battle Master, the operatives are Scouts, the lieutenant is a Veteran. Use [combat.md]({{PLUGIN_ROOT}}/engines/rpg-5e-engine/rules/combat.md) and [turn_order_and_pacing.md]({{PLUGIN_ROOT}}/engines/rpg-5e-engine/rules/turn_order_and_pacing.md). Tune the band size to the party.
+- **The camp is also a workable fight.** A party that wants combat gets a competent skirmish — Mieke is a Battle Master, Hollis Tarn is a Veteran, Danic and Reyn are Scouts. Stat blocks, encounter weight (**4,000 adjusted XP** — hard for four PCs at level 6) and the tuning levers are all on [the band's file]({{PLUGIN_ROOT}}/factions/chapter_1/mieke_band.md#the-band-in-a-fight). **The roster is fixed at four — do not scale by adding bodies**; the camp's population is canon and the reset restores exactly these four every morning. Scale on approach instead, which is the largest swing available. Use [combat.md]({{PLUGIN_ROOT}}/engines/rpg-5e-engine/rules/combat.md) and [turn_order_and_pacing.md]({{PLUGIN_ROOT}}/engines/rpg-5e-engine/rules/turn_order_and_pacing.md).
 - **After the rescue, the camp resets.** Unless the party moves bodies into the dead zone before midnight, the next morning the camp is back to baseline — Mieke and the band and their tents and the writ on the table, identical to yesterday. Jiasha, once removed, does not return to the camp (she is now wherever the party put her), but the camp itself is permanent in the loop. The party that wants the camp gone has to use the dead-zone treatment on Mieke or destroy the loop itself.
 - **Tier discipline:** the camp is Tier 1 for the party once Jiasha's abduction is established. Killing the band is sanctioned by the situation. Looting the camp is fine; the Charnelhold writ is the most valuable retrievable item. Burning the camp is fine; it resets anyway.
 
@@ -97,7 +108,7 @@ The camp runs the same day every day:
 | Element | State |
 |---|---|
 | Mieke's location | Center of camp, near the fire ring or in his tent |
-| Band size | 4–6 operatives (tune to party) + 1 lieutenant |
+| Band present | All four, fixed — Mieke, Hollis Tarn, Danic Ordwell, Reyn Cobbet |
 | Jiasha's position | Picket line, west side of camp |
 | Distance to dead zone | ~quarter-mile-plus east (past the shrine) |
 | Distance to Shar shrine | ~quarter-mile east |

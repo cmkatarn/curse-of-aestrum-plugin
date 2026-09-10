@@ -112,7 +112,7 @@ As the party travels, the signals appear at the predicted locations. Each one va
 
 See [mieke_mercenary_camp.md]({{PLUGIN_ROOT}}/locations/chapter_1/mieke_mercenary_camp.md) for layout, sightlines, and the band's positions. Approach options:
 
-- **Direct combat** — viable for a party of 4–5 at appropriate level; tune Mieke's band size per the encounter notes there.
+- **Direct combat** — viable for a party of 4–5 at appropriate level. The band is **four, fixed**: Mieke, his lieutenant Hollis Tarn, and operatives Danic Ordwell and Reyn Cobbet. Stat blocks and encounter weight are on [the band's file]({{PLUGIN_ROOT}}/factions/chapter_1/mieke_band.md#the-band-in-a-fight); tune on approach, not on headcount.
 - **Stealth infiltration** — the dead-zone-side approach is the cleanest; the band avoids the dead zone and the party can stage from there.
 - **Negotiation** — Mieke is responsive to operational information. A party that demonstrates the loop in language he can verify within his day can shift him from hostile to confused. Hard to do convincingly inside one day; rare path but available.
 - **The dead-zone permanent-kill mechanic** — see [mieke.md]({{PLUGIN_ROOT}}/npcs/chapter_1/mieke.md). The party can permanently end the camp by moving Mieke and key band members into the Misty Forest dead zone before midnight. Same mechanic that ends Rowan.

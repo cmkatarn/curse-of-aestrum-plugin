@@ -714,7 +714,7 @@ Open Claude Code in a **fresh, empty folder** (your play-state is written there,
 - `/{PLUGIN_NAME}:create-party` — build your party, then
 - `/{PLUGIN_NAME}:scene` — begin play.
 
-`/{PLUGIN_NAME}:mex` loads the core cycle mechanics if you want the how-it-works first.
+`/{PLUGIN_NAME}:mechanics` loads the core cycle mechanics if you want the how-it-works first.
 {bugs}{support}
 ## Credits & license
 

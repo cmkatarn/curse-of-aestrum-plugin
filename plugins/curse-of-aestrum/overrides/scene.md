@@ -459,7 +459,7 @@ mouth, not narrated action.
 ## Lore loader
 
 For mechanics context (cycle, dead zones, dead-zone shelter, Moon Amulets,
-loop anchors), the `mex` skill loads `{{PLUGIN_ROOT}}/lore/key_lore_summary.md`. The scene
+loop anchors), the `mechanics` skill loads `{{PLUGIN_ROOT}}/lore/key_lore_summary.md`. The scene
 skill does not auto-load this; be aware it exists if the user asks for
 mechanics clarification mid-scene.
 

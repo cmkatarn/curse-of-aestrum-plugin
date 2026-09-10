@@ -74,7 +74,7 @@ Open Claude Code in a **fresh, empty folder** (your play-state is written there,
 - `/curse-of-aestrum:create-party` — build your party, then
 - `/curse-of-aestrum:scene` — begin play.
 
-`/curse-of-aestrum:mex` loads the core cycle mechanics if you want the how-it-works first.
+`/curse-of-aestrum:mechanics` loads the core cycle mechanics if you want the how-it-works first.
 
 ## Bugs & feedback
 
