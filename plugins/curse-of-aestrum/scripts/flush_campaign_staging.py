@@ -125,13 +125,25 @@ def main():
     ap.add_argument("--campaign", required=True, help="campaign id under campaign_state/")
     ap.add_argument("--dry-run", action="store_true",
                     help="report what would be written, write nothing")
-    ap.add_argument("--repo-root", help="repo root (default: the parent of this script's directory)")
+    ap.add_argument("--repo-root",
+                    help="root holding campaign_state/ (default: the working directory if it has "
+                         "one, else the parent of this script's directory)")
     args = ap.parse_args()
 
     append_delta = load_append_delta()
 
-    repo_root = (Path(args.repo_root).resolve() if args.repo_root
-                 else Path(__file__).resolve().parent.parent)
+    # Play state lives beside the *player*, not beside this script. In a plugin install the two
+    # are different trees — the script ships inside the plugin while campaign_state/ is written
+    # into the player's working directory — so defaulting to the script's parent looked for
+    # campaign_state/ inside the bundle, where it never exists, and every save failed. Prefer the
+    # working directory when it actually holds campaign_state/; fall back to the old behaviour so
+    # a source checkout (where both live in one repo) keeps working from any cwd.
+    if args.repo_root:
+        repo_root = Path(args.repo_root).resolve()
+    elif (Path.cwd() / "campaign_state").is_dir():
+        repo_root = Path.cwd().resolve()
+    else:
+        repo_root = Path(__file__).resolve().parent.parent
     campaign_root = repo_root / "campaign_state" / args.campaign
     if not campaign_root.is_dir():
         fail(f"campaign dir not found: {campaign_root}")

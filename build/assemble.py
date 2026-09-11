@@ -65,6 +65,7 @@ COPY_SPECS: list[tuple[Path, str]] = [
     (COA / "quests", "quests"),
     (COA / "party", "party"),
     (COA / "scripts" / "flush_campaign_staging.py", "scripts/flush_campaign_staging.py"),
+    (COA / "scripts" / "load_scene_context.py", "scripts/load_scene_context.py"),
     (DOCS / "prose-engine" / "scene", "engines/prose-engine/scene"),
     (DOCS / "prose-engine" / "CONTRACT.toml", "engines/prose-engine/CONTRACT.toml"),
     (DOCS / "story-engine" / "rules", "engines/story-engine/rules"),

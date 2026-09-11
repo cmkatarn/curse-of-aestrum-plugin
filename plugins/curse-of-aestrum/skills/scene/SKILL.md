@@ -120,6 +120,27 @@ At scene start (`[scene-start]`) or resume (`[resume]`), front-load:
 
 A scene built up front needs few or no mid-scene reads.
 
+**Load it with one script call, not per-file reads.** The filenames are
+themselves disclosure: a read of `npcs/chapter_1/<someone>.md` in the
+transcript tells the player that character exists before the fiction
+introduces them, and *Live-play silence* cannot reach the harness's own
+tool-call display. One `Bash` call, same interpreter pick as the save path:
+
+```
+PY=$(command -v py || command -v python3 || command -v python); "$PY" {{PLUGIN_ROOT}}/scripts/load_scene_context.py
+```
+
+It resolves `<C>` from `.active`, then emits — bases before overlays, per the
+override's path table — the participants, every overlaid entity with its canon
+base, timelines, preferences, instance rules, conversation states, and any
+in-flight staging file. Its opening lines are counts, never names, so the
+collapsed transcript entry discloses nothing.
+
+Read the **standing location** out of that blob (the PC overlay's *where he is
+at save*) rather than re-reading files already in it. Only a location the
+campaign has never touched needs a further read — and that read names it, so
+resolve from the blob wherever the blob can answer.
+
 ## Documented-location cast
 
 Resolve the standing location — on resume from the save point (PC overlay
