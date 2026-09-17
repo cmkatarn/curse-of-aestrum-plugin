@@ -76,6 +76,27 @@ Open Claude Code in a **fresh, empty folder** (your play-state is written there,
 
 `/curse-of-aestrum:mechanics` loads the core cycle mechanics if you want the how-it-works first.
 
+## Permissions — for an uninterrupted session
+
+Play reads the plugin's bundled engine and campaign files, and every save writes your play-state
+back to `campaign_state/`. Under Claude Code's normal prompting you would be approving those as
+they come, and the prompts land mid-scene, which is exactly where they hurt most.
+
+The quiet way is to leave prompting on and answer the **first** prompt of each kind with
+**"Yes, and don't ask again."** There are only a handful of kinds: reading the plugin's bundled
+files, the scene-context loader, the save script, and writes under `campaign_state/`. Claude Code
+records each approval as a rule in this folder's `.claude/settings.local.json`. Because Claude
+Code writes those rules itself, they match exactly what play runs. After your first scene and
+first save, play continues without interruption, and nothing outside this folder has been
+pre-approved.
+
+You may see `claude --dangerously-skip-permissions` suggested elsewhere. It removes every prompt
+too, but it does so for the *whole session*: Claude Code will read, write, and run commands in
+that folder without asking about anything. It also makes the transcript louder, not quieter. In
+that mode Claude Code does its file reads through shell commands, so each read shows up as a full
+command with its output rather than a one-line collapsed entry. If you use it anyway, use it only
+in a dedicated, empty play folder, and only with campaigns you trust.
+
 ## Bugs & feedback
 
 Found a bug, a dead link, or a scene that went sideways? Open an issue:

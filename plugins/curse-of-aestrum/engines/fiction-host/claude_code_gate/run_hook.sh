@@ -19,7 +19,18 @@
 # The probe demands TOML parsing rather than a bare import, because the gate's lint specs are TOML:
 # stdlib tomllib (3.11+) or the tomli backport both satisfy it, and an interpreter with neither
 # cannot load a spec no matter how new it is.
+#
+# `--strict` as the first argument is for callers that are not hooks — a skill running a script
+# through this launcher so it gets the same interpreter resolution. For those, "no interpreter"
+# must fail loudly: the hook fallback below exits 0, which would make a save or a context load
+# that never ran read as success.
 set -u
+
+STRICT=0
+if [ "${1:-}" = "--strict" ]; then
+    STRICT=1
+    shift
+fi
 
 PROBE='import importlib.util as u, sys; sys.exit(0 if (u.find_spec("tomllib") or u.find_spec("tomli")) else 1)'
 
@@ -33,6 +44,11 @@ for cand in "py -3" "python3" "python"; do
         exec $cand "$@"
     fi
 done
+
+if [ "$STRICT" -eq 1 ]; then
+    printf '%s\n' "run_hook: no Python 3 with TOML support found on PATH (tried: py -3, python3, python). Install Python 3.11+ and retry." >&2
+    exit 127
+fi
 
 # No usable interpreter. Say so loudly and let the turn proceed: the alternative is blocking every
 # prompt in the session, and a gate that cannot run is a reason to warn, not to confiscate the game.

@@ -124,10 +124,10 @@ A scene built up front needs few or no mid-scene reads.
 themselves disclosure: a read of `npcs/chapter_1/<someone>.md` in the
 transcript tells the player that character exists before the fiction
 introduces them, and *Live-play silence* cannot reach the harness's own
-tool-call display. One `Bash` call, same interpreter pick as the save path:
+tool-call display. One `Bash` call, through the same launcher as the save path:
 
 ```
-PY=$(command -v py || command -v python3 || command -v python); "$PY" {{PLUGIN_ROOT}}/scripts/load_scene_context.py
+sh "{{PLUGIN_ROOT}}/engines/fiction-host/claude_code_gate/run_hook.sh" --strict "{{PLUGIN_ROOT}}/scripts/load_scene_context.py"
 ```
 
 It resolves `<C>` from `.active`, then emits — bases before overlays, per the
@@ -517,12 +517,15 @@ staging tail would. Save is the implicit acceptance of the latest beat.
 If the staging file does not yet exist (single-beat scene), `Write` it
 from scratch per the override's staging format.
 
-**Step 2 — invoke the flush script.** One `Bash` call. It picks whichever
-Python the machine has (`py` on Windows, `python3` elsewhere) — the same
-interpreter the gate hooks already require, so this adds no dependency:
+**Step 2 — invoke the flush script.** One `Bash` call, through the gate
+hooks' own launcher. It test-runs each candidate interpreter (`py -3`,
+`python3`, `python`) before using it, so Windows' Microsoft Store placeholder
+`python3` is skipped rather than chosen. `--strict` makes a missing
+interpreter fail loudly instead of reading as a completed save. No new
+dependency — the gate hooks already require the same Python:
 
 ```
-PY=$(command -v py || command -v python3 || command -v python); "$PY" {{PLUGIN_ROOT}}/scripts/flush_campaign_staging.py --campaign <C>
+sh "{{PLUGIN_ROOT}}/engines/fiction-host/claude_code_gate/run_hook.sh" --strict "{{PLUGIN_ROOT}}/scripts/flush_campaign_staging.py" --campaign <C>
 ```
 
 The script is deterministic. It reads the staging file and **appends**
