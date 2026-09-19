@@ -310,6 +310,10 @@ def copy_spec(src: Path, dst_rel: str) -> int:
 import json
 
 PLUGIN_NAME = "curse-of-aestrum"
+# Shown in the desktop plugin browser and /plugin picker. Without it the UI derives a title from
+# the kebab-case id and renders "Curse of aestrum". The marketplace entry's copy wins for a
+# marketplace install, so both manifests carry it.
+DISPLAY_NAME = "Curse of Aestrum"
 
 # Version scheme: <major>.<minor>.<YYYYMMDD><NN>  e.g. 0.2.2026090901
 #
@@ -429,6 +433,9 @@ DESCRIPTION = ("Curse of Aestrum — an interactive Dungeons & Dragons 5e campai
 AUTHOR = "Cody Mallonee"
 AUTHOR_URL = "https://github.com/cmkatarn"
 REPOSITORY = "https://github.com/cmkatarn/curse-of-aestrum-plugin"
+# The owner/repo form `claude plugin marketplace add` and extraKnownMarketplaces take. Derived, so
+# the README's install commands cannot drift from the repository they name.
+MARKETPLACE_SLUG = REPOSITORY.removeprefix("https://github.com/")
 # HOMEPAGE is where a player lands for requirements, the rating scale, and how to start a game;
 # REPOSITORY is the source tree and the issue tracker. Distinct targets, so both fields earn a slot.
 HOMEPAGE = f"{REPOSITORY}/tree/main/plugins/curse-of-aestrum"
@@ -607,6 +614,7 @@ def write_meta() -> None:
     (OUT / ".claude-plugin").mkdir(parents=True, exist_ok=True)
     (OUT / ".claude-plugin" / "plugin.json").write_text(json.dumps({
         "name": PLUGIN_NAME,
+        "displayName": DISPLAY_NAME,
         "version": PLUGIN_VERSION,
         "description": DESCRIPTION,
         "author": {"name": AUTHOR, "url": AUTHOR_URL},
@@ -643,7 +651,8 @@ def write_meta() -> None:
         "name": PLUGIN_NAME,
         "description": MARKETPLACE_DESCRIPTION,
         "owner": {"name": AUTHOR, "url": AUTHOR_URL},
-        "plugins": [{"name": PLUGIN_NAME, "source": "./plugins/curse-of-aestrum",
+        "plugins": [{"name": PLUGIN_NAME, "displayName": DISPLAY_NAME,
+                     "source": "./plugins/curse-of-aestrum",
                      "description": DESCRIPTION,
                      "author": {"name": AUTHOR, "url": AUTHOR_URL},
                      "homepage": HOMEPAGE,
@@ -701,22 +710,59 @@ next response.
 
 ## Requirements
 
-- **Claude Code** and your own Claude access (Pro/Max/API).
+- **The Claude desktop app** (macOS, Windows, or Linux beta) — strongly recommended; see below.
+  Terminal Claude Code also works. Either way you need your own Claude access (Pro/Max, or API).
 - **Python 3.11+** on your PATH — `py`, `python3`, or `python`, whichever your platform provides;
   the play-time epistemic-gate hooks find it for you. (3.9 also works if you have the `tomli`
   package installed; the gate reads TOML lint specs.)
 
+## Play in the desktop app
+
+Play Curse of Aestrum in the **Claude desktop app**, not in a Terminal or Command Prompt window.
+The rules and the story are the same either way; what differs is what you see around them.
+
+- **No spoilers from the machinery.** To run a scene, Claude reads character, location, and quest
+  files. A terminal prints every one of those reads, filenames included, so it can show you who
+  and what the story is holding before you've met them. The app's **Summary** transcript view
+  shows Claude's responses and nothing else. Switch to it from the **Transcript view** menu or
+  with **Ctrl+O**. (The default **Normal** view collapses that activity into one-line summaries:
+  better than a terminal, but still visible.)
+- **Fewer interruptions.** The app's permission-mode selector offers **Auto** mode, which removes
+  most approval prompts. See *Permissions* below.
+- **Your play folder is a click away.** Pick it as the session's **Project folder** before your
+  first message.
+
 ## Install
 
+Everything happens in the Claude desktop app:
+
+1. Open **Settings**, and in the Settings sidebar under **Customize**, choose **Plugins**.
+2. On the Plugins page, click **Add** (top right), then **Add marketplace**.
+3. In the Add marketplace dialog's **URL** field, paste `https://github.com/{MARKETPLACE_SLUG}` and
+   confirm. The dialog's warning about third-party plugins applies here: {DISPLAY_NAME} is
+   published by its author, not by Anthropic.
+4. On the Plugins page, open the **Discover** tab and find **{DISPLAY_NAME}**.
+5. Click the arrow beside **Add** on the {DISPLAY_NAME} row and choose **Install for me**. That
+   makes the campaign available in every folder, so each new play folder works without installing
+   again.
+
+### From a terminal instead
+
+If you prefer the command line, these two commands do the same thing. Run them once from any
+terminal, and the desktop app picks the campaign up in your next session:
+
 ```
-/plugin marketplace add <owner>/{PLUGIN_NAME}
-/plugin install {PLUGIN_NAME}@{PLUGIN_NAME}
+claude plugin marketplace add {MARKETPLACE_SLUG}
+claude plugin install {PLUGIN_NAME}@{PLUGIN_NAME}
 ```
+
+Inside a running terminal session of Claude Code, the same steps are
+`/plugin marketplace add {MARKETPLACE_SLUG}` and `/plugin install {PLUGIN_NAME}@{PLUGIN_NAME}`.
 
 ## Start playing
 
-Open Claude Code in a **fresh, empty folder** (your play-state is written there, under
-`campaign_state/`). Then:
+Start a session whose **Project folder** is a dedicated play folder with nothing else of yours in
+it: your play-state is written there, under `campaign_state/`. Then:
 
 - `/{PLUGIN_NAME}:create-party` — build your party, then
 - `/{PLUGIN_NAME}:scene` — begin play.
@@ -725,24 +771,26 @@ Open Claude Code in a **fresh, empty folder** (your play-state is written there,
 
 ## Permissions — for an uninterrupted session
 
-Play reads the plugin's bundled engine and campaign files, and every save writes your play-state
-back to `campaign_state/`. Under Claude Code's normal prompting you would be approving those as
-they come, and the prompts land mid-scene, which is exactly where they hurt most.
+Play reads the plugin's bundled files, runs its scene-loader and save scripts, and writes your
+play-state to `campaign_state/`. If you're asked about each of those, the prompts land mid-scene,
+which is exactly where they hurt most.
 
-The quiet way is to leave prompting on and answer the **first** prompt of each kind with
-**"Yes, and don't ask again."** There are only a handful of kinds: reading the plugin's bundled
-files, the scene-context loader, the save script, and writes under `campaign_state/`. Claude Code
-records each approval as a rule in this folder's `.claude/settings.local.json`. Because Claude
-Code writes those rules itself, they match exactly what play runs. After your first scene and
-first save, play continues without interruption, and nothing outside this folder has been
-pre-approved.
+**In the desktop app, choose Auto** in the permission-mode selector next to the send button. Claude
+then acts without asking and runs background safety checks that its actions match your request.
+Auto mode needs a Pro or Max plan (or API access) and a supported model: Claude Opus 4.6,
+Sonnet 4.6, or later. Together with the **Summary** view, a scene reads as prose and nothing else.
 
-You may see `claude --dangerously-skip-permissions` suggested elsewhere. It removes every prompt
-too, but it does so for the *whole session*: Claude Code will read, write, and run commands in
-that folder without asking about anything. It also makes the transcript louder, not quieter. In
-that mode Claude Code does its file reads through shell commands, so each read shows up as a full
-command with its output rather than a one-line collapsed entry. If you use it anyway, use it only
-in a dedicated, empty play folder, and only with campaigns you trust.
+Without Auto, **Accept edits** is the next best choice. It approves file writes automatically but
+still asks before running the loader and save scripts. **Manual** asks about everything.
+
+**Bypass permissions** also removes the prompts, but it turns off every check for the whole
+session, and it has to be enabled in the app's Settings first. If you use it, use it only in a
+dedicated play folder with nothing else of yours in it, and only with campaigns you trust.
+
+**In a terminal**, answer the first prompt of each kind with **"Yes, and don't ask again"** where
+it's offered. Claude Code saves each approval as a rule in the play folder's
+`.claude/settings.local.json`. `claude --dangerously-skip-permissions` is the terminal's bypass, and
+the same cautions apply.
 {bugs}{support}
 ## Credits & license
 

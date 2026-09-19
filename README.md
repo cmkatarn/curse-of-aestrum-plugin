@@ -4,15 +4,21 @@ An interactive Dungeons & Dragons 5e campaign, set in the duchy of Aestrum where
 
 ## Install & play
 
-```
-/plugin marketplace add cmkatarn/curse-of-aestrum-plugin
-/plugin install curse-of-aestrum@curse-of-aestrum
-```
+**Play in the Claude desktop app**, not in a Terminal or Command Prompt window. A terminal prints
+every character, location, and quest file Claude reads to run a scene, so it can show you what the
+story is holding before you've met it. The app's **Summary** transcript view shows the story and
+nothing else, and its **Auto** permission mode keeps prompts from interrupting a scene.
 
-Then open Claude Code in a fresh, empty folder (your play-state is written there) and run
-`/curse-of-aestrum:create-party`, then `/curse-of-aestrum:scene`. See
-[plugins/curse-of-aestrum/README.md](plugins/curse-of-aestrum/README.md) for requirements
-(you'll need Python for the play-time gate) and full instructions.
+To install, open **Settings → Plugins** in the desktop app, click **Add → Add marketplace**, and
+paste `https://github.com/cmkatarn/curse-of-aestrum-plugin`. Then find **Curse of Aestrum** on the
+**Discover** tab and choose **Install for me**. The
+[plugin README](plugins/curse-of-aestrum/README.md#install) walks through each click, and also
+gives the two terminal commands if you prefer the command line.
+
+Then, in the desktop app, start a session with a dedicated play folder as the **Project folder**
+(your play-state is written there) and run `/curse-of-aestrum:create-party`, then
+`/curse-of-aestrum:scene`. See [plugins/curse-of-aestrum/README.md](plugins/curse-of-aestrum/README.md)
+for requirements (you'll need Python for the play-time gate), permissions, and full instructions.
 
 ## Content rating
 
