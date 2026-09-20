@@ -738,9 +738,9 @@ Everything happens in the Claude desktop app:
 
 1. Open **Settings**, and in the Settings sidebar under **Customize**, choose **Plugins**.
 2. On the Plugins page, click **Add** (top right), then **Add marketplace**.
-3. In the Add marketplace dialog's **URL** field, paste `https://github.com/{MARKETPLACE_SLUG}` and
-   confirm. The dialog's warning about third-party plugins applies here: {DISPLAY_NAME} is
-   published by its author, not by Anthropic.
+3. In the Add marketplace dialog's **URL** field, paste `https://github.com/{MARKETPLACE_SLUG}`
+   (the short form `{MARKETPLACE_SLUG}` works too) and click **Sync**. The dialog's warning about
+   third-party plugins applies here: {DISPLAY_NAME} is published by its author, not by Anthropic.
 4. On the Plugins page, open the **Discover** tab and find **{DISPLAY_NAME}**.
 5. Click the arrow beside **Add** on the {DISPLAY_NAME} row and choose **Install for me**. That
    makes the campaign available in every folder, so each new play folder works without installing

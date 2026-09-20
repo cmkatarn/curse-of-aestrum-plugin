@@ -82,9 +82,9 @@ Everything happens in the Claude desktop app:
 
 1. Open **Settings**, and in the Settings sidebar under **Customize**, choose **Plugins**.
 2. On the Plugins page, click **Add** (top right), then **Add marketplace**.
-3. In the Add marketplace dialog's **URL** field, paste `https://github.com/cmkatarn/curse-of-aestrum-plugin` and
-   confirm. The dialog's warning about third-party plugins applies here: Curse of Aestrum is
-   published by its author, not by Anthropic.
+3. In the Add marketplace dialog's **URL** field, paste `https://github.com/cmkatarn/curse-of-aestrum-plugin`
+   (the short form `cmkatarn/curse-of-aestrum-plugin` works too) and click **Sync**. The dialog's warning about
+   third-party plugins applies here: Curse of Aestrum is published by its author, not by Anthropic.
 4. On the Plugins page, open the **Discover** tab and find **Curse of Aestrum**.
 5. Click the arrow beside **Add** on the Curse of Aestrum row and choose **Install for me**. That
    makes the campaign available in every folder, so each new play folder works without installing

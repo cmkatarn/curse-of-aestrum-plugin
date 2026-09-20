@@ -10,7 +10,7 @@ story is holding before you've met it. The app's **Summary** transcript view sho
 nothing else, and its **Auto** permission mode keeps prompts from interrupting a scene.
 
 To install, open **Settings → Plugins** in the desktop app, click **Add → Add marketplace**, and
-paste `https://github.com/cmkatarn/curse-of-aestrum-plugin`. Then find **Curse of Aestrum** on the
+paste `https://github.com/cmkatarn/curse-of-aestrum-plugin`, then click **Sync**. Then find **Curse of Aestrum** on the
 **Discover** tab and choose **Install for me**. The
 [plugin README](plugins/curse-of-aestrum/README.md#install) walks through each click, and also
 gives the two terminal commands if you prefer the command line.
