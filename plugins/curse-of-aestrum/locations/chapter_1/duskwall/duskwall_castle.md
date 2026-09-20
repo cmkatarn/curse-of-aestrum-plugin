@@ -5,7 +5,8 @@ type: castle
 parent: loc_duskwall
 curse_affected: true
 loop_anchor: false
-npcs_present: [npc_evandur_tallwood, npc_galadiil_ilphekiir, npc_edwy_murn, npc_sergeant_cael]
+npcs_present: [npc_evandur_tallwood, npc_galadiil_ilphekiir, npc_edwy_murn, npc_sergeant_cael, npc_corran_vye, npc_milo_tarrow]
+npcs_present_notes: "Vye and Tarrow are posted here and reset here, but are absent from roughly the second hour past midday onward every cycle — they draw the Mirot detail and are at the Dundelver estate until the reset takes them. See locations/chapter_1/dundelver_estate_mirot.md."
 faction_primary: aestrum_court
 ---
 

@@ -17,6 +17,8 @@ mode: on_foot
 
 **Curse / boundary barrier:** The Aestrum boundary barrier (`locations/duskwall/as_the_crow_flies.md:50`) prevents snapshot recipients from leaving Aestrum once they have crossed in — see [rules/time_loop.md]({{PLUGIN_ROOT}}/rules/time_loop.md). The inter-duchy routes below describe the underlying geography. Whether the active party can currently use them is tracked in [the saved overlay](saved/routes.md) and updates when the curse breaks.
 
+**Every figure in this file is a walking figure, and that is not an omission.** Aestrum has no riding tack and no saddle horses — farm animals pull, the Duke's carriage horses are under guard in Duskwall Castle, and nobody rides anywhere. Mounted times are therefore not listed, for the party or for NPCs. See [rules/travel.md]({{PLUGIN_ROOT}}/rules/travel.md), *On Foot Is the Only Sustainable Mode*, for why, and for what happens if a party acquires an animal anyway.
+
 **Intra-city walks excluded:** Sub-locations within the same settlement (Duskwall market → Duskwall harbor, etc.) are too short to matter and are not listed here.
 
 ---
@@ -33,7 +35,7 @@ Aestrum's maintained roads and paths form the following topology. Rough track an
   Setland (W) ── [four-way crossroads (4WI)] ───── [three-way junction (3WI)] ─── Duskwall (NE)
                     |                            /         \
                 Rockwood (S)    walking path → Perisdottir   south →
-                    |          (south, midpoint spur)       (Deckard Estate gate, ~1 hr from Duskwall)
+                    |          (south spur, 3 mi W of Tine) (Deckard Estate gate, ~1 hr from Duskwall)
               Temple of Kossuth                                  ↔
               (mountain path)                              dilapidated bridge
                                                                  ↔
@@ -51,7 +53,7 @@ Aestrum's maintained roads and paths form the following topology. Rough track an
 - **South — Dunleaven**
 - **West — Setland, Mirot & Rockwood** (via Quarterways)
 
-**Maintained walking path (to Perisdottir house)** — a spur off the 4WI–3WI road leading south into the Misty Forest, terminating at Aliss Perisdottir's house. The path branches from the road at approximately the midpoint between the two intersections. The path is navigable without woodcraft. Leaving it inside the forest is where navigation becomes difficult.
+**Maintained walking path (to Perisdottir house)** — a spur off the 4WI–3WI road leading south into the Misty Forest, terminating at Aliss Perisdottir's house. The path branches from the road **~3 miles west of Tine Cross** — nearer the Tine Cross end than the middle, with ~5 miles of road still running west to Quarterways beyond it. The path is navigable without woodcraft. Leaving it inside the forest is where navigation becomes difficult.
 
 **Deckard Estate gate** — the estate's gate opens directly onto the Duskwall–Dunleaven road, approximately 1 hour south of Duskwall (~40 min south of the three-way junction). Not a junction — the road passes the gate and continues to the bridge. Most travelers are heading to Dunleaven; the estate is a waypoint, not a destination.
 
@@ -76,13 +78,14 @@ Locations **not on the road network** (rough track or footpath only): Misty Fore
 ---
 
 ### Quarterways (4WI) ↔ Tine Cross (3WI)
-- **distance:** ~5 miles  *[proposed]*
-- **on foot:** ~1.5–2 hours  *[proposed]*
+- **distance:** ~8 miles
+- **on foot:** ~2.5–3 hours
 - **terrain:** maintained road, running east
-- **landmarks — declare these every time (see [rules/travel.md]({{PLUGIN_ROOT}}/rules/travel.md)):** the **Misty Forest** lies to the **south** along this whole leg, its treeline closing the southern horizon; at roughly the **midpoint** a maintained **walking-path spur branches south** off the road, leading to **Aliss Perisdottir's house** inside the forest (see the *Maintained walking path* entry above and the Perisdottir route below)
+- **landmarks — declare these every time (see [rules/travel.md]({{PLUGIN_ROOT}}/rules/travel.md)):** the **Misty Forest** lies to the **south** along this whole leg, its treeline closing the southern horizon; **~3 miles west of Tine Cross** (i.e. ~5 miles east of Quarterways — noticeably nearer the Tine Cross end than the middle) a maintained **walking-path spur branches south** off the road, leading to **Aliss Perisdottir's house** inside the forest (see the *Maintained walking path* entry above and the Perisdottir route below)
 - **hazards:** none on the road itself; leaving it south into the Misty Forest is where navigation becomes difficult
 - **notes:** the road between the two named junctions — Quarterways at the west end, Tine Cross at the east (~20 min short of Duskwall). A party travelling from Quarterways to Duskwall passes Tine Cross before the city
-- **canon source:** topology — this file; Misty Forest to the south + midpoint spur — *Maintained walking path* entry above
+- **canon source:** back-solved from three DM-confirmed figures — Duskwall ↔ Perisdottir (~6 mi) minus Duskwall ↔ Tine Cross (~1 mi) minus the Perisdottir spur (~2 mi) fixes the spur junction at ~3 mi west of Tine Cross; Duskwall ↔ Mirot (~12 mi) minus that ~1 mi and the ~3 mi Quarterways ↔ Mirot leg fixes the full leg at ~8 mi. Misty Forest to the south — *Maintained walking path* entry above
+- **supersedes:** an earlier *[proposed]* ~5 miles / ~1.5–2 hours, and the description of the Perisdottir spur as branching at the leg's midpoint. Both were inferences; the spur's true position follows from the DM-confirmed distances above
 
 ---
 
@@ -98,7 +101,7 @@ Locations **not on the road network** (rough track or footpath only): Misty Fore
 
 ### Duskwall ↔ Aliss Perisdottir's House (Misty Forest)
 - **distance:** ~6 miles
-- **on foot:** ~2 hours (20 min to 3WI, then west on road toward 4WI, then south on walking path into forest)
+- **on foot:** ~2 hours (20 min to 3WI, then ~3 miles / ~1 hour west on the road to the spur junction, then ~2 miles / ~45 min south on the walking path into the forest)
 - **terrain:** maintained road to 3WI, then maintained road west, then maintained walking path south into the Misty Forest
 - **hazards:** leaving the walking path inside the forest is disorienting — mist is consistent, canopy closes off the sky; spider-infested corridor is to the east; stay on path unless you have a reference point
 - **notes:** the walking path is a spur off the 4WI–3WI road; it leads directly to Perisdottir's house and is navigable without woodcraft; sub-locations off the path (dead zone, Shar shrine, great tree) require leaving it
@@ -272,13 +275,34 @@ Locations **not on the road network** (rough track or footpath only): Misty Fore
 
 ---
 
+### Quarterways (4WI) ↔ Mirot
+- **distance:** ~3 miles
+- **on foot:** ~1 hour
+- **terrain:** maintained road, running north from the crossroads; farmland gives way to the estate road
+- **hazards:** none routine
+- **notes:** the shortest of the four arms off Quarterways, and the reason Mirot feels close to the crossroads and far from everywhere else. The Nahamkate Desert begins ~1 mile north of the village.
+- **canon source:** confirmed by DM — "about an hour north of Quarterways"
+
+---
+
+### Quarterways (4WI) ↔ Rockwood
+- **distance:** ~9 miles
+- **on foot:** ~3 hours
+- **terrain:** maintained road, running south; elevation rises approaching Rockwood
+- **hazards:** none routine on the road; the Misty Forest hunting-trail spur leaves this road ~3 miles south of Quarterways (see that entry)
+- **notes:** the long southern arm off Quarterways. Rockwood is three times as far from the crossroads as Mirot is, which is what makes the Dundelver estate a half-day round trip from Darwinnith the Second's house rather than a short errand.
+- **canon source:** the DM-confirmed 12-mile Rockwood ↔ Mirot run, less the ~3-mile Quarterways ↔ Mirot leg above
+
+---
+
 ### Duskwall ↔ Rockwood
-- **distance:** ~35 miles  *[proposed]*
-- **on foot:** 1.5 days (overnight stop recommended)
-- **terrain:** maintained road; route: Duskwall → three-way junction → four-way crossroads → Rockwood
+- **distance:** ~18 miles
+- **on foot:** ~6 hours — a long day's walk, but a single day; no overnight needed
+- **terrain:** maintained road; route: Duskwall → Tine Cross (3WI) → Quarterways (4WI) → Rockwood
 - **hazards:** none routine on the road; southern highlands have ruins including the razed Temple of Kossuth
-- **notes:** no settlement at either junction; travelers typically camp between junctions on the longer leg; elevation rises approaching Rockwood
-- **canon source:** Rockwood and Southern Highlands map — `locations/duskwall/salient_cartographer.md:40`
+- **notes:** no settlement at either junction. This is the longest of Aestrum's internal settlement-to-settlement runs and the one most likely to be attempted in a single push. Rockwood is *not* symmetrical with Mirot: Mirot sits ~3 miles north of Quarterways and Rockwood ~9 miles south, so Rockwood is markedly the more remote of the two from Duskwall.
+- **canon source:** location and direction — `locations/duskwall/salient_cartographer.md:40`. Distance summed from this file's own legs: Duskwall ↔ Tine Cross (~1 mi, DM-confirmed) + Tine Cross ↔ Quarterways (~8 mi) + Quarterways ↔ Rockwood (~9 mi).
+- **supersedes:** ~35 miles / 1.5 days (not derived from the legs at all), and then ~12 miles (which assumed Quarterways sat at the midpoint of the Rockwood ↔ Mirot run — superseded by the DM-confirmed ~1-hour Quarterways ↔ Mirot leg).
 
 ---
 
@@ -297,18 +321,19 @@ Locations **not on the road network** (rough track or footpath only): Misty Fore
 - **on foot:** 3–4 hours
 - **terrain:** maintained road; route: Rockwood → four-way crossroads → Mirot
 - **hazards:** none routine
-- **notes:** Darwinnith Dundelver II claims to have been in Rockwood the night of Rezibund's murder — this is a traveled and attested route; the four-way crossroads is the midpoint
+- **notes:** Darwinnith Dundelver II claims to have been in Rockwood the night of Rezibund's murder — this is a traveled and attested route. Quarterways is **not** the midpoint: it sits ~9 miles from the Rockwood end and ~3 from the Mirot end, so the great majority of this run is the southern leg
 - **canon source:** "Dundelver estate is 3–4 hours from here [Rockwood]" — `locations/chapter_1/standalone_locations.md:137`; "approximately three hours south of the Dundelver estate in Mirot" — `npcs/chapter_1/remaining_npcs.md:397`
 
 ---
 
 ### Duskwall ↔ Mirot
-- **distance:** ~50 miles  *[proposed]*
-- **on foot:** 2 days (Rockwood makes a natural overnight)
-- **terrain:** maintained road throughout; route: Duskwall → three-way junction → four-way crossroads → Mirot
+- **distance:** ~12 miles
+- **on foot:** ~4 hours
+- **terrain:** maintained road throughout; route: Duskwall → Tine Cross (3WI) → Quarterways (4WI) → Mirot
 - **hazards:** none routine; Nahamkate Desert is immediately north of Mirot
-- **notes:** Mirot is a community of retired estates at the desert's edge; Dundelver Estate is here; Rockwood is a natural overnight stop, one junction past the four-way crossroads in the other direction
-- **canon source:** derived from Rockwood ↔ Mirot (3–4 hrs) + Duskwall ↔ Rockwood (proposed)
+- **notes:** Mirot is a community of retired estates at the desert's edge; Dundelver Estate is here. Four hours at a normal walk, three at a brisk one — which is what lets the daily Duskwall guard detail reach the Dundelver estate in the late afternoon and still leaves the walk back as an unappealing prospect. See [the quest]({{PLUGIN_ROOT}}/quests/chapter_1/the_murder_of_rezibund_highbottom.md).
+- **canon source:** summed from this file's own legs — Duskwall ↔ Tine Cross (~1 mi, DM-confirmed) + Tine Cross ↔ Quarterways (~8 mi) + Quarterways ↔ Mirot (~3 mi, DM-confirmed)
+- **supersedes:** an earlier *[proposed]* figure of ~50 miles / 2 days on this route, which was derived from the also-proposed Duskwall ↔ Rockwood distance and contradicted the leg distances above. The ~12-mile total here has since survived two revisions of how it is composed and is the figure the Dundelver guard timeline depends on — see [the quest]({{PLUGIN_ROOT}}/quests/chapter_1/the_murder_of_rezibund_highbottom.md).
 
 ---
 
@@ -366,12 +391,13 @@ Locations **not on the road network** (rough track or footpath only): Misty Fore
 ---
 
 ### Aestrum (Duskwall) ↔ Setland (Charnelhold)
-- **distance:** ~30 miles  *[revised]* — Duskwall ↔ 4WI (~1 day inside Aestrum, per existing internal entries) + 4WI ↔ Setland City (~10 hours per the Setland East Road corridor, with overnight at Jiasha's hut); Charnelhold shares a wall with Setland City
-- **on foot:** ~2 days (overnight at Jiasha's hut at minimum; possibly a second overnight on the Duskwall side depending on departure timing)
+- **distance:** ~48 miles  *[revised]* — Duskwall ↔ 4WI (~9 mi / ~3 hrs) + 4WI ↔ Setland City (~39 mi / ~13 hrs via the Setland East Road corridor); Charnelhold shares a wall with Setland City
+- **on foot:** ~2 days (~16 hours of walking; overnight at Jiasha's hut is the intended split, and a second overnight is likely depending on departure timing)
 - **terrain:** maintained road; route: Duskwall → three-way junction → four-way crossroads → west through Aestrum approach → boundary → Jiasha's hut → forested foothills → farmland → Setland City → Lion's Gate into Charnelhold
 - **hazards:** Setland's military installations are not along this corridor at campaign start (Malak's deliberate concealment); outbound from Aestrum is blocked for snapshot recipients (see callout)
 - **notes:** the Setland road exits Aestrum from the four-way crossroads heading west (see the Setland East Road corridor entries earlier in this file); the older cardinal-direction canon ("northeast of Aestrum") is superseded by user-confirmed geography
-- **canon source:** confirmed by DM; supersedes prior ~120 miles / 5 days estimate
+- **canon source:** summed from the corridor segments above; supersedes prior ~120 miles / 5 days, and then ~30 miles
+- **supersedes:** the ~30-mile figure, whose stated derivation was wrong in both terms — it called Duskwall ↔ 4WI "~1 day" when the internal legs make it ~3 hours, and then summed to less than the Setland-side leg alone
 
 ---
 
@@ -460,22 +486,45 @@ The east road out of Setland City carries the campaign opening from Charnelhold 
 ---
 
 ### Aestrum Boundary ↔ Four-Way Crossroads (4WI)
-- **distance:** ~6 miles  *[derived from 2 hours at standard pace]*
-- **on foot:** ~2 hours
+- **distance:** ~15 miles
+- **on foot:** ~5 hours
 - **terrain:** maintained road, fair quality but less consistently kept than the Setland side
 - **hazards:** Aestrum residents do not remember previous visits (loop effects); behavior of NPCs along this stretch follows the standard loop pattern (see [rules/time_loop.md]({{PLUGIN_ROOT}}/rules/time_loop.md))
-- **notes:** 4WI connects to Mirot (north), Rockwood (south), the three-way junction toward Duskwall (east), and back west toward Setland (the way the party came)
-- **canon source:** 4WI topology — earlier in this file; distances confirmed by DM
+- **notes:** 4WI connects to Mirot (north), Rockwood (south), the three-way junction toward Duskwall (east), and back west toward Setland (the way the party came). **This is the longest single leg inside Aestrum, and deliberately so** — it is the stretch that carries the [Duskwall ↔ Jiasha's Hut](#duskwall--jiashas-hut-the-locked-leg) design constraint. Nothing lives along it; it is empty approach road, and it is supposed to feel like a commitment to walk.
+- **canon source:** back-solved from the locked Duskwall ↔ Jiasha's Hut figure (~24 mi) less Duskwall ↔ Tine Cross (~1 mi, DM-confirmed), Tine Cross ↔ Quarterways (~8 mi), and the Boundary ↔ Hut gap (~200 ft, DM-confirmed)
+- **supersedes:** an earlier ~6 miles / ~2 hours. That figure made a dawn-to-midnight round trip from the hut to Duskwall comfortable, which inverts the design intent of the corridor
+
+---
+
+### Duskwall ↔ Jiasha's Hut (the locked leg)
+- **distance:** ~24 miles  **[LOCKED — design constraint, do not derive around it]**
+- **on foot:** ~8 hours each way
+- **terrain:** maintained road throughout; route: Duskwall → Tine Cross (3WI) → Quarterways (4WI) → west across the Aestrum approach → boundary → hut (200 ft beyond)
+- **hazards:** none routine — and that is the point (see below)
+- **composition:** Duskwall ↔ Tine Cross (~1 mi) + Tine Cross ↔ Quarterways (~8 mi) + Quarterways ↔ Boundary (~15 mi) + Boundary ↔ Hut (~200 ft)
+
+**Why this value is locked.** Jiasha's hut sits ~200 feet *outside* the Aestrum boundary, which makes it the nearest ground on which midnight cannot take you. A party camped there has not yet been snapshotted. The journey this leg is built to frustrate is therefore a specific one: **leave the hut at dawn, reach Duskwall, make contact with someone in authority, and get back out past the boundary before the midnight Sleep step fires.**
+
+That window is 18 hours (dawn ~6 AM → 12:00:00 AM). At the 3 mph baseline, 24 miles each way consumes 16 of them, leaving **two hours** to cover arrival at Duskwall's gate around 2 PM, finding a representative, waiting to be seen, and being heard — in a city whose officials keep daylight hours. The hard turnaround is 4 PM.
+
+**It is meant to be highly unlikely, not impossible.** A party that force-marches (5e forced march, CON saves, exhaustion), finds its representative immediately, and wastes nothing gets back with minutes to spare. Everyone else is still inside the boundary at midnight and is snapshotted — which is the trap the corridor exists to set. Do not soften this by improvising a shortcut, a convenient courier, or an official who happens to be waiting at the gate.
+
+**The deadline is midnight, not dark.** Night travel on this road is not dangerous: [rules/travel.md]({{PLUGIN_ROOT}}/rules/travel.md) establishes no random encounters inside Aestrum or on the approach, and the corridor register holds the road as peaceful and well-kept. Nothing punishes a party for walking after sundown except the cycle itself.
+
+**Mounted travel would defeat this entirely** (~3 hours each way, ~12 hours of slack) — which is why Aestrum has no saddle horses and no riding tack at all, and why the party is outfitted on foot in Setland before they ever reach the hut. See [rules/travel.md]({{PLUGIN_ROOT}}/rules/travel.md). If a party does somehow turn up mounted, that is a real change to the corridor's difficulty and must be priced deliberately rather than waved through.
+
+- **canon source:** locked by DM as a design constraint; the component legs are derived to satisfy it
 
 ---
 
 ### Setland City ↔ Four-Way Crossroads (4WI) (full corridor)
-- **distance:** ~30 miles  *[derived]*
-- **on foot:** ~10 hours of foot travel (Setland City → 7 hrs farmland → 1 hr foothills → Jiasha's hut → 200 ft to boundary → 2 hrs to 4WI); the campaign expects an overnight at the hut, splitting the journey across two calendar days
+- **distance:** ~39 miles  *[derived]*
+- **on foot:** ~13 hours of foot travel (Setland City → 7 hrs farmland → 1 hr foothills → Jiasha's hut → 200 ft to boundary → 5 hrs to 4WI); the campaign expects an overnight at the hut, splitting the journey across two calendar days
 - **terrain:** maintained road throughout; farmland, forested foothills, descent into Aestrum interior
 - **hazards:** see segments above; the corridor is peaceful and productive at campaign start, devastated in Chapter 2 (see [chapter_2/setland_east_corridor.md]({{PLUGIN_ROOT}}/locations/chapter_2/setland_east_corridor.md))
-- **notes:** **this corridor is materially shorter than the prior Aestrum ↔ Setland (Charnelhold) inter-duchy entry indicated.** That older entry (120 miles, 5 days) is now inconsistent with confirmed-by-DM distances; see the flag in the inter-duchy section
-- **canon source:** confirmed by DM
+- **notes:** **this corridor is materially shorter than the original Aestrum ↔ Setland (Charnelhold) inter-duchy entry indicated.** That entry once read 120 miles / 5 days; it now reads ~48 miles and is derived from these segments rather than estimated independently
+- **canon source:** the Setland-side segments are DM-confirmed and unchanged; the Aestrum-side segment grew with the locked Duskwall ↔ Jiasha's Hut constraint above
+- **supersedes:** an earlier ~30 miles / ~10 hours, which assumed a ~6-mile Boundary ↔ 4WI leg
 
 ---
 

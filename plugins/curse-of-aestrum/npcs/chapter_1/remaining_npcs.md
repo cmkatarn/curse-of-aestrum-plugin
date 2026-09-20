@@ -111,7 +111,9 @@ Miri Amblecrown's father and the ruling Duke of Skaarsdaam. Regarded as a benevo
 
 **id:** npc_darwinnith_dundelver_2 | **location:** loc_dundelver_estate_mirot | **cycle_aware:** false | **alignment:** neutral_evil
 
-Heir to the Dundelver estate. Discovered a skeleton in the dining room and immediately claimed sorcery was at play. **The killer is Darwinnith Dundelver, Second of His Name.** He poisoned Rezibund (who claimed to be an illegitimate Dundelver heir), closed the windows, and traveled home. He confessed to his wife and enlisted her help in maintaining the alibi. He has no ongoing awareness of being investigated (the interaction has since reset).
+Heir to the Dundelver estate, resident in Rockwood, twelve miles south of it. Keeps a horse and cart — the single visible comfort of a man who is not rich but is comfortable enough not to have to walk. It is no faster than walking; that was never the point. He does the Rockwood–Mirot run most days and would not dream of doing it on his own feet.
+
+Discovered a skeleton in the dining room and immediately claimed sorcery was at play. **The killer is Darwinnith Dundelver, Second of His Name.** He poisoned Rezibund (who claimed to be an illegitimate Dundelver heir), closed the windows, and traveled home. He confessed to his wife and enlisted her help in maintaining the alibi. He has no ongoing awareness of being investigated (the interaction has since reset).
 
 ## Behavioral Profile
 
@@ -120,6 +122,10 @@ DD2 leans hard into his fear that sorcery is responsible — and this fear is ge
 Play him as visibly shaken, insistent, and frustrated when not believed. He is not confused about whether Rezibund died — he knows exactly what he did. What he cannot explain is what happened to the body afterward. He left a body. He wakes each morning to a skeleton that looks like it's been dead for a decade. These two facts cannot coexist, and yet here they are. His sorcery claim is not deflection or panic — it is the only conclusion available to a man who knows he is guilty and cannot account for what he is looking at. He will repeat variations of "I left him *there*" with increasing desperation. The fear is real. He is a murderer trapped in a haunting he doesn't understand.
 
 **DM Notes:** DD2 and the loop: He killed Rezibund with poison before the loop began, meaning Rezibund's remains — genuinely decade-old decay — are what he rediscovers each morning. The rest of the estate resets around the skeleton; the skeleton itself does not. His confusion is authentic, his alibi is rehearsed, and both can coexist because he experiences them in completely separate mental compartments: the fear is real, the alibi is a story his wife told him to tell.
+
+**The daily circuit.** Rockwood at dawn, the estate by late morning, back on the road around the seventh hour past midday, home by about half past ten with the lanterns lit. Three and a half hours each way, twelve miles, every day. The horse and cart end each night in his own yard, which is why they are still there each morning — his day is a closed loop that returns them, not the cycle. *(This is his post-cycle routine and exists to serve play. It is unrelated to the murder night, which happened once, before the cycle, and is not replayed.)*
+
+**The cart.** He does not farm and has no working use for the animal — it exists so that he can arrive somewhere without having walked there. A party that notices this has read him correctly: he is a man who buys himself out of effort where he can afford to, and who resents that the estate he manages is not yet his to spend freely. It is also the only wheeled vehicle in Aestrum outside the Duke's household (see [rules/travel.md]({{PLUGIN_ROOT}}/rules/travel.md)), which is precisely why Tovy noticed it on the road at midnight and why the sighting is worth anything.
 
 **Confession conditions:** DD2 confesses only if both his alibi is disproved (Tovy's eyewitness account via Maret) AND he is confronted with the forged letter. Either alone is insufficient.
 
@@ -495,13 +501,110 @@ Wife of Darwinnith Dundelver the Second. Lives with him at their home in Rockwoo
 
 **id:** npc_tovy_holm | **location:** loc_rockwood | **cycle_aware:** false | **age:** ~9 | **alignment:** true_neutral
 
-A child living in the house nearest Darwinnith Dundelver the Second's home in Rockwood. Known locally as a night owl — his parents have given up fighting his habit of sitting at his bedroom window late into the evening, watching the road. On the night Rezibund was murdered, Tovy was at his window and saw Darwinnith's carriage arrive home nearly at midnight.
+A child living in the house nearest Darwinnith Dundelver the Second's home in Rockwood. Known locally as a night owl — his parents have given up fighting his habit of sitting at his bedroom window late into the evening, watching the road. On the night Rezibund was murdered, Tovy was at his window and saw Darwinnith's cart arrive home nearly at midnight.
 
-**What he saw:** Darwinnith's carriage, lanterns lit, pulling up to the house at nearly midnight. He noticed because the lanterns were bright and the road was otherwise empty that late.
+**What he saw:** Darwinnith's cart, lanterns lit, pulling up to the house at nearly midnight. He noticed because the lanterns were bright and the road was otherwise empty that late.
 
-**What he does not know:** That this contradicts anything. He has no awareness of the investigation, does not know what Maret claimed, and does not know that anyone was murdered. He is simply a child who saw a carriage arrive late at night.
+**What he does not know:** That this contradicts anything. He has no awareness of the investigation, does not know what Maret claimed, and does not know that anyone was murdered. He is simply a child who saw a cart arrive late at night.
 
 **DM Notes:** The party reaches Tovy through Maret — she mentions him by name without realizing what she's doing. He tells what he saw plainly and without hesitation. His credibility is high precisely because he has no stake in the outcome and no awareness that his account matters.
+
+---
+
+## Hesper Dunn
+
+**id:** npc_hesper_dunn | **location:** loc_a_la_cart | **cycle_aware:** false | **alignment:** lawful_neutral | **race:** Human | **status:** stub
+
+Proprietor of [À la Cart]({{PLUGIN_ROOT}}/locations/chapter_1/duskwall/a_la_cart.md), Duskwall's hire yard. Fifties, square-built, forearms like a woman who has spent thirty years handling animals that outweigh her. Grey hair cut off at the jaw because long hair and harness do not mix. She inherited the yard, has run it alone since, and has no patience whatsoever for being flattered, haggled with, or hurried.
+
+**How she handles the party.** Straight answers, no sales effort, no apology. Carts are available at the day rate. The coach is not: it is held, standing, and she will say who by without dropping her voice, because a booking is not a secret and she cannot imagine why anyone would treat it as one. Pressed a second time she repeats herself in the same words. Pressed a third she goes back to what she was doing.
+
+**The ledger.** She keeps a bookings ledger on a shelf by the gate, in a tight economical hand, and she will show it to anyone with a reason to look — it is a business record, not a confidence. **It is the same page every day.** The same standing entry out to Mirot, the same date at the head of it, the same three lines of forward bookings she has been meaning to extend all week and never does. A party that reads it on two different cycles is holding physical proof of the loop in a form no NPC will argue with. She has never noticed. She has been meaning to start next week's page for ten years.
+
+**DM Notes:** Hesper is not a puzzle and should not be played as one. She is a competent tradeswoman doing an ordinary day's work, and everything interesting about her is something *the party* notices while she is being unremarkable. Do not have her wonder aloud about the date. Resets each midnight at the yard.
+
+**Open slots — to develop in play:** who she inherited the yard from; whether she has family in the city; what she wants (something she would not name unprompted — the yard is not it).
+
+---
+
+## Owyn Frayle
+
+**id:** npc_owyn_frayle | **location:** loc_a_la_cart | **cycle_aware:** false | **alignment:** neutral_good | **race:** Human | **status:** stub
+
+Hesper's driver and ostler. Late thirties, weathered, quiet in the specific way of a man who spends four hours a day on a box seat with nobody to talk to. He handles the animals, keeps the harness, and drives the evening run out to Mirot and back.
+
+**The run.** He takes [Darwinnith Dundelver the First]({{PLUGIN_ROOT}}/npcs/chapter_1/remaining_npcs.md) out to the Dundelver estate every evening — two hours there, a quarter-hour to see the old man safely down and inside, two hours back. He is on the Duskwall–Mirot road between six and half past ten every single night, which makes him **the one person who habitually travels that road after dark.** Anything on it in the evening, he has passed.
+
+**What he has seen and cannot keep.** Two Duskwall watchmen standing outside the Dundelver estate when he pulls up, every night, for ten years. He has never thought it strange, because for him it has only ever happened once. A party that asks him what he saw last night gets an honest blank; a party that asks what he saw *tonight* gets a plain, useful answer.
+
+**The horses know him.** Animals are outside the loop and keep continuous memory ([rules/companion_animals.md]({{PLUGIN_ROOT}}/rules/companion_animals.md)). The coach pair have run the Mirot road with him something like three thousand six hundred times and know his hands, his voice, and the exact place he always slows. He meets them fresh every morning and is quietly, unaccountably good with them — he assumes he simply has a way with horses. He does not. They are doing the remembering for both of them. **Do not state this outright in play.** Let a party with animal-handling instincts or a druid's ear notice that the team responds to him like old colleagues and that he treats them like new acquaintances.
+
+**DM Notes:** Owyn is a witness asset, not a mystery. Play him agreeable, laconic and unsuspicious. He has no stake in the Dundelver case and no idea there is one. Resets each midnight at the yard; the horses do not reset at all, which is the whole of his tragedy and none of his awareness.
+
+**Open slots — to develop in play:** how he came to the yard; whether anyone is waiting for him at the end of a shift; what he wants (he would say "nothing," and be wrong).
+
+---
+
+## Kip Malbry
+
+**id:** npc_kip_malbry | **location:** loc_mirot | **cycle_aware:** false | **age:** 13 | **alignment:** true_neutral | **race:** Human | **status:** stub
+
+A thirteen-year-old girl from Mirot — small, wiry, brown hair hacked short at the neck because long hair is a nuisance when you run. She is the village's runner in the ordinary way villages have one: she carries deliveries and messages for [Rose Landon]({{PLUGIN_ROOT}}/npcs/chapter_1/rose_landon.md)'s apothecary, knows every household on the estate road by name, and is the obvious person to hand a message to when something needs to get somewhere fast. Her mother keeps the grounds at one of the Mirot estates. Her father is not in the picture and Kip does not discuss it.
+
+**Her role in the cycle — the run.** When Darwinnith the Second finds the skeleton in the late morning and the alarm goes up, someone has to fetch the Duskwall guard, and fetching means Kip. She leaves Mirot around a quarter past ten with nothing but the message and covers the twelve miles to Duskwall in a little under three hours, run-walking the whole way. She arrives at the gate unable to get the words out in order. She does this every single day. She has done it roughly three thousand six hundred times and remembers none of them.
+
+**What it costs her:** the run wrecks her, and then she has to walk it again. There is no ride home — nobody in Aestrum has a saddle horse — so she turns around and covers the same twelve miles a second time alongside two guards who are not slowing down for her, and she would rather die than ask them to. Twenty-four miles in a day, every day. A party that meets her in the late afternoon meets a kid with shaking legs and a stitch she is pretending she doesn't have, who will absolutely insist she's fine. She sits on the wall watching two grown men accomplish nothing until someone sends her home for her supper.
+
+**What she is good for:** she is not a witness to the murder and has nothing to say about it. What she has is the *shape of the day* — how the alarm goes up, who said what to whom, how long the road takes, and the fact that the older guard asks her the same three questions at the gate every time and she has never once thought that strange. A loop-aware party asking a Mirot child what she did yesterday, and the day before, gets a very clean answer: *the same thing.*
+
+**DM Notes:** Play her fast, blunt, and slightly rude in the manner of a kid who is out of breath and thinks adults are slow. She is not precocious and she is not tragic to herself — the tragedy is entirely the reader's. Resets each midnight in Mirot; the legs are fresh again every morning. Do not let her reason toward the loop on her own.
+
+**Open slots — to develop in play:** her mother's name and which estate she keeps; what Kip wants (something past Mirot, unshaped); whether she has ever tried to keep running until the road stops being Aestrum.
+
+---
+
+## Corran Vye
+
+**id:** npc_corran_vye | **location:** loc_duskwall_castle | **cycle_aware:** false | **groups:** faction_aestrum_guard | **alignment:** lawful_neutral | **race:** Human | **status:** stub
+
+*Posted at Duskwall Castle; at the Dundelver estate from the late afternoon until the reset takes him.*
+
+The senior of the two guards sent out to the Dundelver estate. Early forties, fifteen years on the Duskwall watch, built like a man who walks all day and eats well afterward. Grey coming in at the temples. Raven-motif outer gear, maintained but not fussed over. He has the specific patience of someone who has taken a great many statements from a great many people who were certain.
+
+**His posture on the case:** he does not think anyone in Mirot killed anybody. He thinks a body has been in a house a long time and somebody finally looked. He is not lazy and he is not stupid — he is a watchman with an aged skeleton, one witness claiming sorcery, no authority to compel anything, and no way to write a report that anyone will act on. He would very much like to be handed a reason to change his mind. He will not pretend to have one.
+
+**Behavioral profile:**
+
+- **He wants the chain, not the conclusion.** A party that opens with a name gets *"Start further back."* He is not refusing — he is asking them to begin at the beginning, and he will wait through the silence while they decide whether they can.
+- **He repeats an answer back slightly wrong.** Not as a trick; it is how he checks he has it. The party's correction is where the real detail comes out.
+- **He says out loud where the case falls over.** *"Say I take him. He's in the lockup tonight, in front of a magistrate in the morning, and the magistrate asks me what I'm asking you — and I've got your word and a dead man made of bones. Then he's out, and he knows you came for him."* This is the pushback that lands: not *I don't believe you*, but *here is the exact place this breaks.*
+- **He does not bluff and does not posture.** He never threatens the party, never invokes rank, never raises his voice. He is courteous the entire time he is declining.
+- **He is honest about the skeleton.** Pressed on it, he admits plainly that it makes no sense to him and that he has no explanation for it. He is not hiding anything. He genuinely does not know.
+
+**The vigil:** he does not walk back. Leaving a body in an empty house overnight is not something he is willing to do, and walking twelve miles for a magistrate in the dark is not either, so he holds the scene until morning and plans to work it properly at first light. Midnight takes him standing outside a stranger’s front door and puts him back in Duskwall. He has kept this vigil roughly three thousand six hundred times in order to be ready for a morning he has never reached.
+
+**DM Notes:** Vye is the case's evidence standard wearing a uniform. Every objection he raises is a real objection — never let him refuse for a reason he cannot state out loud, and never let him be moved by volume or by Persuasion alone with nothing concrete under it. Conversely, when the party does put a real chain in front of him he acts immediately and without ceremony; he has been waiting for it. Resets each midnight in Duskwall, from a post twelve miles away in Mirot. He has walked out to this estate roughly three thousand six hundred times and has never once reached the second day of the investigation.
+
+---
+
+## Milo Tarrow
+
+**id:** npc_milo_tarrow | **location:** loc_duskwall_castle | **cycle_aware:** false | **groups:** faction_aestrum_guard | **alignment:** neutral_good | **race:** Human | **status:** stub
+
+*Posted at Duskwall Castle; at the Dundelver estate from the late afternoon until the reset takes him.*
+
+The junior guard. Early twenties, four months on the watch, still visibly delighted to be wearing the raven. Tall, thin, and unfinished-looking. He has never worked a death before and is trying hard to look as though he has.
+
+**His posture on the case:** he wants it to be someone. He walked twelve miles hoping for a murder and is spending what is left of the day, and then the whole night, discovering that standing outside a house is most of the job. He is the party's natural ally and their worst advocate.
+
+**Behavioral profile — the two-hander.** Tarrow's function is to be *persuaded too easily.* When the party names a suspect he takes it up with enthusiasm and immediately restates it in its flimsiest form — *"So he wanted the estate, and he was here, and there it is"* — at which point Vye takes apart *his* version rather than the party's, calmly and without unkindness. The party is left standing in front of a broken argument they did not actually make, and the obvious move is to supply the version that doesn't break. That is the engine: the pushback never arrives head-on, so it never reads as the DM stonewalling, and the party volunteers its evidence to rescue the one man who was on their side.
+
+**Other habits:**
+- Asks the question Vye is too experienced to ask, which is occasionally the useful one.
+- Repeats Vye's phrases back a beat later as though he thought of them.
+- Softens toward anyone who is kind to Kip.
+
+**DM Notes:** Tarrow must never be *secretly* competent — the warmth is real and so is the inexperience. He is better company than Vye on the long night post and will talk to anyone who stays out there with him. Resets each midnight in Duskwall; four months on the watch, forever.
 
 ---
 
@@ -632,6 +735,8 @@ Warm, slightly formal Nordic cadence. Sample register:
 **id:** npc_darwinnith_dundelver_1 | **location:** loc_dundelver_estate_mirot | **cycle_aware:** false
 
 The elder patriarch of the Dundelver estate, in poor and declining health. A terminal illness has left him forgetful and lethargic — the Maesters consulted thus far have been unable to offer any treatment. The estate is largely run by his son, Darwinnith the Second, in his absence. On the night of the murder, DD1 was in Duskwall seeking medical consultation.
+
+**How he gets home.** He is too ill to walk and will not be seen to struggle, so he keeps a standing daily booking on the only carriage for hire in Aestrum — [À la Cart]({{PLUGIN_ROOT}}/locations/chapter_1/duskwall/a_la_cart.md) in Duskwall. It carries him out to the estate each evening, arriving around 8 PM, and returns to the city the same night. He has held that booking long enough that the yard treats it as part of the day rather than as a reservation. It is also, without his knowing it, a thread anyone asking after transport in Duskwall can pull straight to his front door.
 
 **The journal:** His office contains a journal — in plain view — with an entry expressing longing for a woman named Anwe from Neverwinter, described as a meeting nearly twenty years ago that he has never entirely put aside. This entry independently corroborates the letter found in the servant's quarters without confirming Rezibund's parentage.
 

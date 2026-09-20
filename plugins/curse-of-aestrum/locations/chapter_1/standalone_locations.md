@@ -64,6 +64,10 @@ The large forest within Aestrum. Contains Aliss Perisdottir's three-story stone 
 
 A community of estates comprised primarily of retired individuals. Located at the edge of the Nahamkate Desert — to the north, vegetation abruptly stops, transitioning into a barren, orange-hued wasteland. Home to the Dundelver estate (with Rezibund Highbottom's skeleton in the dining room) and Rose Landon's apothecary.
 
+**npcs_present:** [npc_rose_landon, npc_kip_malbry]
+
+The village's runner is [Kip Malbry]({{PLUGIN_ROOT}}/npcs/chapter_1/remaining_npcs.md#kip-malbry), thirteen, who carries deliveries for Rose Landon's shop and is the one sent to Duskwall for the guard every cycle when the skeleton is found. She is gone down the road from about a quarter past ten each morning and comes back with the guards in the afternoon.
+
 ---
 
 ## Moonmaiden Falls

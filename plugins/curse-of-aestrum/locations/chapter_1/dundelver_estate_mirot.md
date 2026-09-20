@@ -4,7 +4,8 @@ name: The Dundelver Estate
 region: mirot
 curse_affected: true
 connected_locations: [loc_mirot, loc_rockwood]
-npcs_present: [npc_darwinnith_dundelver_1, npc_darwinnith_dundelver_2]
+npcs_present: [npc_darwinnith_dundelver_1, npc_darwinnith_dundelver_2, npc_corran_vye, npc_milo_tarrow, npc_kip_malbry]
+npcs_present_notes: "Darwinnith the Second is here ~10 AM to ~7 PM. Vye, Tarrow and Kip arrive together ~4:45 PM; the guards stay until the midnight reset takes them, Kip until she goes home for her supper. Darwinnith the First arrives later in the evening, after his son has gone. The ~4:45-7 PM overlap is the only time DD2 and the guards are both present."
 related_quest: quest_murder_of_rezibund_highbottom
 ---
 
@@ -20,7 +21,26 @@ Each morning, the estate resets to the following state:
 
 - The skeleton of Rezibund Highbottom is lying face down on the dining room floor, clothes in tatters. The wood around and beneath the body is stained; additional staining near the facial area (vomiting).
 - Darwinnith the Second arrives in the late morning, discovers the skeleton, and immediately claims sorcery or necromancy — the victim was fine just the day before and is now an aged skeleton.
-- Darwinnith the First is expected at the estate later that evening (arriving from Duskwall). He resets in Duskwall, not here.
+- Darwinnith the Second gives the guards his statement, stays as long as he can stand to, and takes the cart home at roughly **the seventh hour past midday (~7 PM)** — twelve miles, about three and a half hours, lanterns lit, home around half past ten. He goes with visible reluctance, promising to return at first light. He does not. He arrives the next morning having forgotten he ever said it.
+- Darwinnith the First arrives at roughly **8 PM**, an hour after his son has gone, by hired coach from Duskwall — the standing booking he keeps at [À la Cart]({{PLUGIN_ROOT}}/locations/chapter_1/duskwall/a_la_cart.md) because he is too ill to walk twelve miles. The driver turns straight around and is back in the city by about half past ten. DD1 resets in Duskwall, not here.
+- Word goes out for the Duskwall guard within the quarter-hour. [Kip Malbry]({{PLUGIN_ROOT}}/npcs/chapter_1/remaining_npcs.md#kip-malbry), Mirot's thirteen-year-old runner, is sent down the road on foot and covers the twelve miles in a little under three hours.
+- Two guards — [Corran Vye]({{PLUGIN_ROOT}}/npcs/chapter_1/remaining_npcs.md#corran-vye) and [Milo Tarrow]({{PLUGIN_ROOT}}/npcs/chapter_1/remaining_npcs.md#milo-tarrow) — set out from Duskwall on foot in the early afternoon and reach the estate at roughly the fifth hour past midday, with Kip walking the twelve miles back alongside them. They never leave it. Vye will not walk away from an unsecured body, so the two of them hold the scene through the evening and into the night, intending to resume at first light — and the midnight Sleep step drops them where they stand. The 3:00 AM Teleport step returns them to Duskwall, because Duskwall is their reset point. First light never arrives for them. Kip resets in Mirot.
+
+---
+
+## The Post Outside the House
+
+From roughly the fifth hour past midday until midnight takes them, two Duskwall guards are standing outside the front of the house. They are not inside it — Vye put his head in once, looked at the body, and came back out, and neither of them has been in since.
+
+Within the first hour they have done everything they are going to do: looked at the skeleton, taken Darwinnith the Second’s statement before he drives home, and stopped. What stops them is not laziness. The body is plainly a decade gone; their only witness says sorcery and cannot be disproved; they have no authority to search or hold anyone in Mirot; and — the part they do not know — they have never once had a second day to work with. Every cycle is hour one.
+
+Kip sits on the wall with her legs out, wrecked from the run, watching them accomplish nothing, until someone sends her home for her supper.
+
+**They do not walk back.** Vye’s position is that you do not leave a body in an empty house overnight, and you do not walk twelve miles to fetch a magistrate in the dark either. So the detail holds the scene until morning and means to work it properly at first light. Night comes on; one of them gets a lantern going; they talk about nothing in the way men do on a long post. At 12:00:00 AM the Sleep step drops both of them where they stand, and the 3:00 AM Teleport step puts them back in Duskwall, which is where they began the day and therefore where they begin every day. See [rules/time_loop.md]({{PLUGIN_ROOT}}/rules/time_loop.md).
+
+Vye has now kept this vigil roughly three thousand six hundred times, every one of them in order to be ready for a morning he has never once seen.
+
+**This is the party's accusation window.** Full mechanics, the arrival timeline and the guards' pushback ladder: [Step 2 of the quest]({{PLUGIN_ROOT}}/quests/chapter_1/the_murder_of_rezibund_highbottom.md).
 
 ---
 
@@ -123,9 +143,15 @@ Rezibund's outbuilding. A short distance from the main house, accessed from outs
 
 **The bug:** The open jar and the missing scavenger insect are a subtle environmental detail available to attentive players — confirming the body has been there long enough to attract insects consistent with decomposition, which supports a death that predates the current morning. Not a critical clue, but rewards investigation.
 
-**DD2's arrival window:** He arrives in the late morning each day. Players who arrive before him find the estate unattended. Players who arrive with him get his performance of genuine confusion. He does not know the party is investigating and will not behave suspiciously unless directly confronted with both the broken alibi and the letter simultaneously.
+**DD2's window:** He is at the estate from the late morning (~10 AM) until roughly **7 PM**, when he takes the cart home to Rockwood. Players who arrive before him find the estate unattended. Players who arrive with him get his performance of genuine confusion. He does not know the party is investigating and will not behave suspiciously unless directly confronted with both the broken alibi and the letter simultaneously.
 
-**DD1's expected arrival:** Later the same evening, from Duskwall. If the party is at the estate in the evening, DD1 is present. He is forgetful and lethargic from his illness — kind but difficult to keep on topic. He does not know Rezibund is dead or that his son is a murderer. If told the letter is a forgery, he gifts the party the safe.
+**Why he leaves, and what it costs to stop him.** The drive is three and a half hours and he has a wife at the other end of it. He is not racing the dark — the cart carries lanterns and he is used to finishing the run in them — he simply has no reason to sleep in a house with a skeleton in it when he has a bed twelve miles away.
+
+> **Do not tie this to the alibi.** Maret's claim that he came home *"shortly after dark"* describes **the night of the murder only** — a single historical night before the cycle began, when he left the estate late because he had a body to arrange and a plate to wash, and Tovy saw him arrive near midnight. That night is fixed and is not replayed. His post-cycle daily departure is a separate fact, set for play rather than for the evidence, and changing it does not touch the alibi or Tovy's testimony in any way.
+
+He can be held later. He will stay as long as someone is actively engaging him, growing steadily more anxious about the hour and the road. **A party that keeps him past about 8:30 PM has cost him the trip** — he cannot reach Rockwood before midnight and will bed down at the estate instead. The consequence is not his; it is the horse's. Animals do not reset ([rules/travel.md]({{PLUGIN_ROOT}}/rules/travel.md)): the cart and horse stay in Mirot, DD2 wakes in Rockwood without them, and he arrives the next day **on foot in the mid-afternoon** instead of by cart in the late morning — visibly put out, and with no idea why his cart is twelve miles away. A loop-aware party has just learned it can leave a fingerprint on tomorrow.
+
+**DD1's expected arrival:** Around 8 PM, by hired coach from Duskwall — two hours at coach pace over the twelve miles, on the standing booking he keeps at [À la Cart]({{PLUGIN_ROOT}}/locations/chapter_1/duskwall/a_la_cart.md). His son leaves at 7; they do not meet, and neither of them remarks on it. If the party is at the estate in the evening, DD1 is present. He is forgetful and lethargic from his illness — kind but difficult to keep on topic. He does not know Rezibund is dead or that his son is a murderer. If told the letter is a forgery, he gifts the party the safe.
 
 **The second plate:** The haphazardly washed plate is DD2's — he washed it after the murder to remove any trace of his presence at the meal, then replaced it. He could not remove Rezibund's plate without making the absence conspicuous. The result: one plate on the table (the victim's, with food remaining), one plate haphazardly washed and returned to the hutch (the killer's). Combined with the goblet trace, the misaligned hutch goblet, and the kitchen window's poison access, it reconstructs a two-person meal in which one party poisoned the other and then cleaned only their own traces.
 

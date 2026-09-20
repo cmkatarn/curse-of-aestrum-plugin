@@ -30,6 +30,7 @@ Duskwall is a **sealed-in port.** Aestrum's boundary traps sea traffic as surely
 - [You've Got Mail]({{PLUGIN_ROOT}}/locations/chapter_1/duskwall/youve_got_mail.md) — armor shop (frequently mistaken for courier service)
 - [As the Crow Flies]({{PLUGIN_ROOT}}/locations/chapter_1/duskwall/as_the_crow_flies.md) — messenger service; trained crows; public address registry
 - [The Salient Cartographer]({{PLUGIN_ROOT}}/locations/chapter_1/duskwall/salient_cartographer.md) — cartography shop
+- [À la Cart]({{PLUGIN_ROOT}}/locations/chapter_1/duskwall/a_la_cart.md) — carriage and cart hire; the duchy's only coach, held on a standing booking
 - [The Last Resort]({{PLUGIN_ROOT}}/locations/chapter_1/duskwall/the_last_resort.md) — traveler's inn near the harbor; party reset point
 - [Sound Asleep]({{PLUGIN_ROOT}}/locations/chapter_1/duskwall/sound_asleep.md) — small respectable inn off the Market District; Miri's reset point
 - [Shrine of Selûne]({{PLUGIN_ROOT}}/locations/chapter_1/duskwall/shrine_of_selune.md) — just outside city gates; desecrated

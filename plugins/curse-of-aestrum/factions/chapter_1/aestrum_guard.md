@@ -3,7 +3,7 @@ id: faction_aestrum_guard
 name: The Aestrum Guard
 type: institution
 base: loc_duskwall_castle
-members: [npc_sergeant_cael]
+members: [npc_sergeant_cael, npc_corran_vye, npc_milo_tarrow]
 cycle_aware: false
 ---
 
@@ -19,10 +19,20 @@ curtain wall. Standard issue is raven-motif outer gear.
 | Member | Role | `known_to` |
 |---|---|---|
 | [Sergeant Cael]({{PLUGIN_ROOT}}/npcs/chapter_1/sergeant_cael.md) | senior guard, inner ward post | **all** |
+| [Corran Vye]({{PLUGIN_ROOT}}/npcs/chapter_1/remaining_npcs.md#corran-vye) | watchman, 15 yrs; draws the Mirot detail each cycle | **all** |
+| [Milo Tarrow]({{PLUGIN_ROOT}}/npcs/chapter_1/remaining_npcs.md#milo-tarrow) | watchman, 4 months; walks the Mirot detail with Vye | **all** |
 
 A guard roster is public by nature: they wear the uniform in daylight and stand where
-everyone can see them. Only Cael is individually authored; the rest of the watch is
-unnamed and can be generated as scenes require.
+everyone can see them. Cael, Vye and Tarrow are individually authored; the rest of the
+watch is unnamed and can be generated as scenes require.
+
+**The Mirot detail.** Every cycle, a Mirot child reaches the gate in the early afternoon
+reporting a body at the Dundelver estate, and Vye and Tarrow walk out to it — twelve
+miles at a brisk pace, the better part of three hours. They are
+gone from Duskwall from roughly the second hour past midday onward and do not come
+back — they hold the scene overnight to resume at first light, and the reset returns
+them here instead, having accomplished nothing. See
+[the quest]({{PLUGIN_ROOT}}/quests/chapter_1/the_murder_of_rezibund_highbottom.md).
 
 ## Two of Those Posts Are Not Held by Guards
 
