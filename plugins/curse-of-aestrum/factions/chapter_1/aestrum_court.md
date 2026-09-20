@@ -3,7 +3,7 @@ id: faction_aestrum_court
 name: The Court of Aestrum
 type: ruling_house
 base: loc_duskwall_castle
-members: [npc_evandur_tallwood, npc_galadiil_ilphekiir]
+members: [npc_evandur_tallwood, npc_galadiil_ilphekiir, npc_steward_crane, npc_venn]
 cycle_aware: false
 ---
 
@@ -23,6 +23,8 @@ midnight, and reset with everyone else.
 |---|---|---|
 | [Evandur Tallwood]({{PLUGIN_ROOT}}/npcs/chapter_1/evandur_tallwood.md) | Duke of Aestrum | **all** |
 | [Galadiil Ilphekiir]({{PLUGIN_ROOT}}/npcs/chapter_1/galadiil_ilphekiir.md) | Duchess | **all** |
+| [Steward Crane]({{PLUGIN_ROOT}}/npcs/chapter_1/remaining_npcs.md) | Steward of the duchy; keeps its books, receives its business | **all** |
+| [Venn]({{PLUGIN_ROOT}}/npcs/chapter_1/remaining_npcs.md) | Crane's secretary; conducts and announces visitors | **all** |
 
 A ruling house is the **maximally public** case — the whole duchy knows who sits at
 its head. Everything interesting about this court is therefore *not* in the

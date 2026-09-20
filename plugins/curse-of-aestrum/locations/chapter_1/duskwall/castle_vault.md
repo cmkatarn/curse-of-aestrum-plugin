@@ -2,7 +2,8 @@
 id: loc_castle_vault
 name: The Castle Vault / The Maze
 type: dungeon
-parent: loc_duskwall
+parent: loc_duskwall_castle
+location_detail: beneath the castle; exterior maze entrance in the cliff face below
 connected_locations: [loc_duskwall]
 curse_affected: true
 dead_zone: false

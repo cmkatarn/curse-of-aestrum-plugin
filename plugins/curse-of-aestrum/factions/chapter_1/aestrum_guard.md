@@ -51,24 +51,31 @@ This is the same trap as the Shrikes' — whose file already warns that the vaul
 operatives are not Shrikes either. **Two different factions have now been mistaken for
 these same two men**, which is a fair measure of how well the disguise works.
 
-## DM Notes — A Hook Worth Deciding
+## DM Notes — Cael Can Still Notice (settled)
 
 Cael's whole characterization is that **he knows every face that belongs inside the
 curtain wall**, and how people move when they are lost, lying, or simply having a bad
 day. He is precisely the man who ought to have noticed two strangers on the side
 entrance.
 
-He has not. The question the campaign has never answered is *why*, and the two
-candidates play very differently:
+**He has not, and the reason is that nothing has ever made him look.** The impostors
+took those posts *after* his snapshot fired — they are not inside his baseline sense of
+"belongs," and his instincts about them are live and unspent. He has registered the
+turnover at that post and filed it under "undesirable posting," which is a conclusion he
+reached once and has never had cause to revisit.
 
-- **The impostors took those posts on the day the cycle began** — the same day Cael's
-  snapshot was taken. If they were already in place when it fired, they have been
-  inside his sense of "belongs" from the first moment, and he cannot notice a wrongness
-  that his baseline includes.
-- **Or he can still notice**, and simply never has, because nothing has yet made him
-  look — in which case a party who gives him a reason is handing him the thread.
+**This was previously left open between two readings.** The alternative — that the
+impostors were already in place when the cycle locked, making him structurally blind and
+them permanently safe — is **superseded**. It made the castle's most capable gatekeeper
+into a dead end with no counterplay, and it removed the most natural route a party has to
+[reach the Duke]({{PLUGIN_ROOT}}/locations/chapter_1/duskwall/duskwall_castle.md).
 
-The first makes him structurally blind and the impostors safe; the second makes him a
-loaded weapon pointed at them. **Not settled here** — it needs a DM ruling, and it
-determines whether Cael is an obstacle or the best ally a party could have inside that
-castle.
+**What this means in play.** Cael is a loaded weapon pointed at the Setland operatives,
+and the party holds the trigger. Give him evidence rather than assertion — a Lion-crest
+tunic under the raven, a body, a name that fails against his roster — and his *activation
+moment* fires. He is then a senior guard with a mission, personally motivated, inside the
+castle, who controls the gates the party needs.
+
+He remains **politely immovable to anyone who has not earned this.** Nothing here makes
+him easier to get past; it makes him possible to get *onside*. Those are different, and
+the difference is the whole design.

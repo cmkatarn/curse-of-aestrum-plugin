@@ -5,7 +5,7 @@ type: castle
 parent: loc_duskwall
 curse_affected: true
 loop_anchor: false
-npcs_present: [npc_evandur_tallwood, npc_galadiil_ilphekiir, npc_edwy_murn, npc_sergeant_cael, npc_corran_vye, npc_milo_tarrow]
+npcs_present: [npc_evandur_tallwood, npc_galadiil_ilphekiir, npc_edwy_murn, npc_sergeant_cael, npc_corran_vye, npc_milo_tarrow, npc_steward_crane, npc_venn]
 npcs_present_notes: "Vye and Tarrow are posted here and reset here, but are absent from roughly the second hour past midday onward every cycle — they draw the Mirot detail and are at the Dundelver estate until the reset takes them. See locations/chapter_1/dundelver_estate_mirot.md."
 faction_primary: aestrum_court
 ---
@@ -41,7 +41,10 @@ The maze also has an exterior entrance: a second access point set into the cliff
 ## Areas
 
 ### Great Hall
-Used for formal audiences, ducal appearances, and nothing else. Evandur does not hold court frequently. Staff move through during service hours and are otherwise absent. The candle arrangement requires regular tending; the staff member responsible for it is the most common presence in the hall outside of formal sessions.
+**This is where an audience with the Duke happens** — including the one [Steward Crane]({{PLUGIN_ROOT}}/npcs/chapter_1/remaining_npcs.md) escorts a writ-bearing party into, and every later visit made on a [Ducal Pass]({{PLUGIN_ROOT}}/items/chapter_1/ducal_pass.md). Used for formal audiences, ducal appearances, and nothing else. Evandur does not hold court frequently.
+
+**Note what the party is being shown.** The dining room opens off this hall through a curtained doorway, and the hall is the best place in the castle to hear what is said in it. The room they are walked into for their audience is the room they will later stand in to listen to the midday meal — see *Overhearing the Meal* on the [Ducal Pass]({{PLUGIN_ROOT}}/items/chapter_1/ducal_pass.md). Crane teaches them the listening post without knowing he has.
+ Staff move through during service hours and are otherwise absent. The candle arrangement requires regular tending; the staff member responsible for it is the most common presence in the hall outside of formal sessions.
 
 Voices from the dining room can be heard clearly from inside the hall when the curtain is parted, and faintly through it when it is not.
 
@@ -65,6 +68,94 @@ Concealed within the room — well-hidden, not obviously placed — are three ma
 Lower level, near-end of the hallway. The castle garrison is small — adequate for peacetime gate duty and petitioner management. Rotating shifts. Guards do not patrol beyond Evandur's quarters toward the vault end. This has been standing practice long enough that no one questions it.
 
 Evandur's two interior guards hold position at the maze entrance door with an alarm pyre. They are legitimate Duskwall men — posted here specifically because Miklas's map reached hostile hands.
+
+## Reaching the Duke
+
+**Evandur must be reachable.** [The assassination]({{PLUGIN_ROOT}}/quests/chapter_1/the_assassination_of_duke_tallwood.md) needs a party in his corridor at 11:29 PM if they are ever to warn or shield him, and [Breaking the Cycle]({{PLUGIN_ROOT}}/quests/chapter_1/breaking_the_cycle.md) runs through this castle. But he does not hold court often, [Sergeant Cael]({{PLUGIN_ROOT}}/npcs/chapter_1/sergeant_cael.md) is politely immovable at the inner ward, and the one documented attempt to contact the Duke in canon — [Dunleaven's bridge petition]({{PLUGIN_ROOT}}/locations/chapter_1/dunleaven.md) — is three letters over two years that a clerk quietly never forwarded.
+
+That is the correct default. **The front door does not work, and should not start working because the party is persistent or rolls well.** What follows are five routes that *do* work, each keyed to something the party has to earn somewhere else. A party that has earned none of them does not get in; a party that has earned one does.
+
+**Do not soften the gatekeepers to compensate.** If the party is stuck at the gate, the answer is never a lower DC — it is that they have not yet found a route, and the route is findable.
+
+**Every route below is phrased to survive a fuzzball, and the phrasing is load-bearing.** Each one rests on ordinary present-tense facts and none of them require the loop to be true. A party that reframes any of these as "this happens every day" converts a working route into a failed one — see [fuzzball.md]({{PLUGIN_ROOT}}/rules/fuzzball.md), *Moving a Fuzzballed NPC*, which is the governing procedure for all five.
+
+**Route 5 is the one every canon party is already holding**, and it is the one to read first.
+
+---
+
+### Route 1 — The name (strongest, and it inverts the gate)
+
+Evandur is **already investigating an assassination plot**, and a name has surfaced: *Luca*. He does not know whether it is the brother he believes he killed. See [evandur_tallwood.md]({{PLUGIN_ROOT}}/npcs/chapter_1/evandur_tallwood.md), *Background* and *Character Memory*.
+
+A party that walks up to any castle official and credibly says **they have information about Luca and the plot against the Duke's life** is no longer a petitioner. They are a lead, in a matter the Duke is personally turning over, and the household knows he is turning it over.
+
+- **What it takes:** any genuine knowledge of the Shrikes' plot — the 11:30 PM corridor, Judith Asemyeer holding the gate, Luca's involvement, the vault heist as cover. Secondhand is enough if they can say something an outsider should not know.
+- **What it does not take:** proof. Evandur will decide about proof himself. The household's job is not to adjudicate the claim; it is not to be the person who threw away the warning.
+- **Say "there is a plot," never "it happens every night."** The plot and the name are ordinary facts and pass straight through — Evandur's own worry about Luca predates the cycle and is part of his snapshot. The *nightly recurrence* is a loop claim and trips the fuzzball of whoever hears it (see [fuzzball.md]({{PLUGIN_ROOT}}/rules/fuzzball.md), *Moving a Fuzzballed NPC*). A party that says the first thing gets an audience; a party that says the second gets escorted out.
+- **Speed:** same day. This is the fast route, deliberately, because a party that has got this far has done real work to get it.
+- **The risk is real and should be felt.** Evandur is `lawful_evil`, paranoid about succession, and will not react immediately — but when he does act, "it will be thorough." A party that walks in holding this is safe only for as long as he finds them more useful than dangerous.
+
+---
+
+### Route 2 — Cael, activated
+
+**Cael can still notice.** See the ruling in [aestrum_guard.md]({{PLUGIN_ROOT}}/factions/chapter_1/aestrum_guard.md). The Setland impostors took the cliff-entrance posts *after* his snapshot fired, so his instincts are live and nothing has yet made him look. A party that gives him a reason is handing him the thread.
+
+Tell him what is true at the exterior maze entrance **right now** — that the two men on that post are not his, and are wearing Setland's lion crest under stolen raven gear — and his *activation moment* fires (see his sheet): one clarifying question, then another, then stillness, then a man with a mission.
+
+**Phrase it in the present tense and leave the loop out of it.** "They are killed and replaced every morning" is a loop claim; it trips his fuzzball, he waves it off, and the party becomes the problem rather than the report (see [fuzzball.md]({{PLUGIN_ROOT}}/rules/fuzzball.md), *Moving a Fuzzballed NPC*). He does not need the repetition and cannot hold it. He needs two strangers on a post today, which he can go and check.
+
+- **What it takes:** evidence, not assertion, and all of it available today. A Lion-crest tunic under the raven. A name that fails against his roster. A post he can walk to. He is not credulous and the claim is enormous — but every part of it is checkable within the hour, which is exactly why it survives contact with his fuzzball.
+- **What it gets them:** the senior guard of the inner ward, personally escorting them past every gate he controls, with a reason the household cannot argue with. **This is the campaign's hardest gatekeeper becoming its best key**, which is the whole point of having ruled that he can still see.
+- **Speed:** same day, once he believes it.
+
+---
+
+### Route 3 — The correspondence clerk
+
+Canon's standing open thread (see *Callback Slots* below, and [dunleaven.md]({{PLUGIN_ROOT}}/locations/chapter_1/dunleaven.md)): three letters from Dunleaven's village elder over two years, none forwarded, and a fourth being drafted. **Why the clerk is holding them is deliberately unestablished** — settle it when the party pulls the thread.
+
+Whatever the reason turns out to be, the party who discovers it is holding something over the household administration, and the elder's fourth letter is a legitimate in-fiction errand that puts them in the correspondence chain with business to transact.
+
+- **What it takes:** going to Dunleaven, caring about a bridge, and following the paperwork backwards.
+- **Speed:** slow. Several days of cycle time, and the letters reset. The leverage does not — the party remembers what they learned even when the clerk does not.
+- **Why keep it slow:** it is the route for a party who never finds the plot and never thinks to talk to Cael. It should exist, and it should cost the most.
+
+---
+
+### Route 4 — Galadiil
+
+The Duchess takes the midday meal with him **every single day** in the dining room off the great hall. She is inside, she is desperate, she has her own agenda, and she is reachable — [Edwy Murn]({{PLUGIN_ROOT}}/npcs/chapter_1/remaining_npcs.md) is a household contact a party can recruit with cover and a real plan.
+
+- **What it takes:** doing something real for her. The Hylea's Mead substitution, the ring, or simply being the first people in a decade to treat her as a person with a problem rather than a fixture.
+- **What it gets them:** not a gate pass — an *advocate at his table*, which is different and in some ways better. She cannot order Cael to admit them. She can raise a subject over the meal.
+- **Speed:** medium, and it compounds. She is the route that keeps paying.
+
+---
+
+### Route 5 — The writ (the default, and the long way round)
+
+Every party that takes the Setland contract leaves the Lion's Den with **sealed letters of introduction under Malak's lion seal** ([the_lions_den.md]({{PLUGIN_ROOT}}/locations/chapter_1/the_lions_den.md)). This is the document they will try first, and it is worth being exact about what it does.
+
+**The writ is a credential, not an audience.** It answers *should these people be inside the castle*, not *should the Duke see them*.
+
+1. **It works on Cael, cleanly.** His sheet: he "respects competence — the right approach, the right documents, the right manner — gets through with minimal friction." A genuine foreign seal is the right document. He passes them without drama. This is as far as the writ carries on its own.
+2. **It routes to [Steward Crane]({{PLUGIN_ROOT}}/npcs/chapter_1/remaining_npcs.md), not the Duke.** A demand for ten years of arrears is a books matter, and the duchy's receiving officer for business is its steward. [Venn]({{PLUGIN_ROOT}}/npcs/chapter_1/remaining_npcs.md) takes the instrument in and announces them.
+3. **Crane accepts the seal and disputes the debt**, and he is not lying — his ledgers genuinely show no arrears, because the ten years accrued inside a cycle his books do not record. Arguing that the debt is real fails here, every time, for that reason.
+4. **The key is authority, not arithmetic.** Argue that Crane lacks the standing to answer a foreign duke on the duchy's behalf and he concedes — reluctantly, visibly, and completely. **He then takes them before Tallwood himself, personally, that day.** This is deterministic; see his sheet. He escalates the claim while still disputing it, and says so in front of the Duke.
+5. **After the audience they hold a [Ducal Pass]({{PLUGIN_ROOT}}/items/chapter_1/ducal_pass.md)** — direct access thereafter without going through Crane, plus standing run of the ward, the courtyard, the Hammered and Anvil, the Great Hall and the garden. Keeping it through a reset is a separate puzzle with three authored solutions.
+
+- **What it takes:** the contract, and one good argument. No prior relationships, no evidence, no plot knowledge. **This is the route available to a party on day one.**
+- **Speed:** an afternoon, repeatable every cycle.
+- **What it costs:** goodwill, and it is not cheap. See *Reaching Him* on [evandur_tallwood.md]({{PLUGIN_ROOT}}/npcs/chapter_1/evandur_tallwood.md) — the writ marks the party as instruments of a hostile power, and the Duke tells them so.
+
+---
+
+### If the party finds none of these
+
+Then they do not reach the Duke this cycle, and that is a correct outcome rather than a failure of the design. Aestrum resets; they can try again tomorrow with what they learned today, which is the one advantage they have over everyone else in the duchy. **Let the closed door be closed.** The campaign is about a party who accumulate across resets — a gate that opens to persistence teaches them nothing, and a gate that opens to leverage teaches them exactly the lesson the cycle is built to teach.
+
+---
 
 ## Faction Reach
 

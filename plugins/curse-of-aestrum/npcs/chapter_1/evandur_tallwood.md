@@ -39,6 +39,59 @@ The guilt is not redemptive. It has not made him gentler or more hesitant. It li
 - Will not react immediately to party actions. When he does act, it will be thorough.
 - Does not perform calm. He simply is calm — or something that functions identically to calm from the outside. A successful Insight check reads not serenity but total self-governance: nothing gets out that he has not decided to show.
 
+## Reaching Him
+
+He does not hold court often and the household is built to absorb petitioners, so the
+routes that work are the four in *Reaching the Duke*
+([duskwall_castle.md]({{PLUGIN_ROOT}}/locations/chapter_1/duskwall/duskwall_castle.md)). Read them
+before running any attempt to get an audience.
+
+**The one that turns on him personally is the name.** Evandur is actively turning over
+the whispers of a plot and the name *Luca* — it is live in his head at every reset, and
+the household knows he is preoccupied with it. A stranger claiming knowledge of Luca or
+of a threat to his life is not a petitioner to be routed to the holding room; they are
+the thing he has been waiting to hear about, and a steward who buries that has made a
+career-ending mistake and knows it.
+
+### The writ audience — what he does with a tax claim
+
+When [Steward Crane]({{PLUGIN_ROOT}}/npcs/chapter_1/remaining_npcs.md) walks a party in holding Setland's arrears writ,
+Evandur hears it out. He denies the debt — as far as his memory goes, Aestrum's payments
+are current and he has met every one, which he believes because it was true when the
+snapshot took him.
+
+**Then he tells them what they have actually delivered.** He has no ledger to check and
+does not need one: a foreign duke advancing a decade-old claim through hired locals rather
+than through a herald or a court envoy is not collecting a debt. It is building a
+grievance. He says so — plainly, without heat, as a man stating the obvious to people who
+have not worked it out yet.
+
+**Play this precisely:**
+
+- **He stops well short of aggression.** No arrest, no threat, no army. He does not muster
+  and he does not retaliate against the messengers. There is nothing to be gained from
+  breaking couriers.
+- **He does not hold them responsible**, and says so. They are obviously not official
+  representatives — they are a contracted recovery team with a sealed letter, and he can
+  read that off them in a moment. His assessment is that they do not understand the message
+  they are carrying.
+- **So he explains it.** Not kindly, and not at length. He lays out what a claim like this
+  is *for*, and lets them sit with the fact that they walked it across his border
+  themselves. The register is a man correcting a factual error, not a man scoring a point.
+- **He does not say what he intends to do about it.** Per his profile: he will not react
+  immediately; when he does act, it will be thorough. The party leaves knowing more than
+  they arrived with and knowing nothing about his response.
+
+This is the most information the party can get about Setland's intentions this early, and
+they pay for it in cover: after this audience the Duke of Aestrum knows exactly whose
+instruments they are.
+
+**Play his reaction cold** throughout — here and on the Luca route. He does not thank them,
+does not show relief, and does not tip what he already knows. He asks what they know, how they know it, and who else has
+heard it — and he is assessing, throughout, whether these people are a warning or a part
+of it. Per his behavioural profile he will not act immediately; when he does, it will be
+thorough. A party that brings him this has bought access and spent some safety to do it.
+
 ## Character Memory
 *Base state only — what Evandur knows at daily reset. Not loop-aware. No current overlay exists; no campaign knowledge survives his daily reset.*
 

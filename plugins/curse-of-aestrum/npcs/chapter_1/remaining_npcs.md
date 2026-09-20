@@ -511,6 +511,73 @@ A child living in the house nearest Darwinnith Dundelver the Second's home in Ro
 
 ---
 
+## Steward Crane
+
+**id:** npc_steward_crane | **location:** loc_duskwall_castle | **cycle_aware:** false | **alignment:** lawful_neutral | **race:** Human | **groups:** [faction_aestrum_court]
+
+Steward of the Duchy of Aestrum — the household and financial officer who keeps the duchy's books and answers for its coin, beneath the ducal authority of the seat. Past sixty, lean as a dried reed, reading-lenses pushed up into iron-grey hair, right hand ink-dark to the knuckle from a lifetime of other men's accounts. He has kept the books himself for decades and does not delegate them.
+
+Dry, flat, unhurried, civil, and immovable. No heat, no theatrics. He reads people in a slow sum and gives nothing of the total back. He never raises his voice and never yields to pressure that is not backed by arithmetic.
+
+**He is the duchy's receiving officer.** Anything that arrives at Duskwall Castle as *business* — a claim, a demand, a sealed instrument from another court — comes to Crane. This is the post that absorbs the party's [Setland writ]({{PLUGIN_ROOT}}/quests/chapter_1/ducats_for_the_duchy.md), and it is why presenting that writ does not put anyone in front of the Duke. See *Reaching the Duke* in [duskwall_castle.md]({{PLUGIN_ROOT}}/locations/chapter_1/duskwall/duskwall_castle.md) for the full route.
+
+### On the Setland arrears claim
+
+He will accept a genuine lion seal as genuine — he knows a true seal and says so. **He will still dispute the debt**, because his books show no such arrears and he is not lying: the ten years accrued inside a cycle his ledgers do not record. He has no idea that is why.
+
+His terms, offered in good faith and always the same:
+
+> *"A true seal and a true debt are two different birds."*
+
+Prove it — what is owed, for what, against which ledger. He offers three paths to that proof: bring Nortmunde's records, bring a man who answers for them, or he writes to Nortmunde under his own seal and everyone waits on the reply.
+
+**All three are closed and nobody in the fiction knows it.** A snapshot-bound party cannot leave Aestrum to fetch records or witnesses, and a letter Crane sends dies at his own reset — he will not remember writing it, and no reply can land with a man for whom the day he sent it never happened. Do not have anyone say this aloud. Let it read as bureaucratic dead air until the party understands the cycle, at which point it should land hard: the terms were never unfair, just quietly impossible.
+
+### The concession — how the party gets past him
+
+**This is deterministic. Run it as written.**
+
+If the party argues that **Crane lacks the authority to answer a foreign duke**, he concedes. Not happily — he will take a moment, and it will visibly cost him — but he concedes, because it is true and he is honest about true things even when they are inconvenient:
+
+> He has the knowledge of the books. He does not have the standing to reply to a Duke on the duchy's behalf.
+
+**He then takes them before Tallwood himself.** Personally, that day, without further obstacle. He does not send them on; he walks them in. A sovereign claim between duchies is above his station, and a careful official does not adjudicate a matter of that magnitude alone — he escalates it, in person, to the only authority that can answer.
+
+Note what this argument is and is not:
+
+- **It is not "the debt is real."** That argument fails, because his books genuinely do not show it, and it fails the same way every time.
+- **It concedes his point rather than fighting it.** He said first that the arithmetic cannot settle the matter. This agrees.
+- **It requires nothing of the loop**, so it never engages his fuzzball. See [fuzzball.md]({{PLUGIN_ROOT}}/rules/fuzzball.md), *Moving a Fuzzballed NPC — The Laundering Rule*.
+- **He still does not believe the debt.** He escalates the claim while disputing it, and will say so plainly in front of the Duke. He is not being won over; he is being correctly redirected.
+
+### After the audience
+
+The household issues the party a [Ducal Pass]({{PLUGIN_ROOT}}/items/chapter_1/ducal_pass.md) — direct access to the Duke without going through Crane again. **Keeping it through a reset is its own problem.** See the item.
+
+### DM Notes
+
+- **Every visit is a first meeting.** Crane is an ordinary loop subject and resets at midnight holding nothing of the day before — not a seal, not a name, not the terms he offered. A party returning must re-present from nothing. Play him warm-neutral and completely blank; **do not have him almost-remember.** Their compensating advantage is real and is the point: they remember, so they can open with the authority argument on the first try of any cycle and skip the failed negotiation entirely.
+- **Do not soften him to speed things along.** He is not an obstacle to be worn down; he is a lock with a specific key. A party that has not found the key does not get past him, and that is correct.
+- Pairs with [Venn]({{PLUGIN_ROOT}}/npcs/chapter_1/remaining_npcs.md), his secretary, who conducts and announces visitors.
+
+---
+
+## Venn
+
+**id:** npc_venn | **location:** loc_duskwall_castle | **cycle_aware:** false | **alignment:** lawful_neutral | **race:** Human | **groups:** [faction_aestrum_court] | **status:** stub
+
+Steward Crane's secretary, and the first person any petitioner on business actually deals with. Lean, past forty, ink-stained to the second knuckle, with the unhurried attention of a man whose whole job is deciding what is worth his master's time. He keeps the steward's correspondence, conducts visitors, and announces them.
+
+**He reads people, and he is good at it.** Not suspicious — *assessing.* He will take a sealed instrument, examine it without comment, and carry it in. Whether he carries it in *promptly* is the only discretion he has, and he exercises it.
+
+**Where he matters:** he is the filter in front of Crane, and a party that handles him badly waits. He responds to being treated as a professional rather than a doorman. He is not bribable and would be offended by the attempt — not morally, but because it misreads him.
+
+**DM Notes:** Venn is a texture and a small competence gate, not a puzzle. He has no secret and no agenda. He is also the household's other candidate for the [correspondence question]({{PLUGIN_ROOT}}/locations/chapter_1/duskwall/duskwall_castle.md) — if the DM wants the Dunleaven bridge petitions to have been held by someone with a reason, Venn is within reach, and his reason would be procedural rather than sinister. Left open. Resets each midnight at the castle.
+
+**Open slots — to develop in play:** whether the bridge petitions are his; how long he has served Crane; what he wants.
+
+---
+
 ## Hesper Dunn
 
 **id:** npc_hesper_dunn | **location:** loc_a_la_cart | **cycle_aware:** false | **alignment:** lawful_neutral | **race:** Human | **status:** stub

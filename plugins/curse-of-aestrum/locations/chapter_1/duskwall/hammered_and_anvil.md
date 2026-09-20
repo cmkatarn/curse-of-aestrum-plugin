@@ -2,7 +2,7 @@
 id: loc_hammered_and_anvil
 name: The Hammered and Anvil
 type: tavern
-parent: loc_duskwall
+parent: loc_duskwall_castle
 location_detail: castle courtyard, within castle walls
 curse_affected: true
 npcs_present: [npc_judith_asemyeer, npc_elyas]
