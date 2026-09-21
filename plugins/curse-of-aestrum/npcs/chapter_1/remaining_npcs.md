@@ -572,7 +572,7 @@ Steward Crane's secretary, and the first person any petitioner on business actua
 
 **Where he matters:** he is the filter in front of Crane, and a party that handles him badly waits. He responds to being treated as a professional rather than a doorman. He is not bribable and would be offended by the attempt — not morally, but because it misreads him.
 
-**DM Notes:** Venn is a texture and a small competence gate, not a puzzle. He has no secret and no agenda. He is also the household's other candidate for the [correspondence question]({{PLUGIN_ROOT}}/locations/chapter_1/duskwall/duskwall_castle.md) — if the DM wants the Dunleaven bridge petitions to have been held by someone with a reason, Venn is within reach, and his reason would be procedural rather than sinister. Left open. Resets each midnight at the castle.
+**DM Notes:** Venn is a texture and a small competence gate, not a puzzle. He has no secret and no agenda. He is also the household's standing candidate for the [Dunleaven bridge petitions]({{PLUGIN_ROOT}}/locations/chapter_1/duskwall/duskwall_castle.md) — **the holder's reasoning is now settled** (an expenditure judged unjustifiable once the village's visitor trade ended), and it sits naturally in Venn's procedural register without making him sinister. Only whether it is *him* is still a DM call. Resets each midnight at the castle.
 
 **Open slots — to develop in play:** whether the bridge petitions are his; how long he has served Crane; what he wants.
 

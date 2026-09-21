@@ -31,7 +31,7 @@ mid-event arrival because every step is instantaneous.
 |---|---|---|---|---|
 | 12:00 AM | **Sleep** | instant | none | Forces unconsciousness on all affected creatures |
 | 1:30 AM | **Resurrect / Recreate** | instant | none | Restores creatures and objects to start-of-day state |
-| 3:00 AM | **Teleport** | instant | none | Moves sleeping individuals to their reset point |
+| 3:00 AM | **Teleport** | instant | none | Moves every affected subject to their reset point — **being asleep is not a precondition** (see below) |
 | 4:30 AM | **Modify Memory** | instant | none | Wipes the day's memories — see [revert.md]({{PLUGIN_ROOT}}/rules/revert.md) and [fuzzball.md]({{PLUGIN_ROOT}}/rules/fuzzball.md). **Must run after Recreate** so resurrected subjects do not retain memory of having died. |
 | 6:00 AM | **Wake** | instant | none | Removes Sleep effect |
 
@@ -39,6 +39,31 @@ At midnight (12:00:00 AM), affected individuals fall asleep, collapse,
 freeze rigid facing their intended direction of travel, then vanish to
 their reset point. The Sleep step itself is instantaneous; the
 collapse-and-freeze tableau plays out in the seconds after.
+
+**Wakefulness is not shelter — the steps do not check whether you are asleep.**
+Every step acts on every affected subject inside the area at the moment it
+fires. **Shelter is the only exemption** — a dead zone, the boundary, or a
+per-step protection. A subject who is awake at 3:00:00 AM and standing
+outside a dead zone is Teleported exactly like everyone else.
+
+The reason the Teleport step is easy to misread is that in the ordinary case
+it is redundant: Sleep took everyone three hours earlier, so by 3:00 AM every
+affected subject *happens* to be asleep. That is a consequence, not a
+condition. It stops being true for anyone who avoided Sleep specifically —
+a [Pendant of the Waking Hours]({{PLUGIN_ROOT}}/items/chapter_1/pendant_of_waking_hours.md)
+bearer, or anyone carrying sleep protection from
+[magical_item_conversion.md]({{PLUGIN_ROOT}}/rules/magical_item_conversion.md) — and those subjects
+are still moved at 3:00 AM unless they are separately protected. The existence
+of a **distinct** Loadstone → Protection from Teleportation conversion is the
+proof: if sleep-immunity covered Teleport, that conversion would do nothing.
+
+**Practical consequence.** Staying awake through the night buys a subject
+nothing on its own. The only way to be in a chosen place at 6:00 AM is to
+shelter, to hold *both* protections, or to wait out the sequence somewhere the
+steps cannot reach — which is why
+[Rowan Deckard]({{PLUGIN_ROOT}}/npcs/chapter_1/rowan_deckard.md) sits inside his dead zone
+until **Modify Memory has fired at 4:30 AM** and only then goes out. He is not
+waiting for morning. He is waiting for the last step that can touch him.
 
 **Boundary-crossing precision.** *"After the morning Wake step"* means
 strictly after 6:00:00 AM. *"Before the following midnight Sleep

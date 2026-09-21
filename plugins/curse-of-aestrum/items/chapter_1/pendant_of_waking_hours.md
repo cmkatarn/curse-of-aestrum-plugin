@@ -14,6 +14,7 @@ At campaign start it lies on Elsinoor Trambeathen's remains in her mausoleum. Pr
 ## Notable Property
 
 - Worn through midnight, it lets its wearer stay conscious across the loop's reset and witness what is otherwise unobservable: living beings freeze in place, then teleport to their reset points.
+- **It does not exempt the wearer from anything but Sleep.** Every other step still acts on them if they are outside a dead zone — including the **3:00 AM Teleport**, which moves them to their own reset point like everyone else (see [time_loop.md]({{PLUGIN_ROOT}}/rules/time_loop.md), *Wakefulness is not shelter*). A wearer who wants to stay awake **and** stay put needs Teleport protection as well, which is a separate conversion from the Loadstone. The two together are what buy a full night of unbroken observation; the pendant alone buys the midnight hours and then goes wherever the cycle sends it.
 
 ## Conversion
 

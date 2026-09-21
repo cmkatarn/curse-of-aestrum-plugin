@@ -56,6 +56,10 @@ The village does not feel sorry for itself. It feels tired. Dunleaven once had a
 
 **The bridge:** A simple hook with outsized goodwill potential. Fixing the bridge costs materials and a half-day of work. To the village it would be transformative. The elder (unnamed — assign from callback slot) would know things about the road, the crypt, and the pond that aren't otherwise accessible.
 
+**The petition — DM side.** The clerk holding the first three is not corrupt. He judged the repair unjustifiable once Dunleaven's visitor trade ended with the crypt, and he is right about the economics and wrong about the bridge, which is the village's only route for immediate aid from Duskwall. Full handling in *Route 3* of [duskwall_castle.md]({{PLUGIN_ROOT}}/locations/chapter_1/duskwall/duskwall_castle.md). **The elder does not know any of this** — he believes the letters never arrived.
+
+**The fourth letter is being drafted, and always will be.** The snapshot caught it mid-draft, so the elder re-drafts the same unfinished petition every morning and has for ten years. A party that reads over his shoulder on two different cycles is looking at identical handwriting stopping at the identical word.
+
 **The petition:** The fourth letter is being drafted. If a player intercepts it, delivers it personally, or investigates why the first three were never answered, this thread connects directly to the Duskwall Castle administration and potentially to Galadiil or Evandur depending on who handles ducal correspondence.
 
 **Dolores's cabin (hidden):** A homestead cabin sits a quarter mile east of the village, screened by a rise and a stand of trees. It is **not** to be mentioned in any narrated description of Dunleaven. It surfaces only when:

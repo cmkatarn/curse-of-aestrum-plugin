@@ -113,7 +113,21 @@ Tell him what is true at the exterior maze entrance **right now** — that the t
 
 ### Route 3 — The correspondence clerk
 
-Canon's standing open thread (see *Callback Slots* below, and [dunleaven.md]({{PLUGIN_ROOT}}/locations/chapter_1/dunleaven.md)): three letters from Dunleaven's village elder over two years, none forwarded, and a fourth being drafted. **Why the clerk is holding them is deliberately unestablished** — settle it when the party pulls the thread.
+Canon's standing open thread (see *Callback Slots* below, and [dunleaven.md]({{PLUGIN_ROOT}}/locations/chapter_1/dunleaven.md)): three letters from Dunleaven's village elder over two years, none forwarded, and a fourth being drafted.
+
+**Why the clerk holds them — settled.** He is not corrupt, not lazy, and not protecting himself. He is doing the job he believes he was given: keeping unjustifiable expenditure off the Duke's desk. His reasoning is sound on its face and he could defend it to anyone who asked:
+
+> The bridge served Dunleaven's visitor traffic. Dunleaven no longer has visitor traffic. The village once ran a modest exorcism trade alongside its funerary work and that drew outsiders; when the crypt sealed, that trade ended, and travellers have passed through rather than stopped ever since. A crossing maintained for a trade that no longer exists is money spent on nothing.
+
+**He is wrong, and the reason he is wrong is not economic.** The bridge is not a tourism asset; it is Dunleaven's only route for **immediate aid.** With it out, nothing from Duskwall reaches the village faster than the long way round — no guard, no healer, no relief of any kind, on any timescale that matters to an emergency. The clerk has assessed a lifeline as an amenity, priced it correctly as an amenity, and filed it accordingly. Nobody has put the other case to him because nobody has been in the room.
+
+That is what the party has to do. **This is a persuasion, not an exposure** — there is no wrongdoing to uncover, no lever to pull, nothing to threaten him with. There is a careful man with an incomplete picture, and an argument he has never heard.
+
+**What it gets them.** A clerk who accepts the argument has to take it upward himself, because reversing a filing decision of that age is not his to make alone — and a man walking a two-year-old error to the seat is a man with business before the Duke. That is the route. It is slower than the others and it costs nothing but the trip to Dunleaven and the wit to see what the bridge actually is.
+
+**Running it.** He is not defensive until pressed, and pressing him is counterproductive; he responds to the case, not to pressure. A party that argues tourism economics with him *loses*, because he is right about the economics. A party that says the words *"and if something happens out there, what reaches them?"* has already won, and should be allowed to see him realise it. Play the realisation as quiet and unwelcome — he has been wrong for a long time and the discovery does not flatter him.
+
+**Identity still open.** Whether this is [Venn]({{PLUGIN_ROOT}}/npcs/chapter_1/remaining_npcs.md) or a separate correspondence clerk is a DM call; the *reasoning* above holds either way, and it fits Venn's procedural register without making him sinister.
 
 Whatever the reason turns out to be, the party who discovers it is holding something over the household administration, and the elder's fourth letter is a legitimate in-fiction errand that puts them in the correspondence chain with business to transact.
 
@@ -176,7 +190,7 @@ Then they do not reach the Duke this cycle, and that is a correct outcome rather
 
 *Assign to an elevated character when one fits.*
 
-- "A castle correspondence clerk sitting on the Dunleaven bridge petition" → three letters over two years, none forwarded; the clerk's reason for holding them is unestablished; referenced in evandur_tallwood.md
+- "A castle correspondence clerk sitting on the Dunleaven bridge petition" → three letters over two years, none forwarded. **His reason is settled** (he judges the repair unjustifiable now that Dunleaven's visitor trade is gone, and has not considered that the bridge is the village's only route for immediate aid) — see *Route 3* above. Only his identity is open. Referenced in evandur_tallwood.md
 - "The Duchess's personal maid who has attended Galadiil during her health episodes" → knows the pattern connects to the midday meal; has never spoken; assign when a player seeks out castle domestic staff
 
 ## Named Characters
