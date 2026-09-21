@@ -75,6 +75,8 @@ COPY_SPECS: list[tuple[Path, str]] = [
     (DOCS / "rpg-5e-engine" / "create-party", "engines/rpg-5e-engine/create-party"),
     (DOCS / "rpg-5e-engine" / "rules", "engines/rpg-5e-engine/rules"),
     (DOCS / "rpg-5e-engine" / "CONTRACT.toml", "engines/rpg-5e-engine/CONTRACT.toml"),
+    # Third-party attribution travels with the engine it describes, not just with its repository.
+    (DOCS / "rpg-5e-engine" / "ATTRIBUTION.md", "engines/rpg-5e-engine/ATTRIBUTION.md"),
     (DOCS / "fiction-host" / "claude_code_gate", "engines/fiction-host/claude_code_gate"),
     # Only what play-time tooling imports: runtime.lint for the gate hooks, runtime.state for the
     # save flush (+ the package marker). NOT the LLM backends / dispatch — those are for the
@@ -444,6 +446,12 @@ MARKETPLACE_DESCRIPTION = ("Home of Curse of Aestrum — an interactive Dungeons
                            "campaign played in Claude Code, with the prose, story, and 5e engines "
                            "it runs on bundled in.")
 DONATION_URL = "https://ko-fi.com/cmkatarn"   # empty suppresses the README's Support section entirely
+# Two licenses, split by what the material is: the engines and the tooling are a platform to build
+# on, the campaign is a book. The SPDX expression names both; LICENSING.md draws the boundary, and
+# all three files are vendored so an installed copy carries its own terms rather than pointing at a
+# repository the player may never visit.
+LICENSE_ID = "MIT AND CC-BY-NC-SA-4.0"
+LICENSE_FILES = ["LICENSE", "LICENSE-CONTENT.md", "LICENSING.md"]
 
 
 def _cmd(s: str) -> dict:
@@ -620,7 +628,11 @@ def write_meta() -> None:
         "author": {"name": AUTHOR, "url": AUTHOR_URL},
         "homepage": HOMEPAGE,
         "repository": REPOSITORY,
-        "keywords": ["dnd", "dnd5e", "ttrpg", "rpg", "interactive-fiction", "campaign"],
+        "license": LICENSE_ID,
+        # Both the abbreviations people type and the spelled-out game name: the plugin browser's
+        # search may look at keywords alone, and "dnd" does not match a search for the full name.
+        "keywords": ["dnd", "dnd5e", "dungeons-and-dragons", "dungeons & dragons",
+                     "ttrpg", "rpg", "interactive-fiction", "campaign"],
     }, indent=2) + "\n", encoding="utf-8")
 
     # Every hook goes through run_hook.sh rather than naming an interpreter: one manifest string is
@@ -795,7 +807,21 @@ the same cautions apply.
 ## Credits & license
 
 Curse of Aestrum by {AUTHOR}. Built on the Calliope (prose), Aria (story), and Bailly (5e)
-engines, bundled here. See each `engines/*/` subtree for its own license/contract.
+engines, which are by the same author and bundled here under `engines/`.
+
+**Two licenses, split by what the material is** — the engines are a platform, the campaign is a
+book. `LICENSING.md` draws the boundary:
+
+- **Engines** (`engines/`) and **tooling** (`scripts/`) — **MIT** (`LICENSE`). Build your own
+  campaign on them and ship it however you like.
+- **Campaign content** (`npcs/`, `locations/`, `lore/`, `quests/`, `items/`, `factions/`,
+  `timelines/`, `party/`, `overrides/`, `rules/`, `skills/`) — **CC BY-NC-SA 4.0**
+  (`LICENSE-CONTENT.md`). Play it, change it, share it, with credit and under the same terms —
+  but not for sale.
+
+The 5e engine implements a system owned by Wizards of the Coast LLC; see
+`engines/rpg-5e-engine/ATTRIBUTION.md`. This plugin is not affiliated with or endorsed by Wizards
+of the Coast.
 """, encoding="utf-8")
 
 
@@ -883,6 +909,14 @@ def main() -> None:
         if sp.exists():
             process_file(sp, OUT / rf, is_skill_md=False)
             total += 1
+    # The licence travels with the bundle, not just with the repository: an installed plugin is a
+    # standalone copy, and the manifest's SPDX id names terms the player should be able to read.
+    for lf in LICENSE_FILES:
+        license_src = HERE.parent / lf
+        if license_src.exists():
+            shutil.copy2(license_src, OUT / lf)
+            total += 1
+            print(f"  copied     1  {lf}")
 
     emit_runtime_main()
     retarget_checker_configs()

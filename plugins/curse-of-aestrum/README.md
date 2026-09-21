@@ -156,4 +156,18 @@ because nothing is locked.
 ## Credits & license
 
 Curse of Aestrum by Cody Mallonee. Built on the Calliope (prose), Aria (story), and Bailly (5e)
-engines, bundled here. See each `engines/*/` subtree for its own license/contract.
+engines, which are by the same author and bundled here under `engines/`.
+
+**Two licenses, split by what the material is** — the engines are a platform, the campaign is a
+book. `LICENSING.md` draws the boundary:
+
+- **Engines** (`engines/`) and **tooling** (`scripts/`) — **MIT** (`LICENSE`). Build your own
+  campaign on them and ship it however you like.
+- **Campaign content** (`npcs/`, `locations/`, `lore/`, `quests/`, `items/`, `factions/`,
+  `timelines/`, `party/`, `overrides/`, `rules/`, `skills/`) — **CC BY-NC-SA 4.0**
+  (`LICENSE-CONTENT.md`). Play it, change it, share it, with credit and under the same terms —
+  but not for sale.
+
+The 5e engine implements a system owned by Wizards of the Coast LLC; see
+`engines/rpg-5e-engine/ATTRIBUTION.md`. This plugin is not affiliated with or endorsed by Wizards
+of the Coast.
