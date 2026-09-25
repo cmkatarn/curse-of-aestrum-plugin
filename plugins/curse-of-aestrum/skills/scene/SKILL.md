@@ -449,6 +449,14 @@ turn ends when that `Write` returns. Never stage *ahead* of the prose, and
 never stage the beat you just posted — it stages next turn, once the player
 advances on it (the one-beat lag).
 
+**Nothing player-facing after the staging write.** No status line, no "your
+move," no OOC note — any text there becomes the app's "reply" and collapses the
+beat out of view (worst when silent reads preceded the beat). If the harness
+then nudges *"your previous response had no visible output,"* answer with the
+**bare dash marker alone** (`------`, nothing else) — never reorder staging
+ahead of the prose and never re-post the beat. Canonical rule:
+`{{PLUGIN_ROOT}}/engines/fiction-host/claude_code_gate/gate_attestation.md` rule 7.
+
 The invariant is the lag, **not** "every fiction turn stages." A turn with **no
 prior play beat** — the resume/refresher beat, and the **first play beat** after
 it — has nothing to stage and correctly writes none; that is not a violation.

@@ -91,10 +91,31 @@ the engine's player-scoped OOC carve-out).
    with a trailing handoff, recap, or "your move" line. Such a line is a fresh
    assistant message that carries **no marker**, and the Stop hook rejects it —
    even though the beat it followed was correct and already handed control. A
-   tool-use-only continuation (no player-facing text) is fine; if a post-write
-   message with text is genuinely unavoidable, it is OOC and must itself end
-   with `--ooc--`. This is the single most common false rejection: the beat was
-   never the problem — the stray trailing line was.
+   tool-use-only continuation (no player-facing text) is fine. This is the
+   single most common false rejection: the beat was never the problem — the
+   stray trailing line was.
+
+   **A trailing line also buries the beat.** The Claude Code app renders a turn's
+   *last* text block as the reply and may collapse earlier text — above all text
+   sitting between tool groups (a beat drafted after silent consultation reads,
+   then followed by the staging write) — into an auto-generated one-line summary.
+   Any text after the trailing writes, even a short OOC note, becomes "the reply"
+   and demotes the beat into that collapsed group, so the player has to go
+   hunting for the prose. Nothing player-facing may follow the trailing writes.
+   (Writes still trail the beat — the content-first order is unchanged; this
+   rule only forbids text after them.)
+
+   **The harness's "no visible output" nudge.** After a tool-only continuation
+   the harness may inject *"your previous response had no visible output —
+   produce a user-visible response."* It is domain-blind: it treats every
+   tool-only ending as a slip and knows nothing of the staging write. It is not
+   a player instruction (see the prose engine's rule that a host prompt to
+   report on a completed silent operation does not license breaking silence).
+   Answer it with **the bare dash marker alone** — a message whose entire
+   content is `------` — and nothing else: no status line, no "your move," no
+   OOC note, no re-post of the beat, no reordering of the writes ahead of the
+   prose. The bare marker satisfies the nudge, renders as a thin rule, and
+   leaves the beat above it as the last prose the player sees.
 
 ## Rationale
 

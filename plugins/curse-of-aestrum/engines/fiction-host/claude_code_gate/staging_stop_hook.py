@@ -88,7 +88,15 @@ def _save(session_id: str, state: dict) -> None:
 
 
 def _classify(text: str) -> str:
-    """Classify the last non-empty line of the message: fiction | ooc | none."""
+    """Classify the last non-empty line of the message: fiction | ooc | none.
+
+    A message that is *only* a marker (the bare-marker reply to the harness's
+    "no visible output" nudge, gate_attestation.md rule 7) carries no beat and
+    is classified "none" so it neither counts as an unstaged fiction beat nor
+    advances the skip run."""
+    if len([ln for ln in text.splitlines() if ln.strip()]) == 1 and \
+            (_OOC_RE.match(text.strip()) or _FICTION_RE.match(text.strip())):
+        return "none"
     for line in reversed(text.splitlines()):
         s = line.strip()
         if not s:
