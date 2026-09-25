@@ -4,7 +4,8 @@ When a scene is active in this session, print ONE reminder line to stdout
 (exit 0 → appended to the model's context, ~30 tokens). When no scene is
 active, print nothing (zero tokens). Never blocks a prompt.
 
-Registered per consumer; see README.md in this directory.
+Usage (registered per consumer; see README.md in this directory):
+  gate_prompt_hook.py --scene-skill <name> [--scene-skill <name> ...]
 """
 
 from __future__ import annotations
@@ -13,7 +14,13 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from gate_common import read_event, scene_active  # noqa: E402
+from gate_common import (  # noqa: E402
+    HookArgumentParser,
+    add_scene_skill_arg,
+    read_event,
+    scene_active,
+    scene_skills,
+)
 
 REMINDER = (
     "[gate] Before posting: run BOTH suites (epistemic + stylistic) against the "
@@ -26,8 +33,12 @@ REMINDER = (
 
 
 def main() -> int:
+    parser = HookArgumentParser(prog="gate_prompt_hook")
+    add_scene_skill_arg(parser)
+    skills = scene_skills(parser, parser.parse_args())
+
     event = read_event()
-    if event and scene_active(event):
+    if event and scene_active(event, skills):
         print(REMINDER)
     return 0
 

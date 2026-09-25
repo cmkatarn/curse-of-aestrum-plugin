@@ -17,36 +17,56 @@ Components (all project-neutral; stdlib-only, reuses `runtime.lint`):
 | `{{PLUGIN_ROOT}}/engines/fiction-host/claude_code_gate/staging_stop_hook.py` | `Stop` hook: enforces that the **staging tail** ran. Staging (compose-during-play, flush-on-save) is Aria/Calliope doctrine consumed by multiple games; each registers this hook with its own `--staging-glob`. Enforces the one-beat-lag invariant — **not** "every fiction turn stages": a turn with no prior play beat (the resume/refresher beat, the first play beat after it, a single retcon-defer) correctly stages nothing and is tolerated. Blocks (exit 2) only when staging is stale past `--stale-limit` (default 2) consecutive fiction beats; bounded by `--max-blocks` (default 2), then warn-and-allow. |
 | `{{PLUGIN_ROOT}}/engines/fiction-host/claude_code_gate/gate_common.py` | Shared stdin/transcript/scope-guard/state helpers. |
 
-Scope guard: hooks act only in sessions where the scene skill was actually
-invoked (JSON-verified `Skill` tool use or `/scene` command in the session
-transcript); all other sessions see zero behavior and zero tokens.
+Scope guard: hooks act only in sessions where **this consumer's** scene skill
+was actually invoked (JSON-verified `Skill` tool use or slash command in the
+session transcript); all other sessions see zero behavior and zero tokens.
+Every hook takes a required, repeatable `--scene-skill <name>` naming that
+entry point exactly as the transcript records it — bare (`scene`) for a
+project skill, namespaced (`<plugin>:scene`) for a plugin skill. There is no
+default: a hardcoded bare name arms in every sibling project that has a skill
+of the same name (hooks from a user-scope plugin load everywhere) and never
+arms a plugin's own namespaced skill. The arming cache is keyed by skill set,
+so two consumers' hooks can share a session without arming each other.
+
+A registration that omits a required flag, or passes an empty one, does
+**not** block: it exits 0 with a `systemMessage` warning every turn that the
+gate did not run. (Stock argparse exits 2 on a usage error, which a `Stop`
+hook would read as a gate rejection.)
 
 ## Wiring a consumer (once per project)
 
 1. **Hooks** — in the consumer's `{{PLUGIN_ROOT}}/.claude/settings.json` (or
-   `settings.local.json`), with `--spec` listing that game's token sidecars
-   (mirror its lint spec set; paths relative to the consumer project root):
+   `settings.local.json`), with `--scene-skill` naming the consumer's scene
+   entry point and `--spec` listing that game's token sidecars (mirror its
+   lint spec set). Use **absolute** paths (or `${CLAUDE_PROJECT_DIR}` /
+   `${CLAUDE_PLUGIN_ROOT}`): hooks run in the session's *current* working
+   directory, which moves whenever a tool `cd`s, so a relative path works
+   until the first `cd` and then fails every turn. Launch through
+   `{{PLUGIN_ROOT}}/engines/fiction-host/claude_code_gate/run_hook.sh` so the interpreter is resolved at play time:
 
 ```json
 "hooks": {
   "UserPromptSubmit": [{ "matcher": "*", "hooks": [{ "type": "command",
-    "command": "py {{PLUGIN_ROOT}}/engines/fiction-host/claude_code_gate/gate_prompt_hook.py" }]}],
+    "command": "sh \"<gate>/run_hook.sh\" \"<gate>/gate_prompt_hook.py\" --scene-skill scene" }]}],
   "Stop": [{ "matcher": "*", "hooks": [{ "type": "command",
-    "command": "py {{PLUGIN_ROOT}}/engines/fiction-host/claude_code_gate/gate_stop_hook.py --spec {{PLUGIN_ROOT}}/engines/prose-engine/scene/gate/infrastructure_tokens.toml" }]}]
+    "command": "sh \"<gate>/run_hook.sh\" \"<gate>/gate_stop_hook.py\" --scene-skill scene --spec \"<engines>/prose-engine/scene/gate/infrastructure_tokens.toml\"" }]}]
 }
 ```
+
+   `<gate>` is this directory's absolute path; `<engines>` is where the engine
+   repos live.
 
 2. **Protocol** — one line in the consumer's scene skill load order:
    *"Read `{{PLUGIN_ROOT}}/engines/fiction-host/claude_code_gate/gate_attestation.md` and follow it
    for every beat."*
 
 3. **Staging enforcement** *(if the consumer stages)* — add a second `Stop`
-   command with that game's staging glob (paths relative to the consumer root):
+   command with that game's staging glob, absolute like the paths above:
 
 ```json
 "Stop": [{ "matcher": "*", "hooks": [
-  { "type": "command", "command": "py {{PLUGIN_ROOT}}/engines/fiction-host/claude_code_gate/gate_stop_hook.py --spec {{PLUGIN_ROOT}}/engines/prose-engine/scene/gate/infrastructure_tokens.toml" },
-  { "type": "command", "command": "py {{PLUGIN_ROOT}}/engines/fiction-host/claude_code_gate/staging_stop_hook.py --staging-glob \"<staging-glob>\"" }
+  { "type": "command", "command": "sh \"<gate>/run_hook.sh\" \"<gate>/gate_stop_hook.py\" --scene-skill scene --spec \"<engines>/prose-engine/scene/gate/infrastructure_tokens.toml\"" },
+  { "type": "command", "command": "sh \"<gate>/run_hook.sh\" \"<gate>/staging_stop_hook.py\" --scene-skill scene --staging-glob \"<project>/<staging-glob>\"" }
 ]}]
 ```
 
@@ -54,7 +74,7 @@ transcript); all other sessions see zero behavior and zero tokens.
    `local/anthologies/*/staging/*.md`.
 
 That's all. The shared scripts carry no consumer data; everything
-game-specific arrives via `--spec` / `--staging-glob`.
+game-specific arrives via `--scene-skill` / `--spec` / `--staging-glob`.
 
 ## Notes
 

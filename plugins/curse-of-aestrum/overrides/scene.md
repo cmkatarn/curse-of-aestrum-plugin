@@ -548,9 +548,10 @@ party to a morning while the drafter's hand is still holding the last day's
 dusk.
 
 **Loop-gated NPC knowledge — testimony is bounded by propagation and the day's
-intake.** Before putting a rumor, report, or piece of local intelligence in a
-**Loop NPC's** mouth, run two loop-specific grounding checks (the loop-context
-form of gate rows 2 and 19):
+intake.** Before putting a rumor, report, a piece of local intelligence, **or any
+first-person account of her own experience** in a **Loop NPC's** mouth, run
+these loop-specific grounding checks (the loop-context form of gate rows 1, 2,
+14 and 19):
 
 - **Propagation.** A phenomenon whose only witnesses are themselves loop-reset —
   a transient camp, a nightly event, anyone who forgets at the next midnight —
@@ -558,19 +559,57 @@ form of gate rows 2 and 19):
   reset, so the report never reaches the NPC's ear (or her persistent store) day
   over day. **A resetting source yields no standing rumor;** the NPC's honest
   answer is the gap, not a fill.
-- **The day's intake-so-far.** A Loop NPC begins each cycle holding only what
-  persists for her (a continuous-memory exception such as a dead box) plus
-  whatever she has actually been told *since this morning's Wake*. Check the
-  in-fiction clock first: early-morning / pre-client, she has had **no intake
-  today**, so *"my visitors have been saying…"* / *"I've been hearing…"* has no
-  source event and is cut. A persistent store holds only what a same-day witness
-  carried to her before a prior midnight — which the propagation test already
-  gates.
+- **The day's intake-so-far.** A Loop NPC begins each cycle holding her snapshot
+  memory (see the self-report test below), plus any continuous-memory exception
+  she has (a dead box), plus whatever she has actually been told *since this
+  morning's Wake*. Check the in-fiction clock first: early-morning / pre-client,
+  she has had **no intake today**, so *"my visitors have been saying…"* /
+  *"I've been hearing…"* has no source event and is cut. A persistent store holds
+  only what a same-day witness carried to her before a prior midnight — which the
+  propagation test already gates.
+- **Her own past is real up to her snapshot — and stops dead there (the
+  self-report test).** The two tests above govern what *reaches* her; this one
+  governs what she *lived*. A Loop NPC is **not** a character with no history.
+  Modify Memory *reverts* her to her [snapshot]({{PLUGIN_ROOT}}/rules/snapshot.md), which
+  captured everything she knew at that moment — so she wakes each cycle holding
+  her whole life up to that point (childhood, training, how she came to this
+  posting, the tenday before the snapshot was taken) **plus** whatever she has
+  accumulated since this morning's Wake, which the next midnight takes. So *"I
+  came here in the spring," "I trained at the house in Y," "last tenday a
+  merchant's boy asked me the same thing"* are all **available to her** — they
+  sit before the snapshot. Author them from her sheet and her role as play
+  requires. What she cannot hold is **anything after the snapshot**: every cycle
+  the loop has run since. Forbidden — elapsed time since the lock, any count or
+  frequency accumulated across cycles, any event of the loop years, and **any
+  encounter with the party**, who arrived long after every Aestrum native's
+  snapshot was taken. **The tell is a claim whose referents sit in the
+  post-snapshot period,** however casually it is phrased: *"I've met two new
+  faces this week"* fails not because a tenday is too long a span for her, but
+  because the faces are post-snapshot and her tenday is not.
+- **Her subjective "recently" points at the pre-snapshot window, and that is a
+  feature.** Her *yesterday* is the day before her snapshot — by the world's
+  clock, years ago. She will therefore date things wrongly in perfect good faith
+  and sound faintly out of step with the present, and nothing in the room can
+  correct her. Render that rather than sanding it off: it is one of the loop's
+  best textures, and the party are the only people in the scene who can hear it.
+- **Her sense of *normal* is frozen at her snapshot — which bars the
+  observation, not the behaviour.** She cannot notice that anything has changed,
+  because noticing change needs a before and an after and her after keeps being
+  deleted. So she cannot find the duchy quiet, cannot find strangers rare, cannot
+  remark that trade has fallen off or that no one travels any more — each of those
+  is a comparison across the period she does not hold. Whatever the place was like
+  at her snapshot is, to her, what it is like today. **This does not make her
+  passive.** She plays her role fully, and initiating with a stranger is squarely
+  within it — a priestess greeting or recruiting a traveller on the road needs no
+  sense of novelty behind it, only her office. What the rule removes is the
+  *remark*, not the approach: she engages the traveller warmly and never once
+  finds a traveller surprising. The blankness is the horror; handing her the
+  observation destroys it.
 
 The failure is handing a Loop NPC a convenient report the loop's own physics
 forbid her to hold — a confirmation-mirror for the party's theory. If it reaches
-a draft, it is a row 2 / row 19 violation: cut the report, render the gap
-instead, and rescan before posting.
+a draft, it is a row 2 / row 19 violation (or, for a self-report, a row 1 + row 14
+violation): cut the report, render the gap instead, and rescan before posting.
 
 **Amulet bearers are NOT cycle-exempt.** Moon Amulets shield only against
 Modify Memory; **Sleep, Recreate, and Teleport still apply** unless

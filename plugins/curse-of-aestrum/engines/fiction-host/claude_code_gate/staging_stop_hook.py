@@ -41,7 +41,6 @@ Usage (registered per consumer; see README.md):
 
 from __future__ import annotations
 
-import argparse
 import glob
 import json
 import os
@@ -54,9 +53,12 @@ _HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(_HERE))  # gate_common
 
 from gate_common import (  # noqa: E402
+    HookArgumentParser,
+    add_scene_skill_arg,
     last_assistant_text,
     read_event,
     scene_active,
+    scene_skills,
 )
 
 # Dash-marker shapes, mirroring gate_stop_hook. Fiction beat: `------` or
@@ -131,9 +133,12 @@ BLOCK_MSG = (
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser()
+    ap = HookArgumentParser(prog="staging_stop_hook")
+    add_scene_skill_arg(ap)
     ap.add_argument("--staging-glob", required=True,
-                    help="glob (relative to CWD) for this consumer's staging files")
+                    help="glob for this consumer's staging files; make it absolute "
+                         "(or ${CLAUDE_PROJECT_DIR}-anchored) — a relative glob "
+                         "resolves against the session's cwd, which drifts")
     ap.add_argument("--stale-limit", type=int, default=2,
                     help="tolerate up to N consecutive unstaged fiction beats "
                          "(covers recap + first play beat + a single retcon-defer); "
@@ -141,9 +146,10 @@ def main() -> int:
     ap.add_argument("--max-blocks", type=int, default=2,
                     help="after this many consecutive blocks, allow with a warning")
     args = ap.parse_args()
+    skills = scene_skills(ap, args)
 
     event = read_event()
-    if not event or not scene_active(event):
+    if not event or not scene_active(event, skills):
         return 0
 
     text = last_assistant_text(event.get("transcript_path", ""))

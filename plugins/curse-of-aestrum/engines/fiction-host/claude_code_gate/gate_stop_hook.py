@@ -19,12 +19,12 @@ Loop guard: consecutive blocks are counted in the per-session state file; after
 so play never deadlocks. Any clean pass resets the counter.
 
 Usage (registered per consumer; see README.md):
-  py gate_stop_hook.py --spec <token_sidecar.toml> [--spec ...] [--max-redrafts N]
+  gate_stop_hook.py --scene-skill <name> --spec <token_sidecar.toml> [--spec ...]
+                    [--max-redrafts N]
 """
 
 from __future__ import annotations
 
-import argparse
 import re
 import sys
 from pathlib import Path
@@ -34,11 +34,14 @@ sys.path.insert(0, str(_HERE))           # gate_common
 sys.path.insert(0, str(_HERE.parent))    # fiction-host root → runtime.lint
 
 from gate_common import (  # noqa: E402
+    HookArgumentParser,
+    add_scene_skill_arg,
     last_assistant_text,
     load_state,
     read_event,
     save_state,
     scene_active,
+    scene_skills,
 )
 from runtime.lint import LintEngine, load_specs  # noqa: E402
 
@@ -112,14 +115,16 @@ def _allow(event: dict, state: dict, warning: str | None = None) -> int:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser()
+    parser = HookArgumentParser(prog="gate_stop_hook")
+    add_scene_skill_arg(parser)
     parser.add_argument("--spec", action="append", default=[],
                         help="token sidecar TOML (repeatable)")
     parser.add_argument("--max-redrafts", type=int, default=2)
     args = parser.parse_args()
+    skills = scene_skills(parser, args)
 
     event = read_event()
-    if not event or not scene_active(event):
+    if not event or not scene_active(event, skills):
         return 0
 
     text = last_assistant_text(event.get("transcript_path", ""))
