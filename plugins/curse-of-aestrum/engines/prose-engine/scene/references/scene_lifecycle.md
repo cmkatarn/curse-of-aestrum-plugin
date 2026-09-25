@@ -289,8 +289,8 @@ bullets) to pick the anchor, honor the latest-entry-wins invariant
 where the override defines one, and avoid duplicate headers. Never
 `Read` the whole overlay file and `Write` it back to append — that
 scales with file size and turns a small delta into a multi-thousand-
-token round-trip on overlays that accumulate across a long campaign or
-anthology. For a brand-new overlay (no prior entry), `Write` the
+token round-trip on overlays that accumulate across a long-running
+work. For a brand-new overlay (no prior entry), `Write` the
 initial content once; thereafter, `Edit`-append.
 
 *Sharded layout.* A consuming game MAY shard the overlay across
