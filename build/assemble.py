@@ -639,16 +639,21 @@ def write_meta() -> None:
     # shared by every platform, and `py` exists only on Windows while `python3` exists only off it.
     # The wrapper resolves it at play time on the machine that knows. See its header for the detail.
     launch = f'sh "{gate}/run_hook.sh"'
+    # The gate's scope guard arms only on the skill named here, matched as the transcript records
+    # it — and a plugin skill is recorded namespaced. The plugin's hooks load in EVERY session (a
+    # user-scope plugin is global), so the bare "scene" would arm them in any project with its own
+    # scene skill while never matching this plugin's. Name our own entry point, namespaced.
+    scene = f'--scene-skill "{PLUGIN_NAME}:scene"'
     hooks = {
         "hooks": {
             "UserPromptSubmit": [{"matcher": "*", "hooks": [
-                _cmd(f'{launch} "{gate}/gate_prompt_hook.py"')]}],
+                _cmd(f'{launch} "{gate}/gate_prompt_hook.py" {scene}')]}],
             "Stop": [{"matcher": "*", "hooks": [
-                _cmd(f'{launch} "{gate}/gate_stop_hook.py"'
+                _cmd(f'{launch} "{gate}/gate_stop_hook.py" {scene}'
                      f' --spec "{root}/engines/prose-engine/scene/gate/infrastructure_tokens.toml"'
                      f' --spec "{root}/engines/rpg-5e-engine/rules/player_meta_tokens.toml"'
                      f' --spec "{root}/overrides/gate_lint/forbidden_tokens.toml"'),
-                _cmd(f'{launch} "{gate}/staging_stop_hook.py"'
+                _cmd(f'{launch} "{gate}/staging_stop_hook.py" {scene}'
                      f' --staging-glob "{proj}/campaign_state/*/staging/*.md"'),
             ]}],
         }
