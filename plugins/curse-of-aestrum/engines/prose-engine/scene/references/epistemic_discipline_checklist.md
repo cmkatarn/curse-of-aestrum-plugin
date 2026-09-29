@@ -229,7 +229,7 @@ Then re-run the gate **once** on the rewrite before posting.
                           check on every callback; land the target proposition
                           (if any) in the realization span
 3. Run the gate         — scan BOTH suites against the draft: this epistemic
-                          suite (rows 1–19) and the stylistic-variance suite
+                          suite (every row) and the stylistic-variance suite
                           (stylistic_variance_checklist.md), in order; on-demand
                           reads as triggers fire (session-cached). For `{...}`,
                           apply the scoped-exemption check per row inside the
