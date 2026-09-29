@@ -2168,6 +2168,42 @@ canon and not the guess decides. (The inverse cost is the sharpest form of
 this: the suspicion is not merely unproven but *false* against canon, and the
 narrator has just certified the POV's error as the world's truth.)
 
+### Trace concretes — a sign left behind must follow from what actually happened
+
+The third surface is the **aftermath detail**: a physical trace the POV comes
+upon that testifies to something done while they were not watching — wet
+footprints, a still-swinging door, a warm seat, a ring on a table, a towel
+dropped on a deck, crumbs, a lipstick mark on a glass. Traces are the
+drafter's favorite tool for off-page action, because a trace *shows* an
+event instead of narrating it. That same property is the danger: **a trace
+asserts its cause.** Wet footprints assert that feet were wet. A warm seat
+asserts that somebody sat in it recently. If the fiction as it stands does
+not contain that cause, or contains it in a different order, the trace has
+fabricated an event — and put it into the POV's perception as evidence, so
+the POV (and the player) now believe something happened that did not.
+
+It slips past the other checks because every piece of it looks grounded. The
+character really did go that way; the water really is right there; footprints
+are a perfectly ordinary thing to see on a deck. The failure is in the
+**causal chain between them**, and it is almost always an ordering error: the
+drafter imports the trace from the *typical* version of the scene (a swimmer
+climbs out and leaves wet prints) while the actual scene runs the other way
+(a dry character walked *to* the water and went in, so any prints on the deck
+are dry and invisible). The mood of the beat — *she was here a moment ago* —
+pulls the stock trace in, the same slot-driven reaching that conjures a
+fabricated entity.
+
+**The drafting test.** For each trace the narration shows, name the event that
+caused it and confirm, in order: (1) that event is on the page or plainly
+entailed by what is; (2) it happened **before** the POV sees the trace; and
+(3) it would actually leave **this** trace given the state things were in at
+the time — whether the feet were wet or dry, whether the door was left
+swinging or closed, whether the seat had time to go cold. If the cause fails
+any of the three, rewrite the trace so it follows from what did happen (*her
+dress in a heap at the edge of the platform, the water still rocking under the
+ladder*), or cut it. A **correct** trace is a strong tool and should be kept;
+only the one whose cause is missing or out of order goes.
+
 ---
 
 ## The confirmation-mirror failure mode — an NPC's testimony authored toward the POV's private hypothesis
@@ -2593,8 +2629,13 @@ the epistemic-pass has already cleared.
      basis for), is conjured: rewrite it to the genuine unknown, relocate it
      to the position the POV actually grounds, or drop the slot. Legitimate
      forward worldbuilding — new state not claimed as POV knowledge — is
-     exempt. This is the gate's defense against the fabricated-concrete
-     failure mode above.
+     exempt. **Trace variant:** for each aftermath sign the POV comes upon
+     (wet prints, a warm seat, a swinging door, a dropped object), name the
+     causing event and confirm it is on the page or entailed, preceded the
+     sighting, and would leave *this* trace given the state at the time (dry
+     feet leave no wet prints). A trace with a missing or out-of-order cause
+     fabricates an event; make it follow from what happened or cut it. This
+     is the gate's defense against the fabricated-concrete failure mode above.
    - **The knowledge-attribution check.** For each verb of cognition or
      perception applied to a character other than the speaker (*knew,
      believed, foresaw, understood, expected, saw, realized, sensed,

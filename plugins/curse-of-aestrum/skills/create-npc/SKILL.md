@@ -10,7 +10,6 @@ description: >
   random) and completeness (complete / stub). The NPC default is random + stub —
   a fast, runnable character fleshed out in play. Do NOT use for player
   characters (use create-character) or for assembling a party (use create-party).
-allowed-tools: [Read, Grep, Glob, Write, Edit, PowerShell]
 version: 1.0.0
 ---
 

@@ -11,7 +11,6 @@ description: >
   characters — NPCs go to create-npc, player characters to create-character,
   parties to create-party. Do NOT use for writing prose, or for live play
   (scene).
-allowed-tools: [Read, Grep, Glob, Write, Edit, PowerShell]
 version: 1.1.0
 ---
 

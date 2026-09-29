@@ -10,7 +10,6 @@ description: >
   enforces party diversity, finalizes the roster, and opens the campaign with
   an introduction to Setland. Do NOT use for solo PC creation (use
   create-character) or for NPC creation.
-allowed-tools: [Read, Grep, Glob, Write, Edit, PowerShell, Skill]
 version: 2.0.0
 ---
 

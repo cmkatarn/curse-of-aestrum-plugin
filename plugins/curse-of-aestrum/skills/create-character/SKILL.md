@@ -9,7 +9,6 @@ description: >
   the skill walks them through D&D 5e character creation with campaign-tied
   background hooks. Do NOT use for assembling a multi-PC party (use
   create-party) or for NPC creation (use create-npc).
-allowed-tools: [Read, Grep, Glob, Write, Edit, PowerShell]
 version: 2.0.0
 ---
 
